@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: #212121;
+}
+a {
+    color: #214ed3;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.text {
+    background-color: #c8ebfb;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 100%;
+}
+.comingSoon {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    img {
+        margin: 0 auto 30px;
+        max-width: 260px;
+    }
+}
