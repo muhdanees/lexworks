@@ -25,8 +25,12 @@
 .text-muted {
     color: #9fa9b3;
 }
+.text-muted:hover {
+    color: #9fa9b3;
+    text-decoration: underline;
+}
 a:hover {
-    color: var(--bs-secondary);
+    color: var(--bs-dark);
 }
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     color: var(--bs-primary);
@@ -36,6 +40,24 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 .text-inline {
     white-space: nowrap;
+}
+.dropdown-item {
+    padding: 4px 10px;
+    /* white-space: break-spaces; */
+    /* max-width: fit-content; */
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: rgba(var(--bs-secondary), 0.5);
+}
+.menuItem {
+    display: flex;
+    flex-direction: column;
+}
+.menuItemSmall {
+    font-size: smaller;
+}
+.cPx-3 {
+    padding: 0 10px;
 }
 
 
@@ -756,6 +778,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     transition: 0.5s;
     opacity: 0;
     z-index: 3;
+    white-space: nowrap;
 }
 
 .country .country-item:hover .country-name {
