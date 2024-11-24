@@ -634,7 +634,7 @@
                             <img src="img/brazil.jpg" class="img-fluid rounded-circle" alt="Image">
                         </div> -->
                         <div class="country-name">
-                            <a href="#" class="text-white fs-4">Akhil Krishan Maggu</a>
+                            <a href="#" class="text-white fs-4">Adv. Akhil Krishan Maggu</a>
                         </div>
                     </div>
                 </div>
@@ -705,13 +705,13 @@
                         <div class="training-inner">
                             <img src="img/training-3.jpg" class="img-fluid w-100 rounded" alt="Image">
                             <div class="training-title-name">
-                                <a href="#" class="h4 text-white mb-0">PTE</a>
-                                <a href="#" class="h4 text-white mb-0">Coaching</a>
+                                <a href="#" class="h4 text-white mb-0">Intern with Us</a>
+                                <!-- <a href="#" class="h4 text-white mb-0">Coaching</a> -->
                             </div>
                         </div>
                         <div class="training-content bg-secondary rounded-bottom p-4">
                             <a href="#">
-                                <h4 class="text-white">PTE Coaching</h4>
+                                <h4 class="text-white">Intern with Us</h4>
                             </a>
                             <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
                                 veritatis.</p>
@@ -725,13 +725,13 @@
                         <div class="training-inner">
                             <img src="img/training-4.jpg" class="img-fluid w-100 rounded" alt="Image">
                             <div class="training-title-name">
-                                <a href="#" class="h4 text-white mb-0">OET</a>
-                                <a href="#" class="h4 text-white mb-0">Coaching</a>
+                                <a href="#" class="h4 text-white mb-0">Join Us</a>
+                                <!-- <a href="#" class="h4 text-white mb-0">Coaching</a> -->
                             </div>
                         </div>
                         <div class="training-content bg-secondary rounded-bottom p-4">
                             <a href="#">
-                                <h4 class="text-white">OET Coaching</h4>
+                                <h4 class="text-white">Join Us</h4>
                             </a>
                             <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
                                 veritatis.</p>
@@ -834,6 +834,31 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+    <div class="modal" tabindex="-1" id="onload">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">CAUTION NOTICE TO WHOMSOEVER IT MAY CONCERN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The rules of the Bar Council of India prohibit lawyers and law firms from advertising and soliciting work through communication in the public domain. By proceeding further and clicking on the “AGREE” button herein below, you hereby acknowledge that:</p>
+
+                <p>a. You, of your own accord, intend to know more and subsequently acquire more information about Lex Works for your own personal purpose and use; and</p>
+                <p>b. There has been no advertisement, solicitation, communication, invitation, or inducement of any sort whatsoever from Lex Works or any of its members to create or solicit an attorney-client relationship through this website.</p>
+                
+                <p>The information on <a href="https://lexworks.co.in/">www.lexworkss.com</a> is not a substitute for legal advice, and as such, we at “Lex Works” are not liable for any consequence of any action taken by the user relying on material/information provided under this website. In cases where the user has any legal issues, they must, in all cases, seek independent legal advice.</p>
+                
+                <p>This website is meant solely for the purpose of information and not for the purpose of advertising, and “Lex Works” does not intend to solicit clients through this website. We do not take responsibility for decisions taken by the reader based solely on the information provided on the website, nor do we warrant that the information contained on this website is accurate or complete. Any information obtained or downloaded from this website is completely at the user's volition, and any transmission, receipt, access, or use of this site is not intended to, and will not, create any lawyer-client relationship.</p>
+                
+                <p>None of the information contained in the website is in the nature of a legal opinion or otherwise amounts to any legal advice. Lex Works hereby disclaims any and all liability to any person for any loss or damage caused by errors or omissions, whether such errors or omissions result from negligence, accident, or any other cause.</p>
+                
+                <p>You further acknowledge having read, understood, and perused through the contents of the Privacy Policy. By continuing to use this site, you consent to the use of cookies on your device as described in our Cookie Policy.</p>                
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -844,9 +869,17 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!--Modal JS Script --> 
+    <script type="text/javascript">
+        window.onload = () => {
+          const myModal = new bootstrap.Modal('#onload');
+          myModal.show();
+        }
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>
