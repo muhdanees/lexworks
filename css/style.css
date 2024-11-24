@@ -63,6 +63,17 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     left: -60px;
 }
 
+.facbookColor {
+    color: #0866ff;
+}
+.instagramColor {
+    color: #b44b8f;
+}
+.youtubeColor {
+    color: #ff0000;
+}
+
+
 
 /*** Spinner Start ***/
 /*** Spinner ***/
@@ -417,7 +428,8 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     background-repeat: no-repeat;
     background-attachment: initial;
     background-size: cover;
-    padding: 100px 0 60px 0;
+    padding: 30px 0 30px 0;
+    max-height: 250px;
 }
 /*** Single Page Hero Header End ***/
 
@@ -970,7 +982,16 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 .footer .footer-item a:hover {
     letter-spacing: 2px;
-    color: var(--bs-secondary);
+    /* color: var(--bs-secondary); */
+}
+a.linkedInHover:hover {
+    color: #0a66c2;
+}
+a.instagramHover:hover {
+    color: #b44b8f;
+}
+a.youtubeHover:hover {
+    color: #ff0000;
 }
 
 /*** Footer End ***/
