@@ -3,6 +3,10 @@
     --bs-secondary: #EBB76E;
 }
 
+body {
+    color: var(--bs-dark);
+}
+
 .text-secondary {
     color: var(--bs-secondary);
 }
@@ -86,6 +90,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .contentLine {
     line-height: 24px;
     margin-bottom: 8px;
+}
+
+.customs-title {
+    font-size: medium;
+}
+.customs-heading {
+    font-size: x-large;
 }
 
 
