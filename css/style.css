@@ -72,6 +72,17 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .youtubeColor {
     color: #ff0000;
 }
+.alignContent {
+    display: flex;
+    align-items: flex-start;
+}
+.alignContent i {
+    margin-top: 7px;
+}
+.contentLine {
+    line-height: 24px;
+    margin-bottom: 8px;
+}
 
 
 
