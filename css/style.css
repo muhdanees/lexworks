@@ -548,6 +548,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     .carousel-header .carousel .carousel-indicators {
         padding: 0;
     }
+    .bg-breadcrumb {
+        max-height: 180px;
+        padding: 0;
+    }
+    .py-sm-0 {
+        padding: 0 !important;
+    }
 }
 /*** Carousel Hero Header End ***/
 
