@@ -119,13 +119,14 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .watermark {
     position: relative;
     overflow: hidden;
+    margin: 0;
 }
 .watermark::before {
     content: '';
     position: absolute;
     left: 20%;
-    top: -35%;
-    background: url('../img/watermark.svg') no-repeat;
+    top: 0;
+    background: url('../img/watermark.svg') repeat;
     background-position: center;
     background-size: contain;
     transform: rotate(-20deg);
