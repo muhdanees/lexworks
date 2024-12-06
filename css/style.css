@@ -190,6 +190,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     filter: invert(50%);
     margin: auto;
 }
+.footer .footer-item a.hoverAnim:hover {
+    letter-spacing: 1px;
+}
 
 
 /*** Spinner Start ***/
