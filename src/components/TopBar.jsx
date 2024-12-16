@@ -1,4 +1,6 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Topbar() {
   return (
@@ -22,7 +24,7 @@ export default function Topbar() {
           {/* Social Media Links */}
           <div className="col-lg-6 text-center mb-2 mb-lg-0">
             <div
-              className="d-inline-flex align-items-center justify-content-end"
+              className="d-flex align-items-center justify-content-end"
               style={{ height: "45px" }}
             >
               <a
