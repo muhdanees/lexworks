@@ -1,6 +1,10 @@
+import Topbar from "./TopBar";
 function Header() {
     return (
-        <header>My header</header>
+        <>
+            <Topbar />
+            <header>My header</header>
+        </>
     );
 }
 
