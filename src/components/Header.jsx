@@ -7,7 +7,6 @@ function Header() {
             <Topbar />
             <Navbar />
             <CarouselSlider />
-            <header>My header</header>
         </>
     );
 }
