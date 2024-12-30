@@ -323,6 +323,20 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        function removeHtmlExtension() {
+            const currentUrl = window.location.href;
+            const parsedUrl = new URL(currentUrl);
+            parsedUrl.pathname = parsedUrl.pathname.replace(/\.html$/, '');
+
+            // Update the URL in the address bar without reloading the page
+            history.replaceState(null, '', parsedUrl.toString());
+        }
+
+        // Call the function to remove .html from the URL
+        removeHtmlExtension();
+
+    </script>
 </body>
 
 </html>
