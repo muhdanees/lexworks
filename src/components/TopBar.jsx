@@ -24,7 +24,6 @@ export default function Topbar() {
           <div className="col-lg-6 text-center mb-2 mb-lg-0">
             <div
               className="d-flex align-items-center justify-content-end"
-              style={{ height: "45px" }}
             >
               <a
                 className="btn btn-sm btn-outline-light btn-square me-2 linkedInHover"
