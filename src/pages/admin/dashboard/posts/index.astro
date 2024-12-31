@@ -1,0 +1,13 @@
+---
+import SideNavigation from "../../../../components/admin/SideNavigation.astro";
+import AdminLayout from "../../../../layouts/AdminLayout.astro";
+import { API_URL } from "astro:env/client";
+import Posts from "../../../../components/admin/Posts";
+---
+
+<AdminLayout>
+  <SideNavigation />
+  <div class="pl-72 pt-4">
+    <Posts url={API_URL} client:load />
+  </div>
+</AdminLayout>
