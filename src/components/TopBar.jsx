@@ -1,9 +1,10 @@
 import React from "react";
+import Styles from "./TopBar.module.scss";
 
 export default function Topbar() {
   return (
     <>
-      <div className="container-fluid bg-primary px-5 d-none d-lg-block">
+      <div className={`container-fluid bg-primary px-5 d-none d-lg-block ${Styles.container}`}>
         <div className="row gx-0 align-items-center">
           {/* Contact Information */}
           <div className="col-lg-6 text-center text-lg-start mb-lg-0">
