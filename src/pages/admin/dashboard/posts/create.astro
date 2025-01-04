@@ -1,7 +1,7 @@
 ---
 import SideNavigation from "../../../../components/admin/SideNavigation.astro";
 import AdminLayout from "../../../../layouts/AdminLayout.astro";
-import EditPost from "../../../../components/admin/EditPost";
+import CreatePost from "../../../../components/admin/CreatePost";
 import { API_URL } from "astro:env/client";
 
 const { slug } = Astro.params;
@@ -9,6 +9,6 @@ const { slug } = Astro.params;
 <AdminLayout>
   <SideNavigation activeTab="dropdown-pages" />
   <div class="pl-72 py-2 pr-8">
-    <EditPost client:only slug={slug} API_URL={API_URL} />
+    <CreatePost client:only slug={slug} API_URL={API_URL} />
   </div>
 </AdminLayout>
