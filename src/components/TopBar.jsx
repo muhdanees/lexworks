@@ -4,7 +4,7 @@ import Styles from "./TopBar.module.scss";
 export default function Topbar() {
   return (
     <>
-      <div className={`container-fluid bg-primary px-5 d-none d-lg-block ${Styles.container}`}>
+      <div className={`container-fluid bg-primary px-5 py-2 d-none d-lg-block ${Styles.bgPrimary}`}>
         <div className="row gx-0 align-items-center">
           {/* Contact Information */}
           <div className="col-lg-6 text-center text-lg-start mb-lg-0">

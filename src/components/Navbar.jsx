@@ -15,11 +15,11 @@ export default function Topbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav ms-auto py-0">
-              <a href="index.html" className="nav-item nav-link active">Home</a>
-              <a href="aboutus.html" className="nav-item nav-link">About Us</a>
-              <a href="ourteam.html" className="nav-item nav-link">Our Team</a>
+              <a href="/" className="nav-item nav-link active">Home</a>
+              <a href="/aboutus" className="nav-item nav-link">About Us</a>
+              <a href="/ourteam" className="nav-item nav-link">Our Team</a>
               <div className="nav-item dropdown">
-                <a href="#!" className="nav-link" data-bs-toggle="dropdown">
+                <a href="javascript:void(0)" className="nav-link" data-bs-toggle="dropdown">
                   <span className="dropdown-toggle">Practice Area</span>
                 </a>
                 <div className="dropdown-menu m-0">

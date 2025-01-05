@@ -4,7 +4,7 @@ export default function LatestNews() {
   return (
     <>
       <div className="container-fluid bg-light py-5">
-        <div className="container py-5">
+        <div className="container">
           <div className="row g-5">
             <div className="col-xl-6 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="card bg-white mb-3">
