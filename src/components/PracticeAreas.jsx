@@ -9,7 +9,7 @@ export default function PracticeAreas() {
             className="section-title text-center mb-5 wow fadeInUp"
             data-wow-delay="0.1s"
           >
-            <div className="sub-style">
+            <div className="sub-style mb-2">
               <h5 className="sub-title text-primary px-3">Practice Areas</h5>
             </div>
             <h2 className="display-6 mb-4">

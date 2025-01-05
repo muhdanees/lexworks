@@ -6,7 +6,7 @@ export default function OurTeam() {
             <div className="container-fluid country overflow-hidden py-5 watermark">
                 <div className="container">
                     <div className="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div className="sub-style">
+                        <div className="sub-style mb-2">
                             <h5 className="sub-title text-primary px-3">Our Team</h5>
                         </div>
                         <h1 className="display-5 mb-4">
@@ -74,6 +74,44 @@ export default function OurTeam() {
                                 href="/ourteam">More Team</a>
                         </div>
                     </div>
+
+                    <div className="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div className="sub-style mb-2">
+                            <h5 className="sub-title text-primary px-3">Expert In</h5>
+                        </div>
+                    </div>
+
+
+                    <div className="row g-4 text-center">
+                        <div class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="country-item">
+                                <div class="rounded overflow-hidden">
+                                    <img src="img/blank-men.png" class="img-fluid w-100 rounded" alt="Image" />
+                                </div>
+                                <div class="country-flag">
+                                    <img src="img/hammer.png" class="img-fluid rounded-circle" alt="Image" />
+                                </div>
+                                <div class="country-name">
+                                    <a href="ms-oshin-maggu.html" class="text-white fs-4">Ms. Oshin Maggu</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="country-item">
+                                <div class="rounded overflow-hidden">
+                                    <img src="img/blank-men.png" class="img-fluid w-100 rounded" alt="Image" />
+                                </div>
+                                <div class="country-flag">
+                                    <img src="img/hammer.png" class="img-fluid rounded-circle" alt="Image" />
+                                </div>
+                                <div class="country-name">
+                                    <a href="ms-shivanjali.html" class="text-white fs-4">Ms. Shivanjali</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </>

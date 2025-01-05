@@ -16,7 +16,7 @@ export default function About() {
               </div>
             </div>
             <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
-              <h5 className="sub-title pe-3">About Our Firm</h5>
+              <h5 className="sub-title mb-2 pe-3">About Our Firm</h5>
               <h2 className="display-6 mb-4">
                 Charting The Course Of Justice Through Collaborative Spirit.
               </h2>
