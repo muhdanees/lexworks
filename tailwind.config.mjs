@@ -6,6 +6,7 @@ export default {
     "./src/components/admin/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./src/components/admin/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./src/layouts/AdminLayout.astro",
+    "!./src/layouts/Layout.astro",
   ],
   theme: {
     extend: {

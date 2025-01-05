@@ -5,7 +5,12 @@ import tailwind from "@astrojs/tailwind";
 import node from "@astrojs/node";
 
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
   env: {
     schema: {
       API_URL: envField.string({
