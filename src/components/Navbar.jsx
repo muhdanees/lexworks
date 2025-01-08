@@ -56,9 +56,9 @@ export default function Topbar() {
                   </div>
                 </div>
               </div>
-              <a href="contactus.html" className="nav-item nav-link">Contact Us</a>
+              <a href="/contactus" className="nav-item nav-link">Contact Us</a>
             </div>
-            <a href="contactus.html" className="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">
+            <a href="/contactus" className="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">
               Consultation Session
             </a>
           </div>
