@@ -388,6 +388,12 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     color: var(--bs-secondary) !important;
 }
 
+@media (min-width: 768px) {
+    .accor-sticky-top {
+        position: sticky;
+        top: 50px;
+    }
+}
 
 @media (max-width: 768px) {
     .topbar {

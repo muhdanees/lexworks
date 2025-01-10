@@ -16,6 +16,58 @@ export default function NewsListing() {
                                 combines wealth of experience to offer strategic insights and comprehensive support tailored to
                                 your specific needs.
                             </p>
+                            <a href="/news-detail" className="card bg-secondary mb-3">
+                                <div className="row g-0">
+                                    <div className="col-md-4">
+                                        <img
+                                            src="img/ipr.png"
+                                            className="img-fluid rounded-start"
+                                            alt="Foreign secretary"
+                                        />
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="card-body">
+                                            <h5 className="card-title">
+                                                Foreign secretary Vikram Misri to visit
+                                            </h5>
+                                            <p className="card-text">
+                                                At Lex Works, we recognize that navigating the complexities of customs law is crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team combines wealth of experience to offer strategic insights and comprehensive support tailored to your specific needs.
+                                            </p>
+                                            <p className="card-text">
+                                                <small className="text-white">
+                                                    Last updated 3 mins ago
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/news-detail" className="card bg-white mb-3">
+                                <div className="row g-0">
+                                    <div className="col-md-4">
+                                        <img
+                                            src="img/ipr.png"
+                                            className="img-fluid rounded-start"
+                                            alt="Foreign secretary"
+                                        />
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="card-body">
+                                            <h5 className="card-title">
+                                                Foreign secretary Vikram Misri to visit
+                                            </h5>
+                                            <p className="card-text">
+                                                At Lex Works, we recognize that navigating the complexities of customs law is crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team combines wealth of experience to offer strategic insights and comprehensive support tailored to your specific needs.
+                                            </p>
+                                            <p className="card-text">
+                                                <small className="text-muted">
+                                                    Last updated 3 mins ago
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                             <a href="/news-detail" className="card bg-light mb-3">
                                 <div className="row g-0">
                                     <div className="col-md-4">
@@ -35,6 +87,33 @@ export default function NewsListing() {
                                             </p>
                                             <p className="card-text">
                                                 <small className="text-muted">
+                                                    Last updated 3 mins ago
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/news-detail" className="card bg-secondary mb-3">
+                                <div className="row g-0">
+                                    <div className="col-md-4">
+                                        <img
+                                            src="img/ipr.png"
+                                            className="img-fluid rounded-start"
+                                            alt="Foreign secretary"
+                                        />
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="card-body">
+                                            <h5 className="card-title">
+                                                Foreign secretary Vikram Misri to visit
+                                            </h5>
+                                            <p className="card-text">
+                                                At Lex Works, we recognize that navigating the complexities of customs law is crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team combines wealth of experience to offer strategic insights and comprehensive support tailored to your specific needs.
+                                            </p>
+                                            <p className="card-text">
+                                                <small className="text-white">
                                                     Last updated 3 mins ago
                                                 </small>
                                             </p>
@@ -121,7 +200,7 @@ export default function NewsListing() {
                                 your specific needs.
                             </p>
 
-                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion accor-sticky-top" id="accordionPanelsStayOpenExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
