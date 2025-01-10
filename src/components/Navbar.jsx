@@ -18,6 +18,7 @@ export default function Topbar() {
               <a href="/" className="nav-item nav-link active">Home</a>
               <a href="/aboutus" className="nav-item nav-link">About Us</a>
               <a href="/ourteam" className="nav-item nav-link">Our Team</a>
+              <a href="/news-listing" className="nav-item nav-link">Updates</a>
               <div className="nav-item dropdown">
                 <a href="javascript:void(0)" className="nav-link" data-bs-toggle="dropdown">
                   <span className="dropdown-toggle">Practice Area</span>
