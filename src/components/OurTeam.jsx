@@ -16,7 +16,7 @@ export default function OurTeam() {
                             sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam
                             necessitatibus saepe in ab? Repellat!</p> */}
                     </div>
-                    <div className="row g-4 text-center">
+                    <div className="row g-4 text-center mb-5">
                         <div className="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.1s">
                             <div className="country-item">
                                 <div className="rounded overflow-hidden">
@@ -82,7 +82,7 @@ export default function OurTeam() {
                     </div>
 
 
-                    <div className="row g-4 text-center">
+                    <div className="row g-4 text-center justify-content-center">
                         <div class="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp" data-wow-delay="0.7s">
                             <div class="country-item">
                                 <div class="rounded overflow-hidden">

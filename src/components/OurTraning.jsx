@@ -30,14 +30,14 @@ export default function OurTraning() {
                                     </div>
                                 </div>
                                 <div className="training-content bg-secondary rounded-bottom p-4">
-                                    <a href="#">
+                                    <a href="/contactus">
                                         <h4 className="text-white">Intern with Us</h4>
                                     </a>
-                                    <p className="text-white-50">
+                                    {/* <p className="text-white-50">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Autem, veritatis.
-                                    </p>
-                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="#">Read More <i
+                                    </p> */}
+                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Read More <i
                                         className="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -52,14 +52,14 @@ export default function OurTraning() {
                                     </div>
                                 </div>
                                 <div className="training-content bg-secondary rounded-bottom p-4">
-                                    <a href="#">
+                                    <a href="/contactus">
                                         <h4 className="text-white">Join Us</h4>
                                     </a>
-                                    <p className="text-white-50">
+                                    {/* <p className="text-white-50">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Autem, veritatis.
-                                    </p>
-                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="#">Read More <i
+                                    </p> */}
+                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Read More <i
                                         className="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
