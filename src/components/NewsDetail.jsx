@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function NewsDetail() {
+export default function NewsDetail({ data }) {
+    console.log("data", data);
     return (
         <>
             <div className="container-fluid py-sm-0 py-5 watermark">
@@ -9,23 +10,8 @@ export default function NewsDetail() {
                         <div className="col-xl-8 wow fadeInLeft" data-wow-delay="0.1s">
                             <h5 className="sub-title mb-4 pe-3">Update Details</h5>
 
-                            <h3 className="customs-heading mb-4">India: recent SEP rulings and evolving jurisprudence shaping patent landscape</h3>
-
-                            <p>At <strong>Lex Works</strong>, we recognize that navigating the complexities of customs law is
-                                crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team
-                                combines wealth of experience to offer strategic insights and comprehensive support tailored to
-                                your specific needs.
-                            </p>
-                            <div className="bg-light mb-3">
-                                <img src="img/customs.png" className="img-fluid rounded img-thumbnail w-100" alt="Direct TAX" />
-                            </div>
-                            <h4 className="customs-heading mb-4">CUSTOMS ADVISORY AND LITIGATION</h4>
-
-                            <p>At <strong>Lex Works</strong>, we recognize that navigating the complexities of customs law is
-                                crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team
-                                combines wealth of experience to offer strategic insights and comprehensive support tailored to
-                                your specific needs.
-                            </p>
+                            <h3 className="customs-heading mb-4">{data.title}</h3>
+                            <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
                         </div>
                         <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
 

@@ -1,6 +1,8 @@
 import React from "react";
+import timeAgo from "../utils/timeago";
 
-export default function NewsListing() {
+export default function NewsListing({ data }) {
+  console.log("data", data);
     return (
         <>
             <div className="container-fluid py-sm-0 py-5 watermark">
@@ -16,7 +18,8 @@ export default function NewsListing() {
                                 combines wealth of experience to offer strategic insights and comprehensive support tailored to
                                 your specific needs.
                             </p>
-                            <a href="/news-detail" className="card bg-secondary mb-3">
+                            {data.map((post) => (
+                            <a href={`/posts/${post.slug}`} className="card bg-secondary mb-3" key={post.postId}>
                                 <div className="row g-0">
                                     <div className="col-md-4">
                                         <img
@@ -28,21 +31,22 @@ export default function NewsListing() {
                                     <div className="col-md-8">
                                         <div className="card-body">
                                             <h5 className="card-title">
-                                                Foreign secretary Vikram Misri to visit
+                                              {post.title}
                                             </h5>
                                             <p className="card-text">
                                                 At Lex Works, we recognize that navigating the complexities of customs law is crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team combines wealth of experience to offer strategic insights and comprehensive support tailored to your specific needs.
                                             </p>
                                             <p className="card-text">
                                                 <small className="text-white">
-                                                    Last updated 3 mins ago
+                                                  {timeAgo(new Date(post.updatedAt))}
                                                 </small>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="/news-detail" className="card bg-white mb-3">
+                            ))}
+                            {/* <a href="/news-detail" className="card bg-white mb-3">
                                 <div className="row g-0">
                                     <div className="col-md-4">
                                         <img
@@ -172,10 +176,10 @@ export default function NewsListing() {
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a> */}
 
 
-                            <nav aria-label="Page navigation">
+                            {/* <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-end">
                                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -183,7 +187,7 @@ export default function NewsListing() {
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                 </ul>
-                            </nav>
+                            </nav> */}
 
                         </div>
 
