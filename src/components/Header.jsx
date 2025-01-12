@@ -1,11 +1,11 @@
 import Topbar from "./TopBar";
 import Navbar from "./Navbar";
 
-function Header() {
+function Header({ page = "" }) {
   return (
     <>
       <Topbar />
-      <Navbar />
+      <Navbar page={page} />
     </>
   );
 }

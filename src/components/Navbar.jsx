@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Topbar() {
+export default function Topbar({ page = "" }) {
   return (
     <>
       <div className="container-fluid nav-bar p-0 sticky-top shadow-sm">
@@ -15,8 +15,8 @@ export default function Topbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav ms-auto py-0">
-              <a href="/" className="nav-item nav-link active">Home</a>
-              <a href="/aboutus" className="nav-item nav-link">About Us</a>
+              <a href="/" className={`nav-item nav-link ${page === "home" ? "active": ""}`}>Home</a>
+              <a href="/aboutus" className={`nav-item nav-link ${page === "aboutus" ? "active": ""}`}>About Us</a>
               <a href="/ourteam" className="nav-item nav-link">Our Team</a>
               <a href="/news-listing" className="nav-item nav-link">Updates</a>
               <div className="nav-item dropdown">
