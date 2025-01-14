@@ -23,7 +23,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" className="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div className="country-name">
-                                    <a href="akhil-krishan-maggu.html" className="text-white fs-4">Adv. Akhil Krishan Maggu</a>
+                                    <a href="akhil-krishan-maggu" className="text-white fs-4">Adv. Akhil Krishan Maggu</a>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" className="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div className="country-name">
-                                    <a href="vikas-sareen.html" className="text-white fs-4">Vikas Sareen</a>
+                                    <a href="vikas-sareen" className="text-white fs-4">Vikas Sareen</a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" className="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div className="country-name">
-                                    <a href="ayush-mittal.html" className="text-white fs-4">AYUSH MITTAL</a>
+                                    <a href="ayush-mittal" className="text-white fs-4">AYUSH MITTAL</a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" className="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div className="country-name">
-                                    <a href="maninder-kaur.html" className="text-white fs-4">Maninder Kaur</a>
+                                    <a href="maninder-kaur" className="text-white fs-4">Maninder Kaur</a>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" class="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div class="country-name">
-                                    <a href="ms-oshin-maggu.html" class="text-white fs-4">Ms. Oshin Maggu</a>
+                                    <a href="ms-oshin-maggu" class="text-white fs-4">Ms. Oshin Maggu</a>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ export default function OurTeam({page}) {
                                     <img src="img/hammer.png" class="img-fluid rounded-circle" alt="Image" />
                                 </div>
                                 <div class="country-name">
-                                    <a href="ms-shivanjali.html" class="text-white fs-4">Ms. Shivanjali</a>
+                                    <a href="ms-shivanjali" class="text-white fs-4">Ms. Shivanjali</a>
                                 </div>
                             </div>
                         </div>

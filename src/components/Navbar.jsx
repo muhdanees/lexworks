@@ -18,7 +18,7 @@ export default function Topbar({ page = "" }) {
               <a href="/" className={`nav-item nav-link ${page === "home" ? "active": ""}`}>Home</a>
               <a href="/aboutus" className={`nav-item nav-link ${page === "aboutus" ? "active": ""}`}>About Us</a>
               <a href="/ourteam" className={`nav-item nav-link ${page === "ourteam" ? "active": ""}`}>Our Team</a>
-              <a href="/news-listing" className="nav-item nav-link">Updates</a>
+              <a href="/news-listing" className={`nav-item nav-link ${page === "news-listing" ? "active": ""}`}>Updates</a>
               <div className="nav-item dropdown">
                 <a href="javascript:void(0)" className="nav-link" data-bs-toggle="dropdown">
                   <span className="dropdown-toggle">Practice Area</span>
@@ -57,7 +57,7 @@ export default function Topbar({ page = "" }) {
                   </div>
                 </div>
               </div>
-              <a href="/contactus" className="nav-item nav-link">Contact Us</a>
+              <a href="/contactus" className={`nav-item nav-link ${page === "contatus" ? "active": ""}`}>Contact Us</a>
             </div>
             <a href="/contactus" className="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">
               Consultation Session
