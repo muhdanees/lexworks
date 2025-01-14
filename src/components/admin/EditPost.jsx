@@ -103,7 +103,6 @@ export default function EditPost({ slug, API_URL }) {
     const res = await fetch(`${API_URL}/images?=key=${encodeURIComponent(preview)}`, {
       method: "DELETE"
     });
-    console.log("res", res);
     if (!res.ok) {
       toast.error("Unable to delete image.")
       throw new Error("Unable to delete image.");
