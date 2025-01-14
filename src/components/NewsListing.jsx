@@ -10,22 +10,24 @@ export default function NewsListing({ data }) {
                         <div className="col-xl-8 wow fadeInLeft" data-wow-delay="0.1s">
                             <h5 className="sub-title mb-4 pe-3">Legal Updates</h5>
 
-                            <h3 className="customs-heading mb-4">CUSTOMS ADVISORY AND LITIGATION</h3>
+                            {/* <h3 className="customs-heading mb-4">CUSTOMS ADVISORY AND LITIGATION</h3>
 
                             <p>At <strong>Lex Works</strong>, we recognize that navigating the complexities of customs law is
                                 crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team
                                 combines wealth of experience to offer strategic insights and comprehensive support tailored to
                                 your specific needs.
-                            </p>
+                            </p> */}
                             {data.map((post) => (
                             <a href={`/posts/${post.slug}`} className="card bg-secondary mb-3" key={post.postId}>
                                 <div className="row g-0">
                                     <div className="col-md-4">
-                                        <img
-                                            src={post.image}
-                                            className="img-fluid rounded-start"
-                                            alt="Foreign secretary"
-                                        />
+                                        <div className="imageCover">
+                                            <img
+                                                src={post.image}
+                                                className="img-fluid rounded-start"
+                                                alt={{post.title}}
+                                            />
+                                        </div>
                                     </div>
                                     <div className="col-md-8">
                                         <div className="card-body">
@@ -36,7 +38,7 @@ export default function NewsListing({ data }) {
                                               {post.content}
                                             </p>
                                             <p className="card-text">
-                                                <small className="text-white">
+                                                <small className="text-dark">
                                                   {timeAgo(new Date(post.updatedAt))}
                                                 </small>
                                             </p>
