@@ -2,7 +2,6 @@ import React from "react";
 import timeAgo from "../utils/timeago";
 
 export default function NewsListing({ data }) {
-  console.log("data", data);
     return (
         <>
             <div className="container-fluid py-sm-0 py-5 watermark">
@@ -23,7 +22,7 @@ export default function NewsListing({ data }) {
                                 <div className="row g-0">
                                     <div className="col-md-4">
                                         <img
-                                            src="img/ipr.png"
+                                            src={post.image}
                                             className="img-fluid rounded-start"
                                             alt="Foreign secretary"
                                         />
@@ -34,7 +33,7 @@ export default function NewsListing({ data }) {
                                               {post.title}
                                             </h5>
                                             <p className="card-text">
-                                                At Lex Works, we recognize that navigating the complexities of customs law is crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team combines wealth of experience to offer strategic insights and comprehensive support tailored to your specific needs.
+                                              {post.content}
                                             </p>
                                             <p className="card-text">
                                                 <small className="text-white">
