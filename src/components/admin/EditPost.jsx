@@ -122,6 +122,7 @@ export default function EditPost({ slug, API_URL }) {
     setValue("title", res.title);
     setValue("slug", res.slug);
     setValue("content", res.content);
+    setPreview(res.image);
   };
 
   useEffect(() => {
