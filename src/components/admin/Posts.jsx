@@ -5,7 +5,7 @@ export default function Posts({ url }) {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const res = await fetch(`${API_URL}/posts/latest`);
+    const res = await fetch(`${API_URL}/posts/latest?limits=10`);
     const json = await res.json();
     setData(json.posts);
   };
