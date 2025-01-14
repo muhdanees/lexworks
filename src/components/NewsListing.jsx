@@ -2,6 +2,8 @@ import React from "react";
 import timeAgo from "../utils/timeago";
 
 export default function NewsListing({ data }) {
+  console.log("data", data);
+
   return (
     <>
       <div className="container-fluid py-sm-0 py-5 watermark">

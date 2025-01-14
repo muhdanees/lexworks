@@ -14,7 +14,7 @@ export default function NewsDetail({ data }) {
               <div
                 className="nesDetails"
                 dangerouslySetInnerHTML={{
-                  __html: data?.content.replace(/style="[^"]*"/g, ""),
+                  __html: data?.content?.replace(/style="[^"]*"/g, ""),
                 }}
               ></div>
               <div className="d-flex gap-2 title">
@@ -38,7 +38,39 @@ export default function NewsDetail({ data }) {
                 combines wealth of experience to offer strategic insights and
                 comprehensive support tailored to your specific needs.
               </p>
-
+              {data?.relatedArticles?.map((relatedArticle) => (
+              <div class="card mb-3 bg-secondary" key={relatedArticle.postId}>
+                <div class="card-body">
+                  <h5 class="card-title">{relatedArticle.title}</h5>
+                  {/* <h6 class="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
+                  <p class="card-text">
+                    {relatedArticle.content}
+                  </p>
+                  <a href={`/posts/${relatedArticle.slug}`} class="card-link">
+                    Read More
+                  </a>
+                  {/* <a href="#" class="card-link">
+                    Another link
+                  </a> */}
+                </div>
+              </div>
+              ))}
+              {/* <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">
+                    Card link
+                  </a>
+                  <a href="#" class="card-link">
+                    Another link
+                  </a>
+                </div>
+              </div>
               <div class="card mb-3 bg-secondary">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
@@ -70,39 +102,7 @@ export default function NewsDetail({ data }) {
                     Another link
                   </a>
                 </div>
-              </div>
-              <div class="card mb-3 bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-white">Card subtitle</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="card-link">
-                    Card link
-                  </a>
-                  <a href="#" class="card-link">
-                    Another link
-                  </a>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="card-link">
-                    Card link
-                  </a>
-                  <a href="#" class="card-link">
-                    Another link
-                  </a>
-                </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
