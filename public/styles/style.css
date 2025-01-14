@@ -89,6 +89,21 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .card {
     overflow: hidden;
 }
+.multiText-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+}
+.headtingTruncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+}
+.listingRow > a:nth-child(2n) {
+    border-bottom: 2px solid var(--bs-secondary);
+}
 .imageCover {
     height: 100%;
     background: #d9d9d9 url(../img/post-bg-image.png) no-repeat;
