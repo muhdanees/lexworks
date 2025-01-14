@@ -25,7 +25,7 @@ export default function NewsListing({ data }) {
                                             <img
                                                 src={post.image}
                                                 className="img-fluid rounded-start"
-                                                alt={{post.title}}
+                                                alt={post.title}
                                             />
                                         </div>
                                     </div>
