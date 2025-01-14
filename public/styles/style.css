@@ -68,6 +68,24 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     left: -60px;
 }
 
+.nesDetails {
+    padding: 0;
+}
+.nesDetails img {
+    border-radius: 10px;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.nesDetails table {
+    border-collapse: collapse;
+    border: 1px solid var(--bs-dark);
+    margin-bottom: 1rem;
+}
+.nesDetails table th, .nesDetails table td {
+    border: 1px solid var(--bs-dark);
+    padding: 5px 10px;
+}
 
 .facbookColor {
     color: #0866ff;

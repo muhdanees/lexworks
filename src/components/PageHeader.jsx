@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PageHeader({
-  title = "Our Team",
+  pageTitle
 }) {
   return (
     <>
@@ -11,7 +11,7 @@ export default function PageHeader({
             className="text-white display-3 mb-4 wow fadeInDown"
             data-wow-delay="0.1s"
           >
-            {title}
+            {pageTitle}
           </h3>
           <ol
             className="breadcrumb justify-content-center text-white mb-0 wow fadeInDown"
@@ -27,7 +27,7 @@ export default function PageHeader({
                 Pages
               </a>
             </li>
-            <li className="breadcrumb-item active text-secondary">Our Team</li>
+            <li className="breadcrumb-item active text-secondary">{pageTitle}</li>
           </ol>
         </div>
       </div>

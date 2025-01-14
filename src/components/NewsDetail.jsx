@@ -11,7 +11,7 @@ export default function NewsDetail({ data }) {
                             <h5 className="sub-title mb-4 pe-3">Update Details</h5>
 
                             <h3 className="customs-heading mb-4">{data.title}</h3>
-                            <div dangerouslySetInnerHTML={{ __html: data?.content.replace(/style="[^"]*"/g, '') }}></div>
+                            <div className="nesDetails" dangerouslySetInnerHTML={{ __html: data?.content.replace(/style="[^"]*"/g, '') }}></div>
                         </div>
                         <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
 

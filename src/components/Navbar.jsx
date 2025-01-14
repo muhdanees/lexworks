@@ -17,7 +17,7 @@ export default function Topbar({ page = "" }) {
             <div className="navbar-nav ms-auto py-0">
               <a href="/" className={`nav-item nav-link ${page === "home" ? "active": ""}`}>Home</a>
               <a href="/aboutus" className={`nav-item nav-link ${page === "aboutus" ? "active": ""}`}>About Us</a>
-              <a href="/ourteam" className="nav-item nav-link">Our Team</a>
+              <a href="/ourteam" className={`nav-item nav-link ${page === "ourteam" ? "active": ""}`}>Our Team</a>
               <a href="/news-listing" className="nav-item nav-link">Updates</a>
               <div className="nav-item dropdown">
                 <a href="javascript:void(0)" className="nav-link" data-bs-toggle="dropdown">
