@@ -39,11 +39,11 @@ export default function NewsDetail({ data }) {
                 comprehensive support tailored to your specific needs.
               </p>
               {data?.relatedArticles?.map((relatedArticle) => (
-              <div class="card mb-3 bg-secondary" key={relatedArticle.postId}>
+              <div class="card mb-3" key={relatedArticle.postId}>
                 <div class="card-body">
-                  <h5 class="card-title">{relatedArticle.title}</h5>
+                  <h5 class="card-title multiText-truncate">{relatedArticle.title}</h5>
                   {/* <h6 class="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
-                  <p class="card-text">
+                  <p class="card-text multiText-truncate">
                     {relatedArticle.content}
                   </p>
                   <a href={`/posts/${relatedArticle.slug}`} class="card-link">
