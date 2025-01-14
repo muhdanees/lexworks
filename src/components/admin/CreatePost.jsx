@@ -59,22 +59,25 @@ export default function CreatePost({ slug, API_URL }) {
       setLoading(true);
     }
     const image = dataSubmit.file[0];
-    const formData = new FormData();
-    formData.append("image", image);
-    const resimage = await fetch(`${API_URL}/images`, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    if (!resimage.ok) {
-      toast.error("Error uploading image. Please try again!");
-      setLoading(false);
-      setSaving(false);
-      throw new Error("Error uploading image");
+    let imageJSON = { url: "" }
+    if (image) {
+      const formData = new FormData();
+      formData.append("image", image);
+      const resimage = await fetch(`${API_URL}/images`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      if (!resimage.ok) {
+        toast.error("Error uploading image. Please try again!");
+        setLoading(false);
+        setSaving(false);
+        throw new Error("Error uploading image");
+      }
+      imageJSON = await resimage.json();
     }
-    const imageJSON = await resimage.json();
     fetch(`${API_URL}/posts`, {
       method: "POST",
       body: JSON.stringify({
@@ -291,7 +294,7 @@ export default function CreatePost({ slug, API_URL }) {
               id="dropzone-file"
               type="file"
               className="hidden"
-              {...register("file", { required: "File is required" })}
+              {...register("file")}
             />
           </label>
         </div>
