@@ -1,12 +1,12 @@
 ---
 import Header from "../../components/Header";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/PostLayout.astro";
 import Footer from "../../components/Footer";
 import PageHeader from "../../components/PageHeader";
 import NewsDetail from "../../components/NewsDetail";
 const { slug } = Astro.params;
 import { API_URL } from "astro:env/client";
-let jsonRes = {};
+let jsonRes: { title?: "", description?: "" } = {};
 try {
   const res = await fetch(`${API_URL}/posts/${slug}`)
   jsonRes = await res.json();
@@ -15,7 +15,7 @@ try {
 }
 ---
 
-<Layout>
+<Layout title={jsonRes?.title} description={jsonRes.description}>
   <Header />
   <PageHeader />
   <NewsDetail data={jsonRes} />

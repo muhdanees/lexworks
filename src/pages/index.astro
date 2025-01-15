@@ -9,12 +9,20 @@ import OurTeam from "../components/OurTeam";
 import OurTraning from "../components/OurTraning";
 import Footer from "../components/Footer";
 import ConsentPopup from "../components/ConsentPopup";
+import { API_URL } from "astro:env/client";
+let jsonRes = { posts: [] };
+try {
+  const res = await fetch(`${API_URL}/posts/latest?limits=4`)
+  jsonRes = await res.json();
+} catch {
+  console.log("NO Posts");
+}
 ---
 
 <Layout>
   <Header page="home" />
   <CarouselSlider />
-  <LatestNews />
+  <LatestNews posts={jsonRes.posts} />
   <About />
   <PracticeAreas />
   <OurTeam />

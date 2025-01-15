@@ -1,122 +1,75 @@
 import React from "react";
+import timeAgo from "../utils/timeago";
 
-export default function LatestNews() {
+export default function LatestNews({ posts }) {
   return (
     <>
       <div className="container-fluid bg-light py-5">
         <div className="container">
           <div className="row g-5">
             <div className="col-xl-6 wow fadeInLeft" data-wow-delay="0.1s">
-              <div className="card bg-white mb-3">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src="img/ipr.png"
-                      className="img-fluid rounded-start"
-                      alt="Foreign secretary"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Foreign secretary Vikram Misri to visit
-                      </h5>
-                      <p className="card-text">
-                        Foreign secretary Vikram Misri will visit Bangladesh on
-                        December 9, the ministry...
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
+              {posts?.slice(0, 2)?.map((post) => (
+                <a
+                  href={`/posts/${post?.slug}`}
+                  className="card bg-white mb-3"
+                  key={post.postId}
+                >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img
+                        src={post?.image}
+                        className="img-fluid rounded-start"
+                        alt="Foreign secretary"
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          {post?.title.slice(0, 30)}...
+                        </h5>
+                        <p className="card-text">
+                          {post?.content?.slice(0, 100)}...
+                        </p>
+                        <p className="card-text">
+                          <small className="text-muted">
+                            {timeAgo(new Date(post.updatedAt))}
+                          </small>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="card bg-white mb-3">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src="img/ipr.png"
-                      className="img-fluid rounded-start"
-                      alt="Foreign secretary"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Foreign secretary Vikram Misri to visit
-                      </h5>
-                      <p className="card-text">
-                        Foreign secretary Vikram Misri will visit Bangladesh on
-                        December 9, the ministry...
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </a>
+              ))}
             </div>
             <div className="col-xl-6 wow fadeInRight" data-wow-delay="0.3s">
-              <div className="card bg-white mb-3">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src="img/ipr.png"
-                      className="img-fluid rounded-start"
-                      alt="Foreign secretary"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Foreign secretary Vikram Misri to visit
-                      </h5>
-                      <p className="card-text">
-                        Foreign secretary Vikram Misri will visit Bangladesh on
-                        December 9, the ministry...
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
+              {posts?.slice(2)?.map((post) => (
+                <a
+                  href={`/posts/${post?.slug}`}
+                  className="card bg-white mb-3"
+                  key={post.postId}
+                >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img
+                        src={post?.image}
+                        className="img-fluid rounded-start"
+                        alt={post?.title}
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{post?.title}</h5>
+                        <p className="card-text">{post?.content}</p>
+                        <p className="card-text">
+                          <small className="text-muted">
+                            {timeAgo(new Date(post.updatedAt))}
+                          </small>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="card bg-white mb-3">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src="img/ipr.png"
-                      className="img-fluid rounded-start"
-                      alt="Foreign secretary"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Foreign secretary Vikram Misri to visit
-                      </h5>
-                      <p className="card-text">
-                        Foreign secretary Vikram Misri will visit Bangladesh on
-                        December 9, the ministry...
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
