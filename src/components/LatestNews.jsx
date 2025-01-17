@@ -16,21 +16,23 @@ export default function LatestNews({ posts }) {
                 >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img
-                        src={post?.image}
-                        className="img-fluid rounded-start"
-                        alt="Foreign secretary"
-                      />
+                      <div className="imageCover">
+                        <img
+                          src={post?.image}
+                          className="img-fluid rounded-start"
+                          alt={post?.title}
+                        />
+                      </div>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">
+                        <h5 className="card-title headtingTruncate">
                           {post?.title.slice(0, 30)}...
                         </h5>
-                        <p className="card-text">
+                        <p className="card-text multiText-truncate">
                           {post?.content?.slice(0, 100)}...
                         </p>
-                        <p className="card-text">
+                        <p className="card-text bottomAlign">
                           <small className="text-muted">
                             {timeAgo(new Date(post.updatedAt))}
                           </small>
@@ -50,17 +52,19 @@ export default function LatestNews({ posts }) {
                 >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img
-                        src={post?.image}
-                        className="img-fluid rounded-start"
-                        alt={post?.title}
-                      />
+                      <div className="imageCover">
+                        <img
+                          src={post?.image}
+                          className="img-fluid rounded-start"
+                          alt={post?.title}
+                        />
+                      </div>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">{post?.title}</h5>
-                        <p className="card-text">{post?.content}</p>
-                        <p className="card-text">
+                        <h5 className="card-title  headtingTruncate">{post?.title}</h5>
+                        <p className="card-text multiText-truncate">{post?.content}</p>
+                        <p className="card-text bottomAlign">
                           <small className="text-muted">
                             {timeAgo(new Date(post.updatedAt))}
                           </small>
