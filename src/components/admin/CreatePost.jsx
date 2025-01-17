@@ -34,6 +34,15 @@ export default function CreatePost({ slug, API_URL }) {
   });
   const [options, setOptions] = useState([]);
 
+  const getAllTags = async () => {
+    const res = await fetch(`${API_URL}/tags`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => res.json());
+    setOptions(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
+  };
+
   const {
     register,
     handleSubmit,
@@ -155,6 +164,7 @@ export default function CreatePost({ slug, API_URL }) {
         setValue("content", html);
       });
     }
+    getAllTags();
   }, [editorRef.current, slug]);
 
   useEffect(() => {

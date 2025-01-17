@@ -18,19 +18,21 @@ export default function LatestNews({ posts }) {
                     <div className="col-md-4">
                       <div className="imageCover">
                         <img
-                          src={post?.image}
+                          src={post?.image || "/img/lexworks-default.png"}
                           className="img-fluid rounded-start"
                           alt={post?.title}
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
                         <h5 className="card-title headtingTruncate">
-                          {post?.title.slice(0, 30)}...
+                          {post?.title}...
                         </h5>
                         <p className="card-text multiText-truncate">
-                          {post?.content?.slice(0, 100)}...
+                          {post?.content}...
                         </p>
                         <p className="card-text bottomAlign">
                           <small className="text-muted">
@@ -54,9 +56,11 @@ export default function LatestNews({ posts }) {
                     <div className="col-md-4">
                       <div className="imageCover">
                         <img
-                          src={post?.image}
+                          src={post?.image || "/img/lexworks-default.png"}
                           className="img-fluid rounded-start"
                           alt={post?.title}
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     </div>

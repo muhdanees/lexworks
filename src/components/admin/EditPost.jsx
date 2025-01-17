@@ -3,7 +3,7 @@ import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
 import { ToastContainer, toast } from "react-toastify";
-import { TrashIcon,  } from "@heroicons/react/24/solid";
+import { TrashIcon } from "@heroicons/react/24/solid";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import LoadingIcon from "./icons/LoadingIcon";
@@ -32,7 +32,7 @@ export default function EditPost({ slug, API_URL }) {
   const [preview, setPreview] = useState(null);
   const [options, setOptions] = useState([]);
   const [deleting, setDeleting] = useState(false);
-
+  console.log(options);
   const {
     register,
     handleSubmit,
@@ -97,19 +97,35 @@ export default function EditPost({ slug, API_URL }) {
       });
   };
 
+  const getAllTags = async () => {
+    const res = await fetch(`${API_URL}/tags`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => res.json());
+    const tags = res.tags.map((tag) => tag.tag);
+    setOptions([
+      ...options.filter((option) => !tags.includes(option)),
+      ...res.tags?.map(({ tag }) => ({ label: tag, value: tag })),
+    ]);
+  };
+
   const onDeleteImage = async (e) => {
     e.preventDefault();
     setDeleting(true);
-    const res = await fetch(`${API_URL}/images?=key=${encodeURIComponent(preview)}`, {
-      method: "DELETE"
-    });
+    const res = await fetch(
+      `${API_URL}/images?=key=${encodeURIComponent(preview)}`,
+      {
+        method: "DELETE",
+      }
+    );
     if (!res.ok) {
-      toast.error("Unable to delete image.")
+      toast.error("Unable to delete image.");
       throw new Error("Unable to delete image.");
     }
     setPreview("");
     setDeleting(false);
-  }
+  };
 
   const handleCreate = (inputValue) => {
     const newOption = { value: inputValue, label: inputValue };
@@ -137,7 +153,7 @@ export default function EditPost({ slug, API_URL }) {
       value: categorie,
       label: categorie,
     }));
-    setOptions(newOptions);
+    setOptions([...options, ...newOptions]);
     setValue("selectedOption", newOptions);
     setValue("title", res.title);
     setValue("slug", res.slug);
@@ -159,6 +175,7 @@ export default function EditPost({ slug, API_URL }) {
       });
     }
     loadData();
+    getAllTags();
   }, [editorRef.current, slug]);
 
   useEffect(() => {
@@ -255,8 +272,15 @@ export default function EditPost({ slug, API_URL }) {
               alt="File Preview"
               className="w-48 h-48 object-cover border rounded-lg"
             />
-            <button onClick={onDeleteImage} className="absolute top-0 right-0 p-2 z-10 scale-75 group-hover:scale-100 delay-500 hidden group-hover:block bg-red-200 rounded transition-all">
-              {deleting ? <LoadingIcon className="inline w-4 h-4 text-white animate-spin" /> : <TrashIcon className="w-4 text-red-600" />}
+            <button
+              onClick={onDeleteImage}
+              className="absolute top-0 right-0 p-2 z-10 scale-75 group-hover:scale-100 delay-500 hidden group-hover:block bg-red-200 rounded transition-all"
+            >
+              {deleting ? (
+                <LoadingIcon className="inline w-4 h-4 text-white animate-spin" />
+              ) : (
+                <TrashIcon className="w-4 text-red-600" />
+              )}
             </button>
           </div>
         )}

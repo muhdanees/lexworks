@@ -85,23 +85,23 @@ const { activeTab } = Astro.props;
         <ul id="dropdown-pages" class="hidden py-2 space-y-2">
           <li>
             <a
-              href="/admin/dashboard/posts/"
-              class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Posts</a
-            >
-          </li>
-          <li>
-            <a
               href="/admin/dashboard/posts/create"
               class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >Create Post</a
             >
           </li>
-          <li class="hidden">
+          <li>
             <a
-              href="#"
+              href="/admin/dashboard/posts/"
               class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Calendar</a
+              >Posts</a
+            >
+          </li>
+          <li class="">
+            <a
+              href="/admin/dashboard/tags/"
+              class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >Tags</a
             >
           </li>
         </ul>

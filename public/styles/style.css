@@ -890,11 +890,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     background: rgba(255, 255, 255, .5);
     transition: 0.5s;
     opacity: 0;
+    transition: opacity 200ms ease-out;
 }
 
 .service .service-item:hover .service-inner .service-img::after {
     height: 100%;
     opacity: 1;
+    transition: opacity 200ms ease-in;
 }
 
 .service .service-item .service-inner .service-img img {
