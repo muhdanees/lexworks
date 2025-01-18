@@ -12,19 +12,17 @@ export default function NewsDetail({ data }) {
 
               <h2 className="customs-heading">{data.title}</h2>
               <div className="stripes mb-3">
-                
-                  <span className="authorText">
-                    <strong>Author:</strong> {data.authorId}
-                  </span>
-                  <span className="authorText">
-                    <strong>Updated on:</strong>{" "}
-                    {new Date(data?.updatedAt).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                
+                <span className="authorText">
+                  <strong>Author:</strong> {data.authorId}
+                </span>
+                <span className="authorText">
+                  <strong>Updated on:</strong>{" "}
+                  {new Date(data?.updatedAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
               <div
                 className="nesDetails"
@@ -46,19 +44,22 @@ export default function NewsDetail({ data }) {
                 comprehensive support tailored to your specific needs.
               </p>
               {data?.relatedArticles?.map((relatedArticle) => (
-                <div class="card mb-3" key={relatedArticle.postId}>
-                  <div class="card-body">
-                    <h5 class="card-title multiText-truncate">
+                <div className="card mb-3" key={relatedArticle.postId}>
+                  <div className="card-body">
+                    <h5 className="card-title multiText-truncate">
                       {relatedArticle.title}
                     </h5>
-                    {/* <h6 class="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
-                    <p class="card-text multiText-truncate">
+                    {/* <h6 className="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
+                    <p className="card-text multiText-truncate">
                       {relatedArticle.content}
                     </p>
-                    <a href={`/posts/${relatedArticle.slug}`} class="card-link">
+                    <a
+                      href={`/posts/${relatedArticle.slug}`}
+                      className="card-link"
+                    >
                       Read More
                     </a>
-                    {/* <a href="#" class="card-link">
+                    {/* <a href="#" className="card-link">
                     Another link
                   </a> */}
                   </div>
@@ -76,50 +77,50 @@ export default function NewsDetail({ data }) {
                   </a>
                 ))}
               </div>
-              {/* <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">
+              {/* <div className="card mb-3">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Card link
                   </a>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Another link
                   </a>
                 </div>
               </div>
-              <div class="card mb-3 bg-secondary">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-white">Card subtitle</h6>
-                  <p class="card-text">
+              <div className="card mb-3 bg-secondary">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <h6 className="card-subtitle mb-2 text-white">Card subtitle</h6>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Card link
                   </a>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Another link
                   </a>
                 </div>
               </div>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">
+              <div className="card mb-3">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Card link
                   </a>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     Another link
                   </a>
                 </div>

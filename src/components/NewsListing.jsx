@@ -33,13 +33,11 @@ export default function NewsListing({ data }) {
                   <div className="row g-0">
                     <div className="col-md-4">
                       <div className="imageCover">
-                        
-                          <img
-                            src={post?.image || "/img/lexworks-default.png"}
-                            className="img-fluid rounded-start"
-                            alt={post.title}
-                          />
-                        
+                        <img
+                          src={post?.image || "/img/lexworks-default.png"}
+                          className="img-fluid rounded-start"
+                          alt={post.title}
+                        />
                       </div>
                     </div>
                     <div className="col-md-8">
@@ -218,75 +216,77 @@ export default function NewsListing({ data }) {
                 comprehensive support tailored to your specific needs.
               </p>
 
+              <div className="accordion" id="accordionExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingOne">
+                    <button
+                      className="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Accordion Item #1
+                    </button>
+                  </h2>
 
-
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#collapseOne" 
-                        aria-expanded="true" 
-                        aria-controls="collapseOne">
-                            Accordion Item #1
-                        </button>
-                    </h2>
-
-                    <div id="collapseOne" class="accordion-collapse collapse show" 
-                        aria-labelledby="headingOne" 
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Data Item #1
-                        </div>
-                    </div>
+                  <div
+                    id="collapseOne"
+                    className="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">Data Item #1</div>
+                  </div>
                 </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#collapseTwo" 
-                        aria-expanded="false"
-                        aria-controls="collapseTwo">
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" 
-                    aria-labelledby="headingTwo" 
-                    data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Data Item #2
-                        </div>
-                    </div>
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingTwo">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Accordion Item #2
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">Data Item #2</div>
+                  </div>
                 </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#collapseThree" 
-                        aria-expanded="false" 
-                        aria-controls="collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" 
-                    aria-labelledby="headingThree" 
-                    data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Data Item #3
-                        </div>
-                    </div>
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingThree">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Accordion Item #3
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">Data Item #3</div>
+                  </div>
                 </div>
-            </div>
-
-
-
-
-
+              </div>
             </div>
           </div>
         </div>

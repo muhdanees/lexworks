@@ -29,4 +29,16 @@ try {
   <OurTraning />
   <Footer />
   <ConsentPopup />
+  <script is:inline>
+    window.onload = () => {
+      // Initialize the modal with options to disable overlay click and Esc key close
+      const myModal = new bootstrap.Modal("#onload", {
+        backdrop: "static", // Prevent closing on overlay click
+        keyboard: false     // Prevent closing on pressing the Esc key
+      });
+
+      // Show the modal
+      myModal.show();
+    };
+  </script>
 </Layout>

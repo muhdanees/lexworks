@@ -3,21 +3,21 @@ import React from "react";
 export default function VikasSareen() {
     return (
         <>
-            <div class="container-fluid py-sm-0 py-5 watermark">
-                <div class="container py-5">
-                    <div class="row g-5">
-                        <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="bg-light">
-                                <img src="img/vikas-sareen.png" class="img-fluid rounded img-thumbnail w-100" alt="Direct TAX" />
+            <div className="container-fluid py-sm-0 py-5 watermark">
+                <div className="container py-5">
+                    <div className="row g-5">
+                        <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                            <div className="bg-light">
+                                <img src="img/vikas-sareen.png" className="img-fluid rounded img-thumbnail w-100" alt="Direct TAX" />
                             </div>
                         </div>
-                        <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                        <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
 
-                            <h5 class="sub-title mb-4 pe-3">VIKAS SAREEN</h5>
+                            <h5 className="sub-title mb-4 pe-3">VIKAS SAREEN</h5>
 
-                            <h4 class="customs-title"><em>Position:</em> Partner</h4>
+                            <h4 className="customs-title"><em>Position:</em> Partner</h4>
 
-                            <h3 class="customs-heading mb-4">Education: LL.B. (H), 2009</h3>
+                            <h3 className="customs-heading mb-4">Education: LL.B. (H), 2009</h3>
 
                             <p><strong>VIKAS SAREEN</strong> is a dedicated Partner at <strong>Lex Works</strong>, bringing over
                                 11 years of comprehensive experience in criminal and commercial litigation, dispute resolution,
@@ -44,7 +44,7 @@ export default function VikasSareen() {
                                 a leader at <strong>Lex Works</strong>, he is dedicated to fostering a collaborative environment
                                 that prioritizes client success and the professional growth of team members.</p>
 
-                            <p class="mb-4"><strong>VIKAS SAREEN</strong> is excited to continue driving the firm's mission
+                            <p className="mb-4"><strong>VIKAS SAREEN</strong> is excited to continue driving the firm's mission
                                 forward, leveraging his extensive experience to navigate the challenges of today's legal
                                 landscape.</p>
 

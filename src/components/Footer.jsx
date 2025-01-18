@@ -157,14 +157,14 @@ function Footer() {
       {/* WhatsApp */}
       <a
         href="https://api.whatsapp.com/send?phone=918826872049"
-        class="whatsapp"
+        className="whatsapp"
       >
         <svg
           aria-hidden="true"
           focusable="false"
           data-prefix="fab"
           data-icon="whatsapp"
-          class="svg-inline--fa fa-whatsapp fa-w-14 "
+          className="svg-inline--fa fa-whatsapp fa-w-14 "
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
