@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
+import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
@@ -29,9 +30,8 @@ export default function CreatePost({ slug, API_URL }) {
   const [saving, setSaving] = useState(false);
   const saveType = useRef("draft"); // "draft" | "published" | "archived"
   const [preview, setPreview] = useState(null);
-  const [data, setData] = useState({
-    authorId: "user-123",
-  });
+  const [data, setData] = useState({});
+  const [authors, setAuthors] = useState([]);
   const [options, setOptions] = useState([]);
 
   const getAllTags = async () => {
@@ -41,6 +41,19 @@ export default function CreatePost({ slug, API_URL }) {
       },
     }).then((res) => res.json());
     setOptions(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
+  };
+
+  const getAllAuthors = async () => {
+    const res = await fetch(`${API_URL}/authors`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => res.json());
+    const authors = res.authors.map(({ author }) => author);
+    setAuthors([
+      ...authors.filter((author) => !authors.includes(author)),
+      ...res.authors?.map(({ author }) => ({ label: author, value: author })),
+    ]);
   };
 
   const {
@@ -68,7 +81,7 @@ export default function CreatePost({ slug, API_URL }) {
       setLoading(true);
     }
     const image = dataSubmit.file[0];
-    let imageJSON = { url: "" }
+    let imageJSON = { url: "" };
     if (image) {
       const formData = new FormData();
       formData.append("image", image);
@@ -95,7 +108,7 @@ export default function CreatePost({ slug, API_URL }) {
         status: saveType.current,
         categories: dataSubmit.selectedOption.map((option) => option.value),
         slug: dataSubmit.slug,
-        authorId: "user-123",
+        authorId: dataSubmit.selectedOptionAuthor.value,
         image: imageJSON.url,
       }),
       headers: {
@@ -165,6 +178,7 @@ export default function CreatePost({ slug, API_URL }) {
       });
     }
     getAllTags();
+    getAllAuthors();
   }, [editorRef.current, slug]);
 
   useEffect(() => {
@@ -180,8 +194,19 @@ export default function CreatePost({ slug, API_URL }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className="block mb-2">
           <span className="text-sm">Author</span>{" "}
-          <span className="bg-gray-300 rounded-full text-xs py-1 px-2.5">
-            {data?.authorId}
+          <span className=" py-1 px-2.5">
+            <Controller
+              name="selectedOptionAuthor"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={authors}
+                  onChange={(selected) => field.onChange(selected)}
+                  placeholder="Select an author"
+                />
+              )}
+            />
           </span>
         </label>
         <label className="pb-4 block">

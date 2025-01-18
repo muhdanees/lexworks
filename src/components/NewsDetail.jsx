@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function NewsDetail({ data }) {
+  console.log("data", data);
   return (
     <>
       <div className="container-fluid py-sm-0 py-5 watermark">
@@ -13,10 +14,15 @@ export default function NewsDetail({ data }) {
               <div className="stripes mb-3">
                 
                   <span className="authorText">
-                    <strong>Author:</strong> <span>Akhil Krishan Maggu; Advocate</span>
+                    <strong>Author:</strong> {data.authorId}
                   </span>
                   <span className="authorText">
-                    <strong>Updated on:</strong> <span>Jan 17, 2025</span>
+                    <strong>Updated on:</strong>{" "}
+                    {new Date(data?.updatedAt).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
                   </span>
                 
               </div>
@@ -60,7 +66,11 @@ export default function NewsDetail({ data }) {
               ))}
               <div className="d-flex gap-2 title">
                 {data?.categories?.map((category) => (
-                  <a key={category} href={`/tags/${category}`} className="border py-1 px-3 rounded">
+                  <a
+                    key={category}
+                    href={`/tags/${category}`}
+                    className="border py-1 px-3 rounded"
+                  >
                     {category?.[0].toUpperCase()}
                     {category.slice(1)}
                   </a>

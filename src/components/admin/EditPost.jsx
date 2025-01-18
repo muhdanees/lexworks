@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
+import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import "quill/dist/quill.core.css";
@@ -31,8 +32,9 @@ export default function EditPost({ slug, API_URL }) {
   const [data, setData] = useState({});
   const [preview, setPreview] = useState(null);
   const [options, setOptions] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [deleting, setDeleting] = useState(false);
-  console.log(options);
+
   const {
     register,
     handleSubmit,
@@ -74,6 +76,7 @@ export default function EditPost({ slug, API_URL }) {
     fetch(`${API_URL}/posts/${data.postId}/${data.slug}`, {
       method: "PATCH",
       body: JSON.stringify({
+        authorId: dataSubmit.selectedOptionAuthor.value,
         content: dataSubmit.content,
         title: dataSubmit.title,
         status: "published",
@@ -107,6 +110,19 @@ export default function EditPost({ slug, API_URL }) {
     setOptions([
       ...options.filter((option) => !tags.includes(option)),
       ...res.tags?.map(({ tag }) => ({ label: tag, value: tag })),
+    ]);
+  };
+
+  const getAllAuthors = async () => {
+    const res = await fetch(`${API_URL}/authors`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => res.json());
+    const authors = res.authors.map(({ author }) => author);
+    setAuthors([
+      ...authors.filter((author) => !authors.includes(author)),
+      ...res.authors?.map(({ author }) => ({ label: author, value: author })),
     ]);
   };
 
@@ -145,7 +161,7 @@ export default function EditPost({ slug, API_URL }) {
       toast.error("Unable to update image.");
       throw new Error("Unable to update image.");
     }
-    console.log("resImage", await resImage.json())
+    console.log("resImage", await resImage.json());
     setPreview("");
   };
 
@@ -177,6 +193,7 @@ export default function EditPost({ slug, API_URL }) {
     }));
     setOptions([...options, ...newOptions]);
     setValue("selectedOption", newOptions);
+    setValue("selectedOptionAuthor", { label: res.authorId, value: res.authorId });
     setValue("title", res.title);
     setValue("slug", res.slug);
     setValue("content", res.content);
@@ -198,6 +215,7 @@ export default function EditPost({ slug, API_URL }) {
     }
     loadData();
     getAllTags();
+    getAllAuthors();
   }, [editorRef.current, slug]);
 
   useEffect(() => {
@@ -213,8 +231,19 @@ export default function EditPost({ slug, API_URL }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className="block mb-2">
           <span className="text-sm">Author</span>{" "}
-          <span className="bg-gray-300 rounded-full text-xs py-1 px-2.5">
-            {data?.authorId}
+          <span className="py-1 px-2.5">
+            <Controller
+              name="selectedOptionAuthor"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={authors}
+                  onChange={(selected) => field.onChange(selected)}
+                  placeholder="Select an author"
+                />
+              )}
+            />
           </span>
         </label>
         <label className="pb-4 block">

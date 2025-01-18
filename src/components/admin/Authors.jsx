@@ -1,53 +1,53 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-export default function Tags({ API_URL }) {
-  const [tag, setTag] = useState("");
-  const [tags, setTags] = useState([]);
+export default function Authors({ API_URL }) {
+  const [author, setAuthor] = useState("");
+  const [authors, setAuthors] = useState([]);
 
   const onCreate = async () => {
-    const res = await fetch(`${API_URL}/tags`, {
+    const res = await fetch(`${API_URL}/authors`, {
       method: "POST",
-      body: JSON.stringify({ tag }),
+      body: JSON.stringify({ author }),
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
     if (!res.ok) {
-      toast.error("Error to create tag!");
-      throw new Error("Error to create tag!");
+      toast.error("Error to create author!");
+      throw new Error("Error to create author!");
     }
-
-    getAllTags();
+    setAuthor("");
+    getAllAuthors();
   };
 
-  const getAllTags = async () => {
-    const res = await fetch(`${API_URL}/tags`, {
+  const getAllAuthors = async () => {
+    const res = await fetch(`${API_URL}/authors`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }).then((res) => res.json());
-    setTags(res.tags);
+    setAuthors(res.authors);
   };
 
-  const removeTag = async (activeTag) => {
-    const res = await fetch(`${API_URL}/tags`, {
+  const removeAuthor = async (activeAuthor) => {
+    const res = await fetch(`${API_URL}/author`, {
       method: "DELETE",
-      body: JSON.stringify({ tag: activeTag }),
+      body: JSON.stringify({ author: activeAuthor }),
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
     if (!res.ok) {
-      toast.error("Error to delete tag!");
-      throw new Error("Error to delete tag!");
+      toast.error("Error to delete author!");
+      throw new Error("Error to delete author!");
     }
 
-    getAllTags();
-  }
+    getAllAuthors();
+  };
 
   useEffect(() => {
-    getAllTags();
+    getAllAuthors();
   }, []);
 
   return (
@@ -58,7 +58,7 @@ export default function Tags({ API_URL }) {
             htmlFor="tag"
             className="block text-sm/6 font-medium text-gray-900 mb-2"
           >
-            Add Tag
+            Add Author
           </label>
           <div className="flex w-full gap-4">
             <div className="flex-1">
@@ -66,9 +66,9 @@ export default function Tags({ API_URL }) {
                 type="text"
                 name="tag"
                 id="tag"
-                value={tag}
+                value={author}
                 onChange={(e) => {
-                  setTag(e.target.value);
+                  setAuthor(e.target.value);
                 }}
                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
               />
@@ -76,27 +76,27 @@ export default function Tags({ API_URL }) {
 
             <button
               onClick={onCreate}
-              disabled={tag.length === 0}
+              disabled={author.length === 0}
               className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Create Tag
+              Create Author
             </button>
           </div>
         </div>
         <div className="mt-4">
-          {tags.map((currentTag) => (
+          {authors.map(({ author }) => (
             <span
-              key={currentTag.tag}
+              key={author}
               id="badge-dismiss-default"
               class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
             >
-              {currentTag.tag}
+              {author}
               <button
                 type="button"
                 class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900"
                 data-dismiss-target="#badge-dismiss-default"
                 aria-label="Remove"
-                onClick={() => removeTag(currentTag.tag)}
+                onClick={() => removeAuthor(author)}
               >
                 <svg
                   class="w-2 h-2"
@@ -113,7 +113,7 @@ export default function Tags({ API_URL }) {
                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                   />
                 </svg>
-                <span class="sr-only">Remove Tag</span>
+                <span class="sr-only">Remove Author</span>
               </button>
             </span>
           ))}
