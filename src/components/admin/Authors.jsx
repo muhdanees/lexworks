@@ -31,7 +31,7 @@ export default function Authors({ API_URL }) {
   };
 
   const removeAuthor = async (activeAuthor) => {
-    const res = await fetch(`${API_URL}/author`, {
+    const res = await fetch(`${API_URL}/authors`, {
       method: "DELETE",
       body: JSON.stringify({ author: activeAuthor }),
       headers: {
