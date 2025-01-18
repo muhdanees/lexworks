@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
-import ContactUs from "../components/ContactUs";
+import ContactUs from "../components/ContactUs.astro";
 
 ---
 
@@ -12,4 +12,5 @@ import ContactUs from "../components/ContactUs";
   <PageHeader />
   <ContactUs />
   <Footer />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </Layout>

@@ -1,0 +1,14 @@
+---
+import SideNavigation from "../../../components/admin/SideNavigation.astro";
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import Contacts from "../../../components/admin/Contacts";
+import { API_URL } from "astro:env/client";
+import "../../../layouts/AdminBase.css";
+---
+
+<AdminLayout>
+  <SideNavigation activeTab="dropdown-pages" />
+  <div class="pl-72 pt-4 pr-4">
+    <Contacts client:only API_URL={API_URL}  />
+  </div>
+</AdminLayout>
