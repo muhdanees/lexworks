@@ -9,7 +9,17 @@ export default function NewsDetail({ data }) {
             <div className="col-xl-8 wow fadeInLeft" data-wow-delay="0.1s">
               <h5 className="sub-title mb-4 pe-3">Update Details</h5>
 
-              <h2 className="customs-heading mb-4">{data.title}</h2>
+              <h2 className="customs-heading">{data.title}</h2>
+              <div className="row justify-content-start mb-3">
+                <div className="col-md-6">
+                  <span className="authorText">
+                    <strong>Author:</strong>  Akhil Krishan Maggu; Advocate
+                  </span>
+                  <span className="authorText">
+                    <strong>Updated on:</strong>  January 17, 2025
+                  </span>
+                </div>
+              </div>
               <div
                 className="nesDetails"
                 dangerouslySetInnerHTML={{
