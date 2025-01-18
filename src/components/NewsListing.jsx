@@ -14,7 +14,7 @@ export default function NewsListing({ data }) {
               <h5 className="sub-title mb-4 pe-3">Legal Updates</h5>
 
               <h3 className="customs-heading mb-4">
-                CUSTOMS ADVISORY AND LITIGATION
+                Customs Advisory and Litigation
               </h3>
 
               <p>
@@ -207,7 +207,7 @@ export default function NewsListing({ data }) {
               <h5 className="sub-title mb-4 pe-3">Customs</h5>
 
               <h3 className="customs-heading mb-4">
-                CUSTOMS ADVISORY AND LITIGATION
+              Customs Advisory and Litigation
               </h3>
 
               <p>

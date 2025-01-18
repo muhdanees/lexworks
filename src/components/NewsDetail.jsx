@@ -64,7 +64,7 @@ export default function NewsDetail({ data }) {
                   </div>
                 </div>
               ))}
-              <div className="d-flex gap-2 title">
+              <div className="d-flex gap-2 title position-sticky top-80">
                 {data?.categories?.map((category) => (
                   <a
                     key={category}
