@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function PageHeader({
-  pageTitle = ""
+  pageTitle = "",
+  lastPage = ""
 }) {
   return (
     <>
@@ -18,12 +19,12 @@ export default function PageHeader({
             data-wow-delay="0.3s"
           >
             <li className="breadcrumb-item">
-              <a href="index.html" className="text-white">
+              <a href="/" className="text-white">
                 Home
               </a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#" className="text-white">
+              <a href={lastPage} className="text-white">
                 Pages
               </a>
             </li>

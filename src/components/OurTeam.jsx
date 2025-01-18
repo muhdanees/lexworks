@@ -27,6 +27,8 @@ export default function OurTeam({ page }) {
                     src="img/akhil-krishnan-maggu.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
@@ -53,6 +55,8 @@ export default function OurTeam({ page }) {
                     src="img/vikas-sareen.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
@@ -79,6 +83,8 @@ export default function OurTeam({ page }) {
                     src="img/ayush-mittal.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
@@ -105,6 +111,8 @@ export default function OurTeam({ page }) {
                     src="img/maninder-kaur.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
@@ -152,6 +160,8 @@ export default function OurTeam({ page }) {
                     src="img/blank-men.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
@@ -178,6 +188,8 @@ export default function OurTeam({ page }) {
                     src="img/blank-men.png"
                     className="img-fluid w-100 rounded"
                     alt="Image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="country-flag">
