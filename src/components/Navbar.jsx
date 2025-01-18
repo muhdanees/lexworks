@@ -18,7 +18,6 @@ export default function Topbar({ page = "" }) {
               <a href="/" className={`nav-item nav-link ${page === "home" ? "active": ""}`}>Home</a>
               <a href="/aboutus" className={`nav-item nav-link ${page === "aboutus" ? "active": ""}`}>About Us</a>
               <a href="/ourteam" className={`nav-item nav-link ${page === "ourteam" ? "active": ""}`}>Our Team</a>
-              <a href="/news-listing" className={`nav-item nav-link ${page === "news-listing" ? "active": ""}`}>Updates</a>
               <div className="nav-item dropdown">
                 <a href="javascript:void(0)" className={`nav-link ${page === "practice-area" ? "active": ""}`} data-bs-toggle="dropdown">
                   <span className="dropdown-toggle">Practice Area</span>

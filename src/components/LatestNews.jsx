@@ -79,6 +79,9 @@ export default function LatestNews({ posts }) {
                 </a>
               ))}
             </div>
+            <div className="col-12 text-center">
+            <a className="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="/news-listing">More Articles</a>
+            </div>
           </div>
         </div>
       </div>

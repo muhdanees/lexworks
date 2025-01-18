@@ -16,14 +16,6 @@ export default function NewsDetail({ data }) {
                   __html: data?.content?.replace(/style="[^"]*"/g, ""),
                 }}
               ></div>
-              <div className="d-flex gap-2 title">
-                {data?.categories?.map((category) => (
-                  <div key={category} className="border py-1 px-3 rounded">
-                    {category?.[0].toUpperCase()}
-                    {category.slice(1)}
-                  </div>
-                ))}
-              </div>
             </div>
             <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
               <h5 className="sub-title mb-4 pe-3">Trending News</h5>
@@ -38,22 +30,32 @@ export default function NewsDetail({ data }) {
                 comprehensive support tailored to your specific needs.
               </p>
               {data?.relatedArticles?.map((relatedArticle) => (
-              <div class="card mb-3" key={relatedArticle.postId}>
-                <div class="card-body">
-                  <h5 class="card-title multiText-truncate">{relatedArticle.title}</h5>
-                  {/* <h6 class="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
-                  <p class="card-text multiText-truncate">
-                    {relatedArticle.content}
-                  </p>
-                  <a href={`/posts/${relatedArticle.slug}`} class="card-link">
-                    Read More
-                  </a>
-                  {/* <a href="#" class="card-link">
+                <div class="card mb-3" key={relatedArticle.postId}>
+                  <div class="card-body">
+                    <h5 class="card-title multiText-truncate">
+                      {relatedArticle.title}
+                    </h5>
+                    {/* <h6 class="card-subtitle mb-2 text-white">{relatedArticle.title}</h6> */}
+                    <p class="card-text multiText-truncate">
+                      {relatedArticle.content}
+                    </p>
+                    <a href={`/posts/${relatedArticle.slug}`} class="card-link">
+                      Read More
+                    </a>
+                    {/* <a href="#" class="card-link">
                     Another link
                   </a> */}
+                  </div>
                 </div>
-              </div>
               ))}
+              <div className="d-flex gap-2 title">
+                {data?.categories?.map((category) => (
+                  <div key={category} className="border py-1 px-3 rounded">
+                    {category?.[0].toUpperCase()}
+                    {category.slice(1)}
+                  </div>
+                ))}
+              </div>
               {/* <div class="card mb-3">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>

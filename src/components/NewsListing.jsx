@@ -33,13 +33,13 @@ export default function NewsListing({ data }) {
                   <div className="row g-0">
                     <div className="col-md-4">
                       <div className="imageCover">
-                        {post.image && (
+                        
                           <img
-                            src={post.image}
+                            src={post?.image || "/img/lexworks-default.png"}
                             className="img-fluid rounded-start"
                             alt={post.title}
                           />
-                        )}
+                        
                       </div>
                     </div>
                     <div className="col-md-8">
