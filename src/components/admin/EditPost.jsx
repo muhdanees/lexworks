@@ -127,6 +127,25 @@ export default function EditPost({ slug, API_URL }) {
       toast.error("Unable to delete image.");
       throw new Error("Unable to delete image.");
     }
+
+    const resImage = await fetch(
+      `${API_URL}/posts/update-image/${data.postId}/${data.slug}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({
+          image: "",
+        }),
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "content-type": "application/json",
+        },
+      }
+    );
+    if (!resImage.ok) {
+      toast.error("Unable to update image.");
+      throw new Error("Unable to update image.");
+    }
+    console.log("resImage", await resImage.json())
     setPreview("");
   };
 
