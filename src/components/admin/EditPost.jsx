@@ -114,17 +114,20 @@ export default function EditPost({ slug, API_URL }) {
     e.preventDefault();
     setDeleting(true);
     const res = await fetch(
-      `${API_URL}/images?=key=${encodeURIComponent(preview)}`,
+      `${API_URL}/images?key=${encodeURIComponent(preview)}`,
       {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
     );
+    setDeleting(false);
     if (!res.ok) {
       toast.error("Unable to delete image.");
       throw new Error("Unable to delete image.");
     }
     setPreview("");
-    setDeleting(false);
   };
 
   const handleCreate = (inputValue) => {
