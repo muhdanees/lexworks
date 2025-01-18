@@ -13,7 +13,7 @@ export default function ContactUs() {
                             {/* <!-- <h1 className="display-5 mb-4">We all here to Navigate your legal needs.</h1> -->
                             <!-- <p className="mb-5">Please reach out to use with any quiesion or to schedule a Consultation.</p> --> */}
                             <div className="d-flex border-bottom mb-4 pb-4">
-                                <i className="fas fa-map-marked-alt fa-4x text-primary bg-light p-3 rounded"></i>
+                                <i className="fas fa-map-marked-alt fa-2x text-primary bg-light p-3 rounded"></i>
                                 <div className="ps-3">
                                     <h5>New Delhi</h5>
                                     <p>C-131, 1st Floor Lajpat Nagar - 110024</p>
@@ -21,9 +21,9 @@ export default function ContactUs() {
                             </div>
                             <div className="row g-3">
                                 <div className="col-xl-6">
-                                    <div className="d-flex">
-                                        <div className="bg-light d-flex align-items-center justify-content-center">
-                                            <i className="fas fa-phone-alt fa-2x text-primary"></i>
+                                    <div className="d-flex align-items-start">
+                                        <div className="bg-light d-flex align-items-center justify-content-center rounded">
+                                            <i className="fas fa-phone-alt fa-2x text-primary p-3"></i>
                                         </div>
                                         <div className="ps-3">
                                             <h5 className="mb-3">Quick Contact</h5>
@@ -40,9 +40,9 @@ export default function ContactUs() {
                                     </div>
                                 </div>
                                 <div className="col-xl-6">
-                                    <div className="d-flex">
-                                        <div className="bg-light d-flex align-items-center justify-content-center">
-                                            <i className="fas fa-clock fa-2x text-primary"></i>
+                                    <div className="d-flex align-items-start">
+                                        <div className="bg-light d-flex align-items-center justify-content-center rounded">
+                                            <i className="fas fa-clock fa-2x text-primary p-3"></i>
                                         </div>
                                         <div className="ps-3">
                                             <h5 className="mb-3">Office Hours</h5>
@@ -59,22 +59,22 @@ export default function ContactUs() {
                                 </div>
                             </div>
                             <div className="d-flex align-items-center pt-3">
-                                <div className="me-4">
-                                    <div className="bg-light d-flex align-items-center justify-content-center">
-                                        <i className="fas fa-share fa-2x text-primary"></i>
+                                <div className="me-3">
+                                    <div className="bg-light d-flex align-items-center justify-content-center rounded">
+                                        <i className="fas fa-share fa-2x text-primary p-3"></i>
                                     </div>
                                 </div>
-                                <div className="d-flex">
-                                    <a className="btn me-1 p-0 linkedinColor" href="#">
-                                        LinkedIn
+                                <div className="d-flex gap-2">
+                                    <a className="btn d-flex gap-2 me-1 p-0 linkedinColor" href="#">
+                                        <span>LinkedIn</span>
                                         <i className="fab fa-linkedin fa-2x align-middle"></i>
                                     </a>
-                                    <a className="btn mx-1 p-0 instagramColor" href="#">
-                                        Instagram
+                                    <a className="btn d-flex gap-2 mx-1 p-0 instagramColor" href="#">
+                                        <span>Instagram</span>
                                         <i className="fab fa-instagram-square fa-2x align-middle"></i>
                                     </a>
-                                    <a className="btn mx-1 p-0 youtubeColor" href="#">
-                                        Youtube
+                                    <a className="btn d-flex gap-2 mx-1 p-0 youtubeColor" href="#">
+                                        <span>Youtube</span>
                                         <i className="fab fa-youtube-square fa-2x align-middle"></i>
                                     </a>
                                 </div>
@@ -115,6 +115,12 @@ export default function ContactUs() {
                                         <div className="form-floating">
                                             <textarea className="form-control" placeholder="Leave a message here" id="message"></textarea>
                                             <label for="message">Description</label>
+                                        </div>
+                                    </div>
+                                    <div className="col-12">
+                                        <div className="form-floating">
+                                        <input type="file" className="form-control" id="uploads" placeholder="uploads" />
+                                        <label for="uploads">Subject</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
