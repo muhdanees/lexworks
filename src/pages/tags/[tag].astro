@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import PageHeader from "../../components/PageHeader";
 import NewsListing from "../../components/NewsListing";
 import { API_URL } from "astro:env/client";
+import PageHeaderPost from "../../components/PageHeaderPost";
 const { tag } = Astro.params;
 let jsonRes = { posts: [] };
 try {
@@ -17,7 +18,7 @@ try {
 
 <Layout>
   <Header page="news-listing" />
-  <PageHeader pageTitle="Updates" />
+  <PageHeaderPost pageTitle="Tags" />
   <NewsListing data={jsonRes?.posts} />
   <Footer />
 </Layout>

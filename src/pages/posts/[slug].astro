@@ -2,7 +2,7 @@
 import Header from "../../components/Header";
 import Layout from "../../layouts/PostLayout.astro";
 import Footer from "../../components/Footer";
-import PageHeader from "../../components/PageHeader";
+import PageHeaderPost from "../../components/PageHeaderPost";
 import NewsDetail from "../../components/NewsDetail";
 const { slug } = Astro.params;
 import { API_URL } from "astro:env/client";
@@ -17,7 +17,7 @@ try {
 
 <Layout title={jsonRes?.title} description={jsonRes.description}>
   <Header />
-  <PageHeader pageTitle="Post" />
+  <PageHeaderPost pageTitle="Post" />
   <NewsDetail data={jsonRes} />
   <Footer />
 </Layout>

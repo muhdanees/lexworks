@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
 import NewsListing from "../components/NewsListing";
 import { API_URL } from "astro:env/client";
+import PageHeaderPost from "../components/PageHeaderPost";
 let jsonRes = { posts: [] };
 try {
   const res = await fetch(`${API_URL}/posts/latest`)
@@ -16,7 +17,7 @@ try {
 
 <Layout>
   <Header page="news-listing" />
-  <PageHeader pageTitle="Updates" />
+  <PageHeaderPost pageTitle="Updates" />
   <NewsListing data={jsonRes?.posts} />
   <Footer />
 </Layout>
