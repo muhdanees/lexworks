@@ -254,7 +254,7 @@ export default function EditPost({ slug, API_URL }) {
             </svg>
           </button>
         </label>
-        <div className="mt-2 pb-4">
+        <div className="mt-2 pb-4 [&>.ql-toolbar.ql-snow]:sticky [&>.ql-toolbar.ql-snow]:top-0 [&>.ql-toolbar.ql-snow]:bg-white [&>.ql-toolbar.ql-snow]:z-10">
           <div id="editor" ref={editorRef} className="min-h-48">
             <p>Loading Data...</p>
           </div>
