@@ -73,9 +73,9 @@ export default function ContactUs() {
                                         <span>Instagram</span>
                                         <i className="fab fa-instagram-square fa-2x align-middle"></i>
                                     </a>
-                                    <a className="btn d-flex gap-2 mx-1 p-0 youtubeColor" href="#">
-                                        <span>Youtube</span>
-                                        <i className="fab fa-youtube-square fa-2x align-middle"></i>
+                                    <a className="btn d-flex gap-2 mx-1 p-0 whatsappColor" href="#">
+                                        <span>Whatsapp</span>
+                                        <i className="fab fa-whatsapp-square fa-2x align-middle"></i>
                                     </a>
                                 </div>
                             </div>

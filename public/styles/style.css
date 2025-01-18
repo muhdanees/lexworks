@@ -166,6 +166,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .youtubeColor {
     color: #ff0000;
 }
+.whatsappColor {
+  color: #25d366;
+}
 .fa-whatsapp {
     color: #25d366;
     font-size: 20px;
