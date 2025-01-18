@@ -67,7 +67,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     left: -60px;
 }
-
+.stripes {
+  background-color: var(--bs-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: nowrap;
+}
 .nesDetails {
     padding: 0;
 }
@@ -75,10 +81,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 1rem;
 }
 .authorText {
-  font-weight: var(--lighter);
-  margin-bottom: 1rem;
-  white-space: nowrap;
+  color: var(--bs-primary);
   margin-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.authorText strong {
+  margin-right: 5px;
 }
 .nesDetails p:empty {
   display: none;
@@ -179,7 +188,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 .customs-heading {
     font-size: x-large;
-    margin-bottom: .6rem;
+    margin-bottom: 1rem;
 }
 
 .whatsapp {

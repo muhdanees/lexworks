@@ -10,15 +10,15 @@ export default function NewsDetail({ data }) {
               <h5 className="sub-title mb-4 pe-3">Update Details</h5>
 
               <h2 className="customs-heading">{data.title}</h2>
-              <div className="row justify-content-start mb-3">
-                <div className="col-md-6">
+              <div className="stripes mb-3">
+                
                   <span className="authorText">
-                    <strong>Author:</strong>  Akhil Krishan Maggu; Advocate
+                    <strong>Author:</strong> <span>Akhil Krishan Maggu; Advocate</span>
                   </span>
                   <span className="authorText">
-                    <strong>Updated on:</strong>  January 17, 2025
+                    <strong>Updated on:</strong> <span>Jan 17, 2025</span>
                   </span>
-                </div>
+                
               </div>
               <div
                 className="nesDetails"
