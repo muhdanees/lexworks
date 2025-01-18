@@ -50,10 +50,10 @@ export default function NewsDetail({ data }) {
               ))}
               <div className="d-flex gap-2 title">
                 {data?.categories?.map((category) => (
-                  <div key={category} className="border py-1 px-3 rounded">
+                  <a key={category} href={`/tags/${category}`} className="border py-1 px-3 rounded">
                     {category?.[0].toUpperCase()}
                     {category.slice(1)}
-                  </div>
+                  </a>
                 ))}
               </div>
               {/* <div class="card mb-3">

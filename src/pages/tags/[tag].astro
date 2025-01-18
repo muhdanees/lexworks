@@ -1,0 +1,23 @@
+---
+import Header from "../../components/Header";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer";
+import PageHeader from "../../components/PageHeader";
+import NewsListing from "../../components/NewsListing";
+import { API_URL } from "astro:env/client";
+const { tag } = Astro.params;
+let jsonRes = { posts: [] };
+try {
+  const res = await fetch(`${API_URL}/posts/latest/${tag}?limit=10`)
+  jsonRes = await res.json();
+} catch {
+  console.log("NO Posts");
+}
+---
+
+<Layout>
+  <Header page="news-listing" />
+  <PageHeader pageTitle="Updates" />
+  <NewsListing data={jsonRes?.posts} />
+  <Footer />
+</Layout>

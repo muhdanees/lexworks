@@ -5,7 +5,7 @@ export default function Topbar({ page = "" }) {
     <>
       <div className="container-fluid nav-bar p-0 sticky-top shadow-sm">
         <nav className="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-          <a href="./" className="navbar-brand p-0">
+          <a href="/" className="navbar-brand p-0">
             <h1 className="display-5 text-secondary m-0">
               <img src="/brand-logo.png" className="img-fluid" alt="Brand Logo" />
             </h1>
