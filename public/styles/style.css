@@ -211,7 +211,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .watermark::before {
     content: '';
     position: absolute;
-    right: -380px;
+    right: 0px;
     bottom: 40px;
     background: url('../img/watermark.svg') no-repeat;
     background-position: center;
@@ -751,6 +751,16 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   }
 }
 @media (max-width: 768px) {
+  .carousel-control-prev {
+    left: 10px;
+  }
+  .carousel-control-next {
+    right: 10px;
+  }
+  .modal-body {
+    max-height: calc(100vh - 210px);
+    overflow: auto;
+  }
     /* .carousel-header {
         height: 700px !important;
     } */
@@ -762,10 +772,12 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
     .carousel-header .carousel-control-prev .carousel-control-prev-icon {
         margin-left: 0px;
+        border-radius: 8px;
     }
 
     .carousel-header .carousel-control-next .carousel-control-next-icon {
         margin-right: 0px;
+        border-radius: 8px;
     }
 
     .carousel-header .carousel .carousel-indicators {
