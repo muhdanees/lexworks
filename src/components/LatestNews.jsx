@@ -6,7 +6,7 @@ export default function LatestNews({ posts }) {
     <>
       <div className="container-fluid bg-light py-5">
         <div className="container">
-          <div className="row g-5">
+          <div className="row g-5 align-items-end">
             <div className="col-xl-6 wow fadeInLeft" data-wow-delay="0.1s">
               {posts?.slice(0, 2)?.map((post) => (
                 <a
@@ -45,7 +45,7 @@ export default function LatestNews({ posts }) {
                 </a>
               ))}
             </div>
-            <div className="col-xl-6 wow fadeInRight" data-wow-delay="0.3s">
+            <div className="col-xl-6 wow fadeInRight mt-0" data-wow-delay="0.3s">
               {posts?.slice(2)?.map((post) => (
                 <a
                   href={`/posts/${post?.slug}`}
@@ -79,7 +79,7 @@ export default function LatestNews({ posts }) {
                 </a>
               ))}
             </div>
-            <div className="col-12 text-center">
+            <div className="col-12 text-center mt-2">
             <a className="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="/news-listing">More Articles</a>
             </div>
           </div>

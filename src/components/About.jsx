@@ -27,13 +27,15 @@ export default function About() {
                 prompt and effective outcomes. With a focus on ethics and client
                 satisfaction, we are dedicated to guiding you through your legal
                 journey...
-                <a
-                  className="btn btn-primary border-secondary rounded-pill"
-                  href="aboutus.html"
-                  style={{ lineHeight: "12px" }}
-                >
-                  Read More
-                </a>
+                <span style={{ position: "relative" }}>
+                  <a
+                    className="btn btn-primary mt-1 border-secondary rounded-pill"
+                    href="/aboutus"
+                    style={{ lineHeight: "12px", position: "absolute", whiteSpace: "nowrap", top: "0", left: "0" }}
+                  >
+                    Read More
+                  </a>
+                </span>
               </p>
             </div>
           </div>
