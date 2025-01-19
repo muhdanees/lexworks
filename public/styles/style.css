@@ -517,6 +517,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     font-weight: 600;
     vertical-align: middle;
 }
+.card-text:last-child {
+  margin-top: auto;
+}
 
 @media (min-width: 1200px) {
     .navbar .nav-item .dropdown-menu {
