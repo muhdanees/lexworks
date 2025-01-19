@@ -1,5 +1,9 @@
 ---
-import { EnvelopeIcon, PhoneIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/solid";
 
 const { activeTab } = Astro.props;
 ---
@@ -9,7 +13,7 @@ const { activeTab } = Astro.props;
   data-drawer-toggle="default-sidebar"
   aria-controls="default-sidebar"
   type="button"
-  class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+  class="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
 >
   <span class="sr-only">Open sidebar</span>
   <svg
@@ -33,17 +37,17 @@ const { activeTab } = Astro.props;
   aria-label="Sidenav"
 >
   <div
-    class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    class="overflow-y-auto py-5 px-3 h-full border-r bg-gray-800 border-gray-700"
   >
     <ul class="space-y-2" id="buttonsContainer">
       <li>
         <a
           href="/admin/dashboard"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gray-700 group"
         >
           <svg
             aria-hidden="true"
-            class="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            class="w-6 h-6 transition duration-75 text-gray-400 group-hover:text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -56,13 +60,13 @@ const { activeTab } = Astro.props;
       <li>
         <button
           type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+          class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
           aria-controls="dropdown-pages"
           data-collapse-toggle="dropdown-pages"
         >
           <svg
             aria-hidden="true"
-            class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+            class="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400 group-hover:text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -88,14 +92,14 @@ const { activeTab } = Astro.props;
           <li>
             <a
               href="/admin/dashboard/posts/create"
-              class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
               >Create Post</a
             >
           </li>
           <li>
             <a
               href="/admin/dashboard/posts/"
-              class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
               >Posts</a
             >
           </li>
@@ -159,11 +163,11 @@ const { activeTab } = Astro.props;
       <li class="">
         <a
           href="/admin/dashboard/tags/"
-          class="flex items-center p-2 text-base font-normal  rounded-lg text-white  hover:bg-gray-700 group"
+          class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gray-700 group"
         >
           <svg
             aria-hidden="true"
-            class="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400  group-hover:text-white"
+            class="flex-shrink-0 w-6 h-6 transition duration-75 text-gray-400 group-hover:text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -184,18 +188,22 @@ const { activeTab } = Astro.props;
       <li class="">
         <a
           href="/admin/dashboard/authors/"
-          class="flex items-center p-2 text-base font-normal  rounded-lg text-white  hover:bg-gray-700 group"
+          class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gray-700 group"
         >
-          <UserGroupIcon className="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400  group-hover:text-white" />
+          <UserGroupIcon
+            className="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400  group-hover:text-white"
+          />
           <span class="flex-1 ml-3 whitespace-nowrap">Authors</span>
         </a>
       </li>
       <li class="">
         <a
           href="/admin/dashboard/contacts/"
-          class="flex items-center p-2 text-base font-normal  rounded-lg text-white  hover:bg-gray-700 group"
+          class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gray-700 group"
         >
-          <EnvelopeIcon className="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400  group-hover:text-white" />
+          <EnvelopeIcon
+            className="flex-shrink-0 w-6 h-6  transition duration-75 text-gray-400  group-hover:text-white"
+          />
           <span class="flex-1 ml-3 whitespace-nowrap">Contacts</span>
         </a>
       </li>
@@ -257,17 +265,15 @@ const { activeTab } = Astro.props;
         </ul>
       </li>
     </ul>
-    <ul
-      class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700"
-    >
+    <ul class="pt-5 mt-5 space-y-2 border-t border-gray-700">
       <li class="hidden">
         <a
           href="#"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+          class="flex items-center p-2 text-base font-normal rounded-lg transition duration-75 hover:bg-gray-700 text-white group"
         >
           <svg
             aria-hidden="true"
-            class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            class="flex-shrink-0 w-6 h-6 transition duration-75 text-gray-400 group-hover:text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -319,11 +325,11 @@ const { activeTab } = Astro.props;
     </ul>
   </div>
   <div
-    class="absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20 border-r border-gray-200 dark:border-gray-700"
+    class="absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-gray-800 z-20 border-r border-gray-700"
   >
     <a
       href="#"
-      class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
+      class="inline-flex justify-center p-2 rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600"
     >
       <svg
         aria-hidden="true"
@@ -339,7 +345,7 @@ const { activeTab } = Astro.props;
     <a
       href="#"
       data-tooltip-target="tooltip-settings"
-      class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+      class="inline-flex justify-center p-2 rounded cursor-pointer text-gray-400 hover:text-white hover:bg-gray-600"
     >
       <svg
         aria-hidden="true"
@@ -365,7 +371,7 @@ const { activeTab } = Astro.props;
       type="button"
       id="settings"
       data-dropdown-toggle="language-dropdown"
-      class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:hover:text-white dark:text-gray-400 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+      class="inline-flex justify-center p-2 rounded cursor-pointer hover:text-white text-gray-400 hover:bg-gray-600"
     >
       <svg
         aria-hidden="true"
@@ -397,13 +403,13 @@ const { activeTab } = Astro.props;
       >
     </button>
     <div
-      class="hidden absolute -bottom-4 -translate-y-16 z-50 my-4 w-full text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+      class="hidden absolute -bottom-4 -translate-y-16 z-50 my-4 w-full text-base list-none rounded divide-y divide-gray-100 shadow bg-gray-700"
       id="language-dropdown"
     >
       <ul class="py-1" role="none">
         <li>
           <button
-            class="block text-left w-full py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600"
+            class="block text-left w-full py-2 px-4 text-sm hover:text-white text-gray-300 hover:bg-gray-600"
             role="menuitem"
             id="logoutButton"
           >
