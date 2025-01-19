@@ -8,7 +8,7 @@ export default function VikasSareen() {
                     <div className="row g-5">
                         <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
                             <div className="bg-light">
-                                <img src="img/vikas-sareen.png" className="img-fluid rounded img-thumbnail w-100" alt="Direct TAX" />
+                                <img src="img/vikas-sareen.jpg" className="img-fluid rounded img-thumbnail w-100" alt="Direct TAX" />
                             </div>
                         </div>
                         <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">

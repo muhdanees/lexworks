@@ -9,7 +9,7 @@ export default function AkhilKrishanMaggu() {
             <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="bg-light">
                 <img
-                  src="img/akhil-krishnan-maggu.png"
+                  src="img/akhil-krishnan-maggu.jpg"
                   className="img-fluid rounded img-thumbnail w-100"
                   alt="Direct TAX"
                 />

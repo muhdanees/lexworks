@@ -24,7 +24,7 @@ export default function OurTeam({ page }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/akhil-krishnan-maggu.png"
+                    src="img/akhil-krishnan-maggu.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"
@@ -52,7 +52,7 @@ export default function OurTeam({ page }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/vikas-sareen.png"
+                    src="img/vikas-sareen.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"
@@ -80,7 +80,7 @@ export default function OurTeam({ page }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/ayush-mittal.png"
+                    src="img/ayush-mittal.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"
@@ -108,7 +108,7 @@ export default function OurTeam({ page }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/maninder-kaur.png"
+                    src="img/maninder-kaur.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"

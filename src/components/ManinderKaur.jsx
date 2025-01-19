@@ -9,7 +9,7 @@ export default function ManinderKaur() {
             <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="bg-light">
                 <img
-                  src="img/maninder-kaur.png"
+                  src="img/maninder-kaur.jpg"
                   className="img-fluid rounded img-thumbnail w-100"
                   alt="Direct TAX"
                 />
