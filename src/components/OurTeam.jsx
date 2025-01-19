@@ -157,7 +157,7 @@ export default function OurTeam({ page }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/blank-men.png"
+                    src="img/ms-oshin-maggu.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"

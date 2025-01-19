@@ -9,7 +9,7 @@ export default function MsOshinMaggu() {
             <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="bg-light">
                 <img
-                  src="img/blank-men.png"
+                  src="img/ms-oshin-maggu.jpg"
                   className="img-fluid rounded img-thumbnail w-100"
                   alt="Direct TAX"
                 />
