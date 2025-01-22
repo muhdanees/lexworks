@@ -40,7 +40,7 @@ export default function OurTeam({ page }) {
                 </div>
                 <div className="country-name">
                   <a href="akhil-krishan-maggu" className="text-white fs-4">
-                    Adv. Akhil Krishan Maggu
+                    Akhil Krishan Maggu
                   </a>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function OurTeam({ page }) {
                 </div>
                 <div className="country-name">
                   <a href="ayush-mittal" className="text-white fs-4">
-                    AYUSH MITTAL
+                    Ayush Mittal
                   </a>
                 </div>
               </div>

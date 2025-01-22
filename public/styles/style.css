@@ -99,6 +99,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   display: none;
 }
 .nesDetails img {
+  width: 100%;
     border-radius: 10px;
     padding: .25rem;
     background-color: #fff;
@@ -134,16 +135,20 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     border-bottom: 2px solid var(--bs-secondary);
 }
 .imageCover {
-    min-height: 174px;
-    height: 100%;
+    height: 174px;
     background: #d9d9d9;
     /* background: #d9d9d9 url(../img/post-bg-image.png) no-repeat; */
     /* background-size: contain;
     background-position: center center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 .imageCover img {
-    height: 100%;
-    object-fit: contain;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .facbookColor {
