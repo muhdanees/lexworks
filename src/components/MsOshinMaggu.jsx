@@ -16,21 +16,20 @@ export default function MsOshinMaggu() {
               </div>
             </div>
             <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
-              <h5 className="sub-title mb-4 pe-3">Ms. Oshin Maggu</h5>
+              <h5 className="sub-title mb-4 pe-3">Oshin Maggu</h5>
 
               <h4 className="customs-title">
                 <em>Position:</em> Senior Associate
               </h4>
 
               <h3 className="customs-heading mb-4">
-                LL.B., 2023; M.Sc. (Biotechnology), 2015; B.Sc. (Biotechnology),
-                2013
+                LL.B., M.Sc. (Biotechnology), B.Sc. (Biotechnology)
               </h3>
 
               <p>
-                <strong>Ms. Oshin Maggu</strong> is a dynamic professional with
+                <strong>OSHIN MAGGU</strong> is a dynamic professional with
                 a unique combination of expertise in biotechnology, digital
-                strategy, and law. As an Senior Associate at Lex Works, she
+                strategy, and law. As an Senior Associate at <strong>Lex Works</strong>, she
                 brings a multidisciplinary approach to problem-solving,
                 seamlessly blending technical knowledge, strategic thinking, and
                 legal acumen.
@@ -38,7 +37,7 @@ export default function MsOshinMaggu() {
 
               <p>
                 With experience managing global digital transformation projects
-                during her tenure at UPL Limited, Ms. Maggu has proven her
+                during her tenure at UPL Limited, OSHIN MAGGU has proven her
                 ability to lead complex initiatives across diverse geographies.
                 Her work has included developing digital frameworks,
                 implementing CRM systems, and managing high-value projects
@@ -47,7 +46,7 @@ export default function MsOshinMaggu() {
               </p>
 
               <p>
-                In 2023, Ms. Maggu added a legal dimension to her career by
+                In 2023, OSHIN MAGGU added a legal dimension to her career by
                 earning her LL.B., further enhancing her ability to navigate the
                 intersections of science, business, and law. Her strategic
                 mindset and attention to detail make her an invaluable asset in
@@ -55,7 +54,7 @@ export default function MsOshinMaggu() {
               </p>
 
               <p className="mb-4">
-                <strong>Ms. Maggu</strong> is dedicated to delivering
+              OSHIN MAGGU is dedicated to delivering
                 exceptional solutions for clients while contributing to the
                 growth and success of Lex Works, embodying a forward-thinking
                 approach that aligns with the firm's mission.

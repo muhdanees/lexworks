@@ -16,7 +16,7 @@ export default function MsShivanjali() {
               </div>
             </div>
             <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
-              <h5 className="sub-title mb-4 pe-3">Ms. Shivanjali</h5>
+              <h5 className="sub-title mb-4 pe-3">Shivanjali Malik</h5>
 
               {/* <!-- <h4 className="customs-title"><em>Position:</em> Senior Associate</h4> --> */}
 
@@ -25,7 +25,7 @@ export default function MsShivanjali() {
               </h3>
 
               <p>
-                <strong>Ms. Shivanjali</strong>, the founder of Dastawezz, is a
+                <strong>SHIVANJALI MALIK</strong>, the founder of <strong><a href="https://dastawezz.com/" target="_blank">Dastawezz</a></strong>, is a
                 trailblazer in the legal technology sector, renowned for her
                 innovative approach to simplifying legal documentation and
                 providing accessible legal services. With a deep understanding
@@ -36,7 +36,7 @@ export default function MsShivanjali() {
               </p>
 
               <p>
-                As a member of our expert panel, Ms. Shivanjali lends her
+                As a member of our expert panel, SHIVANJALI MALIK lends her
                 invaluable expertise in legal documentation, compliance, and
                 technology-driven solutions. Her forward-thinking mindset and
                 dedication to excellence make her an integral part of our team,
@@ -45,7 +45,7 @@ export default function MsShivanjali() {
               </p>
 
               <p className="mb-4">
-                Explore the advantage of having Ms. Shivanjali and our expert
+                Explore the advantage of having SHIVANJALI MALIK and our expert
                 panel guide you through your legal challenges with precision and
                 professionalism.
               </p>

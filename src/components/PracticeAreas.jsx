@@ -17,16 +17,14 @@ export default function PracticeAreas() {
             </h2>
             <p>
               Facet of your business, and let us be your trusted partner in
-              navigating the intricacies of GST, providing you with the clarity
+              navigating the intricacies of Legal field, providing you with the clarity
               and support you need to succeed.
               In the realm of litigation, our experienced team is prepared to
               represent clients at every level, from departmental authorities
               and tribunals to the High Court and Supreme Court. We also
               advocate on behalf of our clients before Advance Ruling
               Authorities, seeking clarity and favorable rulings on complex
-              business transactions. We also engage with Advance Ruling
-              Authorities to clarify complex issues regarding your business
-              transactions.
+              business transactions.
             </p>
           </div>
           <div className="row g-4">

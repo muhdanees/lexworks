@@ -1279,6 +1279,12 @@ a.instagramHover:hover {
 a.youtubeHover:hover {
     color: #ff0000;
 }
+a.whatsappHover i {
+  color: #f0f5fb;
+}
+a.whatsappHover:hover i {
+  color: #25d366;
+}
 
 /*** Footer End ***/
 

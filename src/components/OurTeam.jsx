@@ -156,7 +156,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
                 <div className="country-name">
                   <a href="ms-oshin-maggu" className="text-white fs-4">
-                  Ms. Oshin Maggu
+                  Oshin Maggu
                   </a>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
                 <div className="country-name">
                   <a href="ms-shivanjali" className="text-white fs-4">
-                    Ms. Shivanjali
+                    Shivanjali Malik
                   </a>
                 </div>
               </div>

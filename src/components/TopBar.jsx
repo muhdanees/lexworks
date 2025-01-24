@@ -38,10 +38,10 @@ export default function Topbar() {
                 <i className="fab fa-instagram fw-normal"></i>
               </a>
               <a
-                className="btn btn-sm btn-outline-light btn-square youtubeHover"
-                href="#"
+                className="btn btn-sm btn-outline-light btn-square whatsappHover"
+                href="https://api.whatsapp.com/send?phone=918826872049"
               >
-                <i className="fab fa-youtube fw-normal"></i>
+                <i className="fab fa-whatsapp fw-normal"></i>
               </a>
             </div>
           </div>

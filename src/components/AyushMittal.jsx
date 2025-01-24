@@ -23,12 +23,11 @@ export default function AyushMittal() {
               </h4>
 
               <h3 className="customs-heading mb-4">
-                Education: B.A. LL.B., 2022
+                Education: B.A. LL.B.
               </h3>
 
               <p>
-                <strong>AYUSH MITTAL</strong> is a dedicated senior associate at{" "}
-                <strong>Lex Works</strong>, specializing in civil, commercial,
+                <strong>AYUSH MITTAL</strong> is a dedicated senior associate at <strong>Lex Works</strong>, specializing in civil, commercial,
                 and intellectual property rights litigation. A recent graduate
                 with a Bachelor of Arts in Law, he brings fresh perspectives and
                 a strong commitment to delivering effective legal solutions for
@@ -36,8 +35,8 @@ export default function AyushMittal() {
               </p>
 
               <p>
-                With a keen interest in navigating complex legal disputes,{" "}
-                <strong>AYUSH MITTAL</strong> has quickly developed a reputation
+                With a keen interest in navigating complex legal disputes,
+                AYUSH MITTAL has quickly developed a reputation
                 for his analytical skills and attention to detail. He is
                 passionate about protecting clients' rights and ensuring fair
                 outcomes in all matters. He values open communication and
@@ -46,8 +45,8 @@ export default function AyushMittal() {
               </p>
 
               <p className="mb-4">
-                <strong>AYUSH MITTAL</strong> is excited to contribute to the
-                success of <strong>Lex Works</strong> and looks forward to
+                AYUSH MITTAL is excited to contribute to the
+                success of Lex Works and looks forward to
                 tackling new challenges in the dynamic world of law.
               </p>
             </div>

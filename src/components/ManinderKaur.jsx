@@ -27,7 +27,7 @@ export default function ManinderKaur() {
               </h3>
 
               <p>
-                <strong>Maninder Kaur</strong> is a dedicated Senior Associate
+                <strong>MANINDER KAUR</strong> is a dedicated Senior Associate
                 at <strong>Lex Works</strong>, specializing in indirect taxation
                 and patent law. With a strong academic foundation that includes
                 a B.Sc., an LL.B., and an LL.M., she brings a wealth of
@@ -35,7 +35,7 @@ export default function ManinderKaur() {
               </p>
 
               <p>
-                Since joining the firm, Maninder Kaur has focused on navigating
+                Since joining the firm, MANINDER KAUR has focused on navigating
                 the complexities of indirect tax regulations and intellectual
                 property rights, particularly in the area of patents. She has
                 successfully managed numerous cases, providing clients with
@@ -45,7 +45,7 @@ export default function ManinderKaur() {
 
               <p>
                 Known for her meticulous approach and strong analytical skills,
-                Maninder Kaur excels in developing tailored strategies that
+                MANINDER KAUR excels in developing tailored strategies that
                 align with clients' business objectives while ensuring
                 compliance with legal standards. She is committed to building
                 lasting relationships with clients, understanding their unique
@@ -57,7 +57,7 @@ export default function ManinderKaur() {
               </p>
 
               <p className="mb-4">
-                At <strong>Lex Works</strong>, Maninder Kaur is focused on
+                At Lex Works, MANINDER KAUR is focused on
                 contributing to the firm's growth and success, leveraging her
                 expertise to help clients navigate the complexities of indirect
                 taxation and patent law with confidence.

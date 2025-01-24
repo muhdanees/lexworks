@@ -19,7 +19,7 @@ export default function AkhilKrishanMaggu() {
               <h5 className="sub-title mb-4 pe-3">Akhil Krishan Maggu</h5>
 
               <h4 className="customs-title">
-                <em>Position:</em> Partner
+                <em>Position:</em> Founding Partner
               </h4>
 
               <h3 className="customs-heading mb-4">
@@ -27,16 +27,16 @@ export default function AkhilKrishanMaggu() {
               </h3>
 
               <p>
-                <strong>Akhil Krishan Maggu</strong> is a dynamic Partner at Lex
-                Works, with over a decade of diverse experience in business
+                <strong>AKHIL KRISHAN MAGGU</strong> is a dynamic Partner at <strong>Lex
+                Works</strong>, with over a decade of diverse experience in business
                 operations, financial restructuring, and legal compliance. As a
                 dual-qualified professional with expertise in finance and law,
-                Akhil brings a unique blend of strategic insight and practical
+                AKHIL KRISHAN MMAGGU brings a unique blend of strategic insight and practical
                 execution to every challenge.
               </p>
 
               <p>
-                Akhil's professional journey spans leadership roles across
+              AKHIL KRISHAN MAGGU's professional journey spans leadership roles across
                 manufacturing, logistics, and international freight, where he
                 has consistently driven operational efficiency and innovation.
                 His deep understanding of financial restructuring, supply chain
@@ -46,7 +46,7 @@ export default function AkhilKrishanMaggu() {
               </p>
 
               <p>
-                Akhil believes in delivering tailored solutions that address
+              AKHIL KRISHAN MAGGU believes in delivering tailored solutions that address
                 client needs with precision and foresight. His ability to
                 seamlessly integrate legal, financial, and operational expertise
                 enables him to offer comprehensive guidance in today's complex
@@ -55,13 +55,13 @@ export default function AkhilKrishanMaggu() {
 
               <p>
                 Known for his innovative mindset, collaborative leadership, and
-                unwavering dedication, Akhil Krishan Maggu is committed to
+                unwavering dedication, AKHIL KRISHAN MAGGU is committed to
                 advancing Lex Works's mission of empowering clients with
                 effective legal and business strategies.
               </p>
 
               <p className="mb-4">
-                Connect with <strong>Akhil today</strong> to explore how his
+                Connect with <strong>AKHIL KRISHAN MAGGU today</strong> to explore how his
                 expertise can support your legal and financial goals.
               </p>
             </div>
