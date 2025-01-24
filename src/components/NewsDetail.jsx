@@ -9,7 +9,7 @@ export default function NewsDetail({ data }) {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-xl-8 wow fadeInLeft" data-wow-delay="0.1s">
-              <h5 className="sub-title mb-4 pe-3">Update Details</h5>
+              {/* <h5 className="sub-title mb-4 pe-3">Update Details</h5> */}
 
               <h2 className="customs-heading">{data.title}</h2>
               <div className="stripes mb-3">
