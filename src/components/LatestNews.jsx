@@ -36,7 +36,8 @@ export default function LatestNews({ posts }) {
                         </p>
                         <p className="card-text bottomAlign">
                           <small className="text-muted">
-                            {timeAgo(new Date(post.updatedAt))}
+                            {/* {timeAgo(new Date(post.createdAt))} */}
+                            Upload on {new Date(post.createdAt).toDateString()}
                           </small>
                         </p>
                       </div>
@@ -70,7 +71,7 @@ export default function LatestNews({ posts }) {
                         <p className="card-text multiText-truncate">{post?.content}</p>
                         <p className="card-text bottomAlign">
                           <small className="text-muted">
-                            {timeAgo(new Date(post.updatedAt))}
+                          Upload on {new Date(post.createdAt).toDateString()}
                           </small>
                         </p>
                       </div>

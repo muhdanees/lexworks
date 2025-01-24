@@ -3,7 +3,7 @@ import React from "react";
 export default function PracticeAreas() {
   return (
     <>
-      <div className="container-fluid service bg-light overflow-hidden pt-5 watermarkBig">
+      <div className="container-fluid service bg-light overflow-hidden watermarkBig">
         <div className="container py-5">
           <div
             className="section-title text-center mb-5 wow fadeInUp"
@@ -12,15 +12,13 @@ export default function PracticeAreas() {
             <div className="sub-style mb-2">
               <h5 className="sub-title text-primary px-3">Practice Areas</h5>
             </div>
-            <h2 className="display-6 mb-4">
+            <h2 className="display-6 mb-4" style={{ "textWrap": "balance" }}>
               Navigating Your Case With Unwavering Efficiency And Consistency
             </h2>
             <p>
-              facet of your business, and let us be your trusted partner in
+              Facet of your business, and let us be your trusted partner in
               navigating the intricacies of GST, providing you with the clarity
               and support you need to succeed.
-            </p>
-            <p className="mb-0">
               In the realm of litigation, our experienced team is prepared to
               represent clients at every level, from departmental authorities
               and tribunals to the High Court and Supreme Court. We also

@@ -1288,3 +1288,7 @@ a.youtubeHover:hover {
     background: var(--bs-secondary) !important;
 }
 /*** copyright end ***/
+
+.our-team-header {
+  margin-bottom: 5rem;
+}

@@ -1,20 +1,24 @@
 import React from "react";
 
-export default function OurTeam({ page }) {
+export default function OurTeam({ page, showSubtitle = false }) {
   return (
     <>
       <div className="container-fluid country overflow-hidden py-5 watermark">
         <div className="container">
           <div
-            className="section-title text-center mb-5 wow fadeInUp"
+            className="section-title text-center our-team-header wow fadeInUp"
             data-wow-delay="0.1s"
           >
             <div className="sub-style mb-2">
-              <h5 className="sub-title text-primary px-3">{page}</h5>
+              <h5 className="sub-title text-primary px-3">
+                Meet Your Legal Team
+              </h5>
             </div>
-            <h1 className="display-5 mb-4">
-              "A Collective Force for Justice." Meet Your Legal Team
-            </h1>
+            {showSubtitle && (
+              <h1 className="display-5 mb-4">
+                "A Collective Force for Justice."
+              </h1>
+            )}
           </div>
           <div className="row g-4 text-center mb-5">
             <div
