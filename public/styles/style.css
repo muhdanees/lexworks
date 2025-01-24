@@ -136,7 +136,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 .imageCover {
     height: 174px;
-    background: #d9d9d9;
+    background-image: linear-gradient(45deg, var(--bs-secondary) -25%, transparent 48%);
     /* background: #d9d9d9 url(../img/post-bg-image.png) no-repeat; */
     /* background-size: contain;
     background-position: center center; */
@@ -176,7 +176,8 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     color: var(--bs-white);
 }
 .alignContent i {
-    margin-top: 5px;
+  min-width: 20px;
+  margin-top: 5px;
 }
 .contentLine {
     line-height: 24px;

@@ -7,17 +7,15 @@ export default function OurTraning() {
                 <div className="container py-5">
                     <div className="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div className="sub-style">
-                            <h5 className="sub-title text-primary px-3">CHECK OUR TRAINING</h5>
+                            <h5 className="sub-title text-primary px-3">Be a Part of Our Team</h5>
                         </div>
-                        <h1 className="display-5 mb-4">
-                            Get the Best Coacing Service Training with Our Travisa
-                        </h1>
-                        <p className="mb-0">
+                        <h1 className="display-5 mb-4">Ready to make an impact? Join our team and shape the future with us.</h1>
+                        {/* <p className="mb-0">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
                             deleniti amet at atque sequi quibusdam cumque itaque repudiandae
                             temporibus, eius nam mollitia voluptas maxime veniam necessitatibus
                             saepe in ab? Repellat!
-                        </p>
+                        </p> */}
                     </div>
                     <div className="row g-4">
                         <div className="col-lg-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -37,7 +35,7 @@ export default function OurTraning() {
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Autem, veritatis.
                                     </p> */}
-                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Read More <i
+                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Reach Us <i
                                         className="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -59,7 +57,7 @@ export default function OurTraning() {
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Autem, veritatis.
                                     </p> */}
-                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Read More <i
+                                    <a className="btn btn-secondary rounded-pill text-white p-0" href="/contactus">Reach Us <i
                                         className="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>

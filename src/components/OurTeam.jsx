@@ -144,16 +144,16 @@ export default function OurTeam({ page, showSubtitle = false }) {
             </div>
           </div>
 
-          <div
+          {/* <div
             className="section-title text-center mb-5 wow fadeInUp"
             data-wow-delay="0.1s"
           >
             <div className="sub-style mb-2">
               <h5 className="sub-title text-primary px-3">{page}</h5>
             </div>
-          </div>
+          </div> */}
 
-          <div className="row g-4 text-center justify-content-center">
+          {/* <div className="row g-4 text-center justify-content-center">
             <div
               className="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
               data-wow-delay="0.7s"
@@ -210,7 +210,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -20,7 +20,7 @@ function Footer() {
                     className="contentLine hoverAnim"
                     style={{ width: "245px" }}
                   >
-                    C-131, 1st Floor Lajpat Nagar New Delhi - 110024
+                    C-131, 1st Floor Lajpat Nagar<br />New Delhi - 110024
                   </a>
                 </div>
                 <div className="alignContent">
@@ -72,19 +72,19 @@ function Footer() {
                 <div className="alignContent">
                   <i className="fas fa-angle-right me-2"></i>
                   <span className="contentLine">
-                    Litigation &amp; dispute redressals
+                    Litigation &amp; Dispute Redressals
                   </span>
                 </div>
                 <div className="alignContent">
                   <i className="fas fa-angle-right me-2"></i>
                   <span className="contentLine">
-                    Offering business formation, (compliance &amp; Contracts)
+                    Offering Business Formation, (Compliance &amp; Contracts)
                   </span>
                 </div>
                 <div className="alignContent">
                   <i className="fas fa-angle-right me-2"></i>
                   <span className="contentLine">
-                    Resolution facilities &amp; ADR
+                    Resolution Facilities &amp; ADR
                   </span>
                 </div>
                 <div className="alignContent">
