@@ -9,7 +9,7 @@ export default function OurTraning() {
                         <div className="sub-style">
                             <h5 className="sub-title text-primary px-3">Be a Part of Our Team</h5>
                         </div>
-                        <h1 className="display-5 mb-4">Ready to make an impact? Join our team and shape the future with us.</h1>
+                        <h1 className="display-5 mb-4">Ready to make an impact? <br />Join our team and shape the future with us.</h1>
                         {/* <p className="mb-0">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
                             deleniti amet at atque sequi quibusdam cumque itaque repudiandae
