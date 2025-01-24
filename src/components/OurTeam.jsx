@@ -177,7 +177,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
             data-wow-delay="0.1s"
           >
             <div className="sub-style mb-2">
-              <h5 className="sub-title text-primary px-3">Expert Team</h5>
+              <h5 className="sub-title text-primary px-3">Expert Advisors</h5>
             </div>
           </div>
 
