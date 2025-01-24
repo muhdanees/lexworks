@@ -13,9 +13,9 @@ export default function Insolvency() {
                         </div>
                         <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
 
-                            <h5 className="sub-title mb-4 pe-3">Insolvency</h5>
+                            <h5 className="sub-title mb-4 pe-3">IBC</h5>
 
-                            <h3 className="customs-heading mb-4">Insolvency</h3>
+                            {/* <h3 className="customs-heading mb-4">Insolvency</h3> */}
 
                             <p>At <strong>Lex Works</strong>, ur Insolvency Practice provides expert guidance and representation
                                 in matters of corporate and personal insolvency. We understand the challenges that arise during

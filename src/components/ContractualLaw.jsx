@@ -13,9 +13,9 @@ export default function ContractualLaw() {
                         </div>
                         <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
 
-                            <h5 className="sub-title mb-4 pe-3">C-Law</h5>
+                            <h5 className="sub-title mb-4 pe-3">Contract</h5>
 
-                            <h3 className="customs-heading mb-4">Contractual Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Contractual Law</h3> */}
 
                             <p>At <strong>Lex Works</strong>, ur Contractual Law Practice specializes in drafting, reviewing,
                                 and enforcing contracts across various industries. Our experienced attorneys understand the

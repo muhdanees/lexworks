@@ -13,9 +13,9 @@ export default function DirectTax() {
                         </div>
                         <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
 
-                            <h5 className="sub-title mb-4 pe-3">Direct</h5>
+                            <h5 className="sub-title mb-4 pe-3">Taxation</h5>
 
-                            <h3 className="customs-heading mb-4">Direct Tax</h3>
+                            {/* <h3 className="customs-heading mb-4">Direct Tax</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Direct Tax Practice is focused on providing clients with
                                 expert advice and representation in matters related to income tax, wealth tax, and other direct

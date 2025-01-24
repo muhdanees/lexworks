@@ -15,7 +15,7 @@ export default function Ipr() {
 
                             <h5 className="sub-title mb-4 pe-3">IPR</h5>
 
-                            <h3 className="customs-heading mb-4">Intellectual Property Rights</h3>
+                            {/* <h3 className="customs-heading mb-4">Intellectual Property Rights</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Intellectual Property Rights (IPR) Litigation Practice is
                                 dedicated to protecting and enforcing the creative and innovative assets of our clients. We

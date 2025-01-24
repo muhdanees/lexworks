@@ -15,7 +15,7 @@ export default function Arbitration() {
 
                             <h5 className="sub-title mb-4 pe-3">Arbitration</h5>
 
-                            <h3 className="customs-heading mb-4">Arbitration Practice</h3>
+                            {/* <h3 className="customs-heading mb-4">Arbitration Practice</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Arbitration Practice provides expert legal representation in
                                 resolving disputes efficiently and effectively through arbitration. We understand that

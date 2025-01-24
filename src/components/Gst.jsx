@@ -16,7 +16,7 @@ export default function Gst() {
 
                             <h5 className="sub-title mb-4 pe-3">GST</h5>
 
-                            <h3 className="customs-heading mb-4">GOODS AND SERVICES TAX</h3>
+                            {/* <h3 className="customs-heading mb-4">GOODS AND SERVICES TAX</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our dedicated GST Law team offers a comprehensive suite of
                                 services designed to navigate the complexities of Goods and Services Tax. We understand that GST

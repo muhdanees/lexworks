@@ -24,7 +24,7 @@ export default function PageHeaderPost({
             </li>
             <li className="breadcrumb-item">
               <a href="/news-listing" className="text-white">
-                Pages
+                Posts
               </a>
             </li>
             <li className="breadcrumb-item active text-secondary">{pageTitle}</li>

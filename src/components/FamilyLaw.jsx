@@ -15,7 +15,7 @@ export default function FamilyLaw() {
 
                             <h5 className="sub-title mb-4 pe-3">Family</h5>
 
-                            <h3 className="customs-heading mb-4">Family Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Family Law</h3> */}
 
                             <p>Our Family Law Practice at <strong>Lex Works</strong>, is committed to providing compassionate
                                 and skilled legal representation in sensitive family matters. We understand the complexities of

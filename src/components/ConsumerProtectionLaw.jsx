@@ -15,7 +15,7 @@ export default function ConsumerProtectionLaw() {
 
                             <h5 className="sub-title mb-4 pe-3">Consumer Protection</h5>
 
-                            <h3 className="customs-heading mb-4">Consumer Protection Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Consumer Protection Law</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Consumer Protection Law Practice is dedicated to safeguarding
                                 the rights of consumers and ensuring compliance with relevant laws and regulations. We provide

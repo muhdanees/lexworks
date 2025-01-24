@@ -15,7 +15,7 @@ export default function EdPmlaFema() {
 
                             <h5 className="sub-title mb-4 pe-3">ED</h5>
 
-                            <h3 className="customs-heading mb-4">Enforcement Directorate</h3>
+                            {/* <h3 className="customs-heading mb-4">Enforcement Directorate</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Enforcement Directorate (ED) Litigation Practice focuses on
                                 providing robust legal support in matters involving economic offenses, including money

@@ -16,7 +16,7 @@ export default function Customs() {
 
                             <h5 className="sub-title mb-4 pe-3">Customs</h5>
 
-                            <h3 className="customs-heading mb-4">CUSTOMS ADVISORY AND LITIGATION</h3>
+                            {/* <h3 className="customs-heading mb-4">CUSTOMS ADVISORY AND LITIGATION</h3> */}
 
                             <p>At <strong>Lex Works</strong>, we recognize that navigating the complexities of customs law is
                                 crucial for businesses engaged in international trade. Our Customs Advisory and Litigation team

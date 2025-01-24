@@ -15,7 +15,7 @@ export default function BankingAndFinance() {
 
                             <h5 className="sub-title mb-4 pe-3">Banking & Finance</h5>
 
-                            <h3 className="customs-heading mb-4">Banking & Finance Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Banking & Finance Law</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Banking and Finance Law Practice is dedicated to providing
                                 comprehensive legal support to financial institutions, corporations, and individuals in

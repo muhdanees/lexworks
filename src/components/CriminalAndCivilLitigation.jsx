@@ -15,9 +15,9 @@ export default function CriminalAndCivilLitigation() {
                         </div>
                         <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
 
-                            <h5 className="sub-title mb-4 pe-3">CCL </h5>
+                            <h5 className="sub-title mb-4 pe-3">Litigation</h5>
 
-                            <h3 className="customs-heading mb-4">Criminal and Civil Litigation</h3>
+                            {/* <h3 className="customs-heading mb-4">Criminal and Civil Litigation</h3> */}
 
                             <p>At <strong>Lex Works</strong>, our Criminal and Civil Litigation Practice is committed to
                                 providing robust legal representation in both criminal and civil matters. Our experienced

@@ -23,11 +23,11 @@ export default function PageHeader({
                 Home
               </a>
             </li>
-            <li className="breadcrumb-item">
+            {/* <li className="breadcrumb-item">
               <a href={lastPage} className="text-white">
                 Pages
               </a>
-            </li>
+            </li> */}
             <li className="breadcrumb-item active text-secondary">{pageTitle}</li>
           </ol>
         </div>

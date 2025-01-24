@@ -15,7 +15,7 @@ export default function RealStateLaw() {
 
                             <h5 className="sub-title mb-4 pe-3">Real Estate</h5>
 
-                            <h3 className="customs-heading mb-4">Real Estate Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Real Estate Law</h3> */}
 
                             <p>Our Real Estate Law Practice at <strong>Lex Works</strong>, is dedicated to providing expert
                                 legal guidance in all aspects of real estate transactions and disputes. We assist clients with

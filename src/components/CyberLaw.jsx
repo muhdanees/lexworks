@@ -15,7 +15,7 @@ export default function CyberLaw() {
 
                             <h5 className="sub-title mb-4 pe-3">Cyber</h5>
 
-                            <h3 className="customs-heading mb-4">Cyber Law</h3>
+                            {/* <h3 className="customs-heading mb-4">Cyber Law</h3> */}
 
                             <p>Our Cyber Law Practice at <strong>Lex Works</strong>, ocuses on the legal challenges and
                                 opportunities presented by the digital landscape. We provide comprehensive services related to

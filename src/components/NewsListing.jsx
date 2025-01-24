@@ -11,9 +11,9 @@ export default function NewsListing({ data }) {
               className="col-xl-8 listingRow wow fadeInLeft"
               data-wow-delay="0.1s"
             >
-              <h5 className="sub-title mb-4 pe-3">Legal Updates</h5>
+              <h5 className="sub-title mb-4 pe-3">Latest</h5>
 
-              <h3 className="customs-heading mb-4">
+              {/* <h3 className="customs-heading mb-4">
                 Customs Advisory and Litigation
               </h3>
 
@@ -23,7 +23,7 @@ export default function NewsListing({ data }) {
                 international trade. Our Customs Advisory and Litigation team
                 combines wealth of experience to offer strategic insights and
                 comprehensive support tailored to your specific needs.
-              </p>
+              </p> */}
               {data.map((post) => (
                 <a
                   href={`/posts/${post.slug}`}
@@ -50,7 +50,8 @@ export default function NewsListing({ data }) {
                         </p>
                         <p className="card-text">
                           <small className="text-dark">
-                            {timeAgo(new Date(post.updatedAt))}
+                            {/* {timeAgo(new Date(post.createdAt))} */}
+                            Uploaded on {new Date(post.createdAt).toDateString()}
                           </small>
                         </p>
                       </div>
