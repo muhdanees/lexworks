@@ -1,0 +1,17 @@
+export const tags = [
+  "GST",
+  "Customs",
+  "ED (PMLA/FEMA)",
+  "IPR",
+  "Arbitration",
+  "Banking & Finance",
+  "Corporate Law",
+  "Criminal & Civil Litigation",
+  "Cyber Law",
+  "Consumer Protection Law",
+  "Contractual Law",
+  "Direct Tax",
+  "Family Law",
+  "Insolvency",
+  "Real Estate Law",
+];

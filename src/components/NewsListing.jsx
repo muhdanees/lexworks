@@ -1,5 +1,6 @@
 import React from "react";
 import timeAgo from "../utils/timeago";
+import { tags } from "../utils/tags";
 
 export default function NewsListing({ data }) {
   return (
@@ -51,7 +52,8 @@ export default function NewsListing({ data }) {
                         <p className="card-text">
                           <small className="text-dark">
                             {/* {timeAgo(new Date(post.createdAt))} */}
-                            Uploaded on {new Date(post.createdAt).toDateString()}
+                            Uploaded on{" "}
+                            {new Date(post.createdAt).toDateString()}
                           </small>
                         </p>
                       </div>
@@ -203,21 +205,32 @@ export default function NewsListing({ data }) {
             </div>
 
             <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
-              <h5 className="sub-title mb-4 pe-3">Customs</h5>
+              <h5 className="sub-title mb-4 pe-3">Tags</h5>
 
-              <h3 className="customs-heading mb-4">
+              <div className="">
+                {tags.map((tag) => (
+                  <a
+                    href={`/tags/${tag.toLowerCase()}`}
+                    className="tags"
+                  >
+                    #{tag}
+                  </a>
+                ))}
+              </div>
+
+              {/* <h3 className="customs-heading mb-4">
               Customs Advisory and Litigation
-              </h3>
+              </h3> */}
 
-              <p>
+              {/* <p>
                 At <strong>Lex Works</strong>, we recognize that navigating the
                 complexities of customs law is crucial for businesses engaged in
                 international trade. Our Customs Advisory and Litigation team
                 combines wealth of experience to offer strategic insights and
                 comprehensive support tailored to your specific needs.
-              </p>
+              </p> */}
 
-              <div className="accordion" id="accordionExample">
+              {/* <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingOne">
                     <button
@@ -287,7 +300,7 @@ export default function NewsListing({ data }) {
                     <div className="accordion-body">Data Item #3</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
