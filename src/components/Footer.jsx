@@ -35,7 +35,7 @@ function Footer() {
                   className="alignContent"
                 >
                   <i className="fab fa-whatsapp me-2"></i>
-                  <span className="contentLine">+91 918826872049</span>
+                  <span className="contentLine">Connect</span>
                 </a>
                 <a href="tel:011-41540229" className="alignContent mb-3">
                   <i className="fas fa-phone-alt me-2"></i>
