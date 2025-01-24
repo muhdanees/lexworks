@@ -52,7 +52,7 @@ export default function Posts({ url }) {
           >
             <span>{post.title}</span>
             <span className="block mt-1 text-sm text-gray-500">
-              Updated: {new Date(post.updatedAt).toDateString()}
+              Updated: {new Date(post.createdAt).toDateString()}
             </span>
           </a>
           <div className="flex justify-center items-center">

@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
-import CreatableSelect from "react-select/creatable";
+// import CreatableSelect from "react-select/creatable";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
+import { tags } from "../../utils/tags";
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -32,7 +33,7 @@ export default function CreatePost({ slug, API_URL }) {
   const [preview, setPreview] = useState(null);
   const [data, setData] = useState({});
   const [authors, setAuthors] = useState([]);
-  const [options, setOptions] = useState([]);
+  // const [options, setOptions] = useState([]);
 
   const getAllTags = async () => {
     const res = await fetch(`${API_URL}/tags`, {
@@ -106,7 +107,7 @@ export default function CreatePost({ slug, API_URL }) {
         content: dataSubmit.content,
         title: dataSubmit.title,
         status: saveType.current,
-        categories: dataSubmit.selectedOption.map((option) => option.value),
+        categories: dataSubmit.selectedOption.value,
         slug: dataSubmit.slug,
         authorId: dataSubmit.selectedOptionAuthor.value,
         image: imageJSON.url,
@@ -177,7 +178,7 @@ export default function CreatePost({ slug, API_URL }) {
         setValue("content", html);
       });
     }
-    getAllTags();
+    // getAllTags();
     getAllAuthors();
   }, [editorRef.current, slug]);
 
@@ -262,25 +263,23 @@ export default function CreatePost({ slug, API_URL }) {
         <div className="pb-4 block">
           <span className="block mb-2">Tags</span>
           <div className="mb-2">
-            {optionsWatch?.map((option) => (
-              <span
-                className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
-                key={option.value}
-              >
-                {option.value}
+          {optionsWatch.value.length > 0 ? (
+              <span className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded">
+                {optionsWatch.value}
               </span>
-            ))}
+            ) : null}
           </div>
           <Controller
             name="selectedOption"
             control={control}
             render={({ field }) => (
-              <CreatableSelect
+              <Select
                 {...field}
-                options={options}
+                options={tags.map((tag) => ({ label: tag, value: tag }))}
                 onChange={(selected) => field.onChange(selected)}
-                isMulti
-                onCreateOption={handleCreate}
+                // isMulti
+                isSearchable
+                // onCreateOption={handleCreate}
                 placeholder="Select or create an option"
               />
             )}

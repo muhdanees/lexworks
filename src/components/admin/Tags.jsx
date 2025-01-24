@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import { tags } from "../../utils/tags";
 
 export default function Tags({ API_URL }) {
   const [tag, setTag] = useState("");
-  const [tags, setTags] = useState([]);
+  // const [tags, setTags] = useState([]);
 
   const onCreate = async () => {
     const res = await fetch(`${API_URL}/tags`, {
@@ -47,7 +48,7 @@ export default function Tags({ API_URL }) {
   }
 
   useEffect(() => {
-    getAllTags();
+    // getAllTags();
   }, []);
 
   return (
@@ -58,9 +59,9 @@ export default function Tags({ API_URL }) {
             htmlFor="tag"
             className="block text-sm/6 font-medium text-gray-900 mb-2"
           >
-            Add Tag
+            Tags
           </label>
-          <div className="flex w-full gap-4">
+          <div className="hidden w-full gap-4">
             <div className="flex-1">
               <input
                 type="text"
@@ -86,17 +87,17 @@ export default function Tags({ API_URL }) {
         <div className="mt-4">
           {tags.map((currentTag) => (
             <span
-              key={currentTag.tag}
+              key={currentTag}
               id="badge-dismiss-default"
-              className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
+              className="inline-flex items-center px-2 py-1 me-2 mb-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
             >
-              {currentTag.tag}
+              {currentTag}
               <button
                 type="button"
-                className="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900"
+                className="hidden items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900"
                 data-dismiss-target="#badge-dismiss-default"
                 aria-label="Remove"
-                onClick={() => removeTag(currentTag.tag)}
+                onClick={() => removeTag(currentTag)}
               >
                 <svg
                   className="w-2 h-2"
