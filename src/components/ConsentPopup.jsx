@@ -17,7 +17,7 @@ export default function ConsentPopup() {
                                 aria-label="Close"
                             ></button> */}
             </div>
-            <div className="modal-body">
+            <div className="modal-body consent">
               <p>
                 The rules of the Bar Council of India prohibit lawyers and law
                 firms from advertising and soliciting work through communication
@@ -38,13 +38,7 @@ export default function ConsentPopup() {
               </p>
 
               <p>
-                The information on
-                <a href="https://lexworks.co.in/">www.lexworkss.com</a> is not a
-                substitute for legal advice, and as such, we at “Lex Works” are
-                not liable for any consequence of any action taken by the user
-                relying on material/information provided under this website. In
-                cases where the user has any legal issues, they must, in all
-                cases, seek independent legal advice.
+                The information on <a href="https://www.lexworks.co.in/">www.lexworks.co.in</a> is not a substitute for legal advice, and as such, we at “Lex Works” are not liable for any consequence of any action taken by the user relying on material/information provided under this website. In cases where the user has any legal issues, they must, in all cases, seek independent legal advice.
               </p>
 
               <p>

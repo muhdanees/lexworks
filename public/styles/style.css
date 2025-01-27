@@ -1285,6 +1285,12 @@ a.whatsappHover i {
 a.whatsappHover:hover i {
   color: #25d366;
 }
+.consent a {
+  text-decoration: underline;
+}
+.consent a:hover {
+  text-decoration: none;
+}
 
 /*** Footer End ***/
 
