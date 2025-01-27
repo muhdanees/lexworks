@@ -1,4 +1,5 @@
 import React from "react";
+import { image_path } from "../utils/images";
 
 export default function OurTeam({ page, showSubtitle = false }) {
   return (
@@ -27,20 +28,50 @@ export default function OurTeam({ page, showSubtitle = false }) {
             >
               <div className="country-item">
                 <div className="rounded overflow-hidden">
-                  <img
-                    src="img/akhil-krishnan-maggu.jpg"
-                    className="img-fluid w-100 rounded"
-                    alt="Image"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/akhil-krishnan-maggu.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/akhil-krishnan-maggu.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/akhil-krishnan-maggu.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid w-100 rounded"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/akhil-krishnan-maggu.jpg`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-flag">
-                  <img
-                    src="img/hammer.png"
-                    className="img-fluid rounded-circle"
-                    alt="Image"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/hammer.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid rounded-circle"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/hammer.png`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-name">
                   <a href="akhil-krishan-maggu" className="text-white fs-4">
@@ -55,20 +86,50 @@ export default function OurTeam({ page, showSubtitle = false }) {
             >
               <div className="country-item">
                 <div className="rounded overflow-hidden">
-                  <img
-                    src="img/vikas-sareen.jpg"
-                    className="img-fluid w-100 rounded"
-                    alt="Image"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/vikas-sareen.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/vikas-sareen.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/vikas-sareen.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid w-100 rounded"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/vikas-sareen.jpg`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-flag">
-                  <img
-                    src="img/hammer.png"
-                    className="img-fluid rounded-circle"
-                    alt="Image"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/hammer.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid rounded-circle"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/hammer.png`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-name">
                   <a href="vikas-sareen" className="text-white fs-4">
@@ -83,20 +144,50 @@ export default function OurTeam({ page, showSubtitle = false }) {
             >
               <div className="country-item">
                 <div className="rounded overflow-hidden">
-                  <img
-                    src="img/ayush-mittal.jpg"
-                    className="img-fluid w-100 rounded"
-                    alt="Image"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/ayush-mittal.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/ayush-mittal.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/ayush-mittal.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid w-100 rounded"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/ayush-mittal.jpg`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-flag">
-                  <img
-                    src="img/hammer.png"
-                    className="img-fluid rounded-circle"
-                    alt="Image"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/hammer.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid rounded-circle"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/hammer.png`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-name">
                   <a href="ayush-mittal" className="text-white fs-4">
@@ -111,20 +202,50 @@ export default function OurTeam({ page, showSubtitle = false }) {
             >
               <div className="country-item">
                 <div className="rounded overflow-hidden">
-                  <img
-                    src="img/maninder-kaur.jpg"
-                    className="img-fluid w-100 rounded"
-                    alt="Image"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/maninder-kaur.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/maninder-kaur.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/maninder-kaur.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid w-100 rounded"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/maninder-kaur.jpg`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-flag">
-                  <img
-                    src="img/hammer.png"
-                    className="img-fluid rounded-circle"
-                    alt="Image"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`${image_path}/hammer.jxl`}
+                      type="image/jxl"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.avif`}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={`${image_path}/hammer.webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      className="img-fluid rounded-circle"
+                      decoding="async"
+                      loading="lazy"
+                      src={`${image_path}/hammer.png`}
+                      alt=""
+                    />
+                  </picture>
                 </div>
                 <div className="country-name">
                   <a href="maninder-kaur" className="text-white fs-4">

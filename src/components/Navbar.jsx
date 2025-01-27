@@ -1,5 +1,5 @@
 import React from "react";
-
+import { image_path } from "../utils/images";
 export default function Topbar({ page = "" }) {
   return (
     <>
@@ -7,7 +7,13 @@ export default function Topbar({ page = "" }) {
         <nav className="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
           <a href="/" className="navbar-brand p-0">
             <h1 className="display-5 text-secondary m-0">
-              <img src="/brand-logo.png" className="img-fluid" alt="Brand Logo" />
+              {/* <img src="/brand-logo.png" className="img-fluid" alt="Brand Logo" /> */}
+              <picture>
+                <source srcSet={`${image_path}/brand-logo.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/brand-logo.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/brand-logo.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/brand-logo.png`} alt="Brand Logo" />
+              </picture>
             </h1>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
