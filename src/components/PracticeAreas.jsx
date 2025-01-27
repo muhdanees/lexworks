@@ -16,7 +16,7 @@ export default function PracticeAreas() {
               Navigating Your Case With Unwavering Efficiency And Consistency
             </h2>
             <p>
-              Facet of your business, and let us be your trusted partner in
+              Facets of your business, and let us be your trusted partner in
               navigating the intricacies of Legal field, providing you with the clarity
               and support you need to succeed.
               In the realm of litigation, our experienced team is prepared to

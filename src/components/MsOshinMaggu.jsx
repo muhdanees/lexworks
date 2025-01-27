@@ -29,7 +29,7 @@ export default function MsOshinMaggu() {
               <p>
                 <strong>OSHIN MAGGU</strong> is a dynamic professional with
                 a unique combination of expertise in biotechnology, digital
-                strategy, and law. As an Senior Associate at <strong>Lex Works</strong>, she
+                strategy, and law. As a Senior Associate at <strong>Lex Works</strong>, she
                 brings a multidisciplinary approach to problem-solving,
                 seamlessly blending technical knowledge, strategic thinking, and
                 legal acumen.
@@ -46,7 +46,7 @@ export default function MsOshinMaggu() {
               </p>
 
               <p>
-                In 2023, OSHIN MAGGU added a legal dimension to her career by
+                In 2022, OSHIN MAGGU added a legal dimension to her career by
                 earning her LL.B., further enhancing her ability to navigate the
                 intersections of science, business, and law. Her strategic
                 mindset and attention to detail make her an invaluable asset in

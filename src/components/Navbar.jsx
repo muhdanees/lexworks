@@ -20,7 +20,7 @@ export default function Topbar({ page = "" }) {
               <a href="/ourteam" className={`nav-item nav-link ${page === "ourteam" ? "active": ""}`}>Our Team</a>
               <div className="nav-item dropdown">
                 <a href="javascript:void(0)" className={`nav-link ${page === "practice-area" ? "active": ""}`} data-bs-toggle="dropdown">
-                  <span className="dropdown-toggle">Practice Area</span>
+                  <span className="dropdown-toggle">Practice Areas</span>
                 </a>
                 <div className="dropdown-menu m-0">
                   <div className="d-flex flex-column flex-md-row">

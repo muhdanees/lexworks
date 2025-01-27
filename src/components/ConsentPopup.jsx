@@ -8,7 +8,7 @@ export default function ConsentPopup() {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">
-                CAUTION NOTICE TO WHOMSOEVER IT MAY CONCERN
+                Caution Notice To whom it may concern
               </h5>
               {/* <button
                                 type="button"

@@ -141,14 +141,7 @@ function Footer() {
               </span>
             </div>
             <div className="col-md-6 text-center text-md-end text-primary">
-              Designed & Develped By
-              <a
-                className="border-bottom text-primary"
-                href="https://muhdanees.github.io/codeplayer/"
-              >
-                Mohd Anees
-              </a>
-              .
+              Developed by Lex Works.
             </div>
           </div>
         </div>

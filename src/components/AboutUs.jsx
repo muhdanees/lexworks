@@ -17,7 +17,7 @@ export default function AboutUs() {
                             <h5 className="sub-title mb-4 pe-3">About Us</h5>
                             <h3 className="customs-heading mb-4">Your Trusted Legal Partner</h3>
 
-                            <p className="mb-4">At <strong>Lex Works</strong> our foundation is built on the inspiration to resolve
+                            <p className="mb-4">At <strong>Lex Works</strong>, our foundation is built on the inspiration to resolve
                                 legal and technical challenges for those in need. We are dedicated to being a source of support
                                 and guidance for our clients. Our inspiration comes from a desire to assist those who need it
                                 most by offering nationwide legal solutions and bringing our expertise to clients across India.
