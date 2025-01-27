@@ -1,4 +1,5 @@
 import React from "react";
+import { image_path } from "../utils/images";
 
 export default function OurTraning() {
     return (
@@ -21,7 +22,13 @@ export default function OurTraning() {
                         <div className="col-lg-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div className="training-item">
                                 <div className="training-inner">
-                                    <img src="img/internWithUs.png" className="img-fluid w-100 rounded" alt="Image" />
+                                    <picture>
+                                      <source srcSet={`${image_path}/internWithUs.jxl`} type="image/jxl" />
+                                      <source srcSet={`${image_path}/internWithUs.avif`} type="image/avif" />
+                                      <source srcSet={`${image_path}/internWithUs.webp`} type="image/webp" />
+                                      <img className="img-fluid w-100 rounded" decoding="async" loading="lazy" src={`${image_path}/internWithUs.png`} alt="" />
+                                    </picture>
+                                    {/* <img src="img/internWithUs.png" className="img-fluid w-100 rounded" alt="Image" /> */}
                                     <div className="training-title-name">
                                         <a href="#" className="h4 text-white mb-0">Intern with Us</a>
                                         {/* <a href="#" className="h4 text-white mb-0">Coaching</a> */}
@@ -43,7 +50,13 @@ export default function OurTraning() {
                         <div className="col-lg-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.7s">
                             <div className="training-item">
                                 <div className="training-inner">
-                                    <img src="img/joinUs.png" className="img-fluid w-100 rounded" alt="Image" />
+                                    <picture>
+                                      <source srcSet={`${image_path}/joinUs.jxl`} type="image/jxl" />
+                                      <source srcSet={`${image_path}/joinUs.avif`} type="image/avif" />
+                                      <source srcSet={`${image_path}/joinUs.webp`} type="image/webp" />
+                                      <img className="img-fluid w-100 rounded" decoding="async" loading="lazy" src={`${image_path}/joinUs.png`} alt="" />
+                                    </picture>
+                                    {/* <img src="img/joinUs.png" className="img-fluid w-100 rounded" alt="Image" /> */}
                                     <div className="training-title-name">
                                         <a href="#" className="h4 text-white mb-0">Join Us</a>
                                         {/* <a href="#" className="h4 text-white mb-0">Coaching</a> */}
