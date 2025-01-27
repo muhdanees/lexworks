@@ -1,5 +1,5 @@
 import React from "react";
-
+import { image_path } from "../utils/images";
 export default function PracticeAreas() {
   return (
     <>
@@ -12,48 +12,66 @@ export default function PracticeAreas() {
             <div className="sub-style mb-2">
               <h5 className="sub-title text-primary px-3">Practice Areas</h5>
             </div>
-            <h2 className="display-6 mb-4" style={{ "textWrap": "balance" }}>
+            <h2 className="display-6 mb-4" style={{ textWrap: "balance" }}>
               Navigating Your Case With Unwavering Efficiency And Consistency
             </h2>
             <p>
-              Facets of your business, and let us be your trusted partner in
-              navigating the intricacies of Legal field, providing you with the clarity
-              and support you need to succeed.
-              In the realm of litigation, our experienced team is prepared to
-              represent clients at every level, from departmental authorities
-              and tribunals to the High Court and Supreme Court. We also
-              advocate on behalf of our clients before Advance Ruling
-              Authorities, seeking clarity and favorable rulings on complex
-              business transactions.
+              Facet of your business, and let us be your trusted partner in
+              navigating the intricacies of Legal field, providing you with the
+              clarity and support you need to succeed. In the realm of
+              litigation, our experienced team is prepared to represent clients
+              at every level, from departmental authorities and tribunals to the
+              High Court and Supreme Court. We also advocate on behalf of our
+              clients before Advance Ruling Authorities, seeking clarity and
+              favorable rulings on complex business transactions.
             </p>
           </div>
           <div className="row g-4">
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/customs.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/customs.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/customs.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/customs.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/customs.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="customs.html" className="h5 text-white mb-0">
+                        <a href="/customs" className="h5 text-white mb-0">
                           Customs
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="customs.html"
+                        href="/customs"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="customs.html">
+                      <a href="/customs">
                         <h4 className="text-white h5 mb-4 py-3">CUSTOMS</h4>
                       </a>
                       <div className="px-4">
@@ -64,7 +82,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill py-3 px-5"
-                          href="customs.html"
+                          href="/customs"
                         >
                           Read More
                         </a>
@@ -74,32 +92,51 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.3s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/gst.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/gst.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/gst.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/gst.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/gst.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="gst.html" className="h5 text-white mb-0">
+                        <a href="/gst" className="h5 text-white mb-0">
                           GST
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="gst.html"
+                        href="/gst"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="gst.html">
+                      <a href="/gst">
                         <h4 className="text-white h5 mb-4 py-3">
                           GOODS AND SERVICES TAX
                         </h4>
@@ -113,7 +150,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="gst.html"
+                          href="/gst"
                         >
                           Read More
                         </a>
@@ -123,33 +160,54 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/ed.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/ed.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/ed.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/ed.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/ed.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="ed-pmla-fema.html" className="h5 text-white mb-0">
+                        <a href="/ed-pmla-fema" className="h5 text-white mb-0">
                           ED/PMLA/FEMA
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="ed-pmla-fema.html"
+                        href="/ed-pmla-fema"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="ed-pmla-fema.html">
-                        <h4 className="text-white h5 mb-4 py-3">ED/PMLA/FEMA</h4>
+                      <a href="/ed-pmla-fema">
+                        <h4 className="text-white h5 mb-4 py-3">
+                          ED/PMLA/FEMA
+                        </h4>
                       </a>
                       <div className="px-4">
                         <p className="mb-4 text-white">
@@ -160,7 +218,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="ed-pmla-fema.html"
+                          href="/ed-pmla-fema"
                         >
                           Read More
                         </a>
@@ -170,32 +228,51 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/ipr.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/ipr.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/ipr.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/ipr.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/ipr.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="ipr.html" className="h5 text-white mb-0">
+                        <a href="/ipr" className="h5 text-white mb-0">
                           IPR
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="ipr.html"
+                        href="/ipr"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="ipr.html">
+                      <a href="/ipr">
                         <h4 className="text-white h5 mb-4 py-3">IPR</h4>
                       </a>
                       <div className="px-4">
@@ -207,7 +284,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="ipr.html"
+                          href="/ipr"
                         >
                           Read More
                         </a>
@@ -217,32 +294,51 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.3s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/cyberLaw.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/cyberLaw.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/cyberLaw.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/cyberLaw.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/cyberLaw.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="cyber-law.html" className="h5 text-white mb-0">
+                        <a href="/cyber-law" className="h5 text-white mb-0">
                           Cyber Law
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="cyber-law.html"
+                        href="/cyber-law"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="cyber-law.html">
+                      <a href="/cyber-law">
                         <h4 className="text-white h5 mb-4 py-3">Cyber Law</h4>
                       </a>
                       <div className="px-4">
@@ -254,7 +350,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="cyber-law.html"
+                          href="/cyber-law"
                         >
                           Read More
                         </a>
@@ -264,21 +360,40 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/banking.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/banking.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/banking.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/banking.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/banking.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
                         <a
-                          href="banking-and-finance.html"
+                          href="/banking-and-finance"
                           className="h5 text-white mb-0"
                         >
                           Banking and Finance
@@ -286,13 +401,13 @@ export default function PracticeAreas() {
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="banking-and-finance.html"
+                        href="/banking-and-finance"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="banking-and-finance.html">
+                      <a href="/banking-and-finance">
                         <h4 className="text-white h5 mb-4 py-3">
                           Banking and Finance Law
                         </h4>
@@ -305,7 +420,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="banking-and-finance.html"
+                          href="/banking-and-finance"
                         >
                           Read More
                         </a>
@@ -315,21 +430,40 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/criminalLaw.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/criminalLaw.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/criminalLaw.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/criminalLaw.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/criminalLaw.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded py-3 mx-5 mb-4">
                         <a
-                          href="criminal-and-civil-litigation.html"
+                          href="/criminal-and-civil-litigation"
                           className="h5 text-white mb-0"
                         >
                           Criminal and Civil Litigation
@@ -337,13 +471,13 @@ export default function PracticeAreas() {
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="criminal-and-civil-litigation.html"
+                        href="/criminal-and-civil-litigation"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="criminal-and-civil-litigation.html">
+                      <a href="/criminal-and-civil-litigation">
                         <h4 className="text-white h5 mb-4 py-3">
                           Criminal and Civil Litigation
                         </h4>
@@ -357,7 +491,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="criminal-and-civil-litigation.html"
+                          href="/criminal-and-civil-litigation"
                         >
                           Read More
                         </a>
@@ -367,32 +501,51 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.3s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/arbitration.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/arbitration.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/arbitration.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/arbitration.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/arbitration.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="arbitration.html" className="h5 text-white mb-0">
+                        <a href="/arbitration" className="h5 text-white mb-0">
                           Arbitration Practice
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="arbitration.html"
+                        href="/arbitration"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="arbitration.html">
+                      <a href="/arbitration">
                         <h4 className="text-white mb-4 py-3">
                           Arbitration Practice
                         </h4>
@@ -406,7 +559,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="arbitration.html"
+                          href="/arbitration"
                         >
                           Read More
                         </a>
@@ -416,33 +569,54 @@ export default function PracticeAreas() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div
+              className="col-lg-6 col-xl-4 wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
               <div className="service-item">
                 <div className="service-inner">
                   <div className="service-img">
-                    <img
-                      src="img/insolvency.png"
-                      className="img-fluid w-100 rounded"
-                      alt="Image"
-                    />
+                    <picture>
+                      <source
+                        srcSet={`${image_path}/insolvency.jxl`}
+                        type="image/jxl"
+                      />
+                      <source
+                        srcSet={`${image_path}/insolvency.avif`}
+                        type="image/avif"
+                      />
+                      <source
+                        srcSet={`${image_path}/insolvency.webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        className="img-fluid w-100 rounded"
+                        decoding="async"
+                        loading="lazy"
+                        src={`${image_path}/insolvency.png`}
+                        alt=""
+                      />
+                    </picture>
                   </div>
                   <div className="service-title">
                     <div className="service-title-name">
                       <div className="bg-primary text-center rounded p-3 mx-5 mb-4">
-                        <a href="insolvency.html" className="h5 text-white mb-0">
+                        <a href="/insolvency" className="h5 text-white mb-0">
                           Insolvency Law
                         </a>
                       </div>
                       <a
                         className="btn bg-secondary text-primary btn-sm rounded-pill py-2 px-3 mb-4"
-                        href="insolvency.html"
+                        href="/insolvency"
                       >
                         Read More
                       </a>
                     </div>
                     <div className="service-content pb-4">
-                      <a href="insolvency.html">
-                        <h4 className="text-white h5 mb-4 py-3">Insolvency Law</h4>
+                      <a href="/insolvency">
+                        <h4 className="text-white h5 mb-4 py-3">
+                          Insolvency Law
+                        </h4>
                       </a>
                       <div className="px-4">
                         <p className="mb-4 text-white">
@@ -452,7 +626,7 @@ export default function PracticeAreas() {
                         </p>
                         <a
                           className="btn btn-primary border-secondary rounded-pill text-white py-3 px-5"
-                          href="insolvency.html"
+                          href="/insolvency"
                         >
                           Read More
                         </a>

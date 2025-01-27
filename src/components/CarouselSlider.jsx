@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { image_path } from "../utils/images";
 
 export default function CarouselSlider() {
   return (
@@ -19,7 +20,12 @@ export default function CarouselSlider() {
 
           <div className="carousel-inner" role="listbox">
             <div className="carousel-item active">
-              <img src="/carousel-1.png" className="img-fluid" alt="Image" />
+              <picture>
+                <source srcSet={`${image_path}/carousels/carousel-1.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/carousels/carousel-1.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/carousels/carousel-1.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/carousels/carousel-1.png`} alt="" />
+              </picture>
               {/* <div className="carousel-caption">
               <div className="text-center p-4" style="max-width: 900px">
                 <h4
@@ -53,16 +59,40 @@ export default function CarouselSlider() {
             </div>
 
             <div className="carousel-item">
-              <img src="/carousel-2.png" className="img-fluid" alt="Image" />
+              {/* <img src="/carousel-2.png" className="img-fluid" alt="Image" /> */}
+              <picture>
+                <source srcSet={`${image_path}/carousels/carousel-2.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/carousels/carousel-2.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/carousels/carousel-2.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/carousels/carousel-2.png`} alt="" />
+              </picture>
             </div>
             <div className="carousel-item">
-              <img src="/carousel-3.png" className="img-fluid" alt="Image" />
+              {/* <img src="/carousel-3.png" className="img-fluid" alt="Image" /> */}
+              <picture>
+                <source srcSet={`${image_path}/carousels/carousel-3.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/carousels/carousel-3.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/carousels/carousel-3.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/carousels/carousel-3.png`} alt="" />
+              </picture>
             </div>
             <div className="carousel-item">
-              <img src="/carousel-4.png" className="img-fluid" alt="Image" />
+              {/* <img src="/carousel-4.png" className="img-fluid" alt="Image" /> */}
+              <picture>
+                <source srcSet={`${image_path}/carousels/carousel-4.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/carousels/carousel-4.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/carousels/carousel-4.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/carousels/carousel-4.png`} alt="" />
+              </picture>
             </div>
             <div className="carousel-item">
-              <img src="/carousel-5.png" className="img-fluid" alt="Image" />
+              {/* <img src="/carousel-5.png" className="img-fluid" alt="Image" /> */}
+              <picture>
+                <source srcSet={`${image_path}/carousels/carousel-5.jxl`} type="image/jxl" />
+                <source srcSet={`${image_path}/carousels/carousel-5.avif`} type="image/avif" />
+                <source srcSet={`${image_path}/carousels/carousel-5.webp`} type="image/webp" />
+                <img className="img-fluid" decoding="async" loading="lazy" src={`${image_path}/carousels/carousel-5.png`} alt="" />
+              </picture>
             </div>
           </div>
 

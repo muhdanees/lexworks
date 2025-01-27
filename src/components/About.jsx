@@ -1,4 +1,5 @@
 import React from "react";
+import { image_path } from "../utils/images";
 
 export default function About() {
   return (
@@ -8,11 +9,32 @@ export default function About() {
           <div className="row g-5">
             <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="bg-light">
-                <img
+                <picture>
+                  <source
+                    srcSet={`${image_path}/aboutCompany.jxl`}
+                    type="image/jxl"
+                  />
+                  <source
+                    srcSet={`${image_path}/aboutCompany.avif`}
+                    type="image/avif"
+                  />
+                  <source
+                    srcSet={`${image_path}/aboutCompany.webp`}
+                    type="image/webp"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src={`${image_path}/aboutCompany.png`}
+                    alt="Direct TAX"
+                    className="img-fluid rounded img-thumbnail w-100"
+                  />
+                </picture>
+                {/* <img
                   src="img/aboutCompany.png"
                   className="img-fluid rounded img-thumbnail w-100"
                   alt="Direct TAX"
-                />
+                /> */}
               </div>
             </div>
             <div className="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
@@ -31,7 +53,13 @@ export default function About() {
                   <a
                     className="btn btn-primary mt-1 border-secondary rounded-pill"
                     href="/aboutus"
-                    style={{ lineHeight: "12px", position: "absolute", whiteSpace: "nowrap", top: "0", left: "0" }}
+                    style={{
+                      lineHeight: "12px",
+                      position: "absolute",
+                      whiteSpace: "nowrap",
+                      top: "0",
+                      left: "0",
+                    }}
                   >
                     Read More
                   </a>
