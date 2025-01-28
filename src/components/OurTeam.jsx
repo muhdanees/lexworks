@@ -217,7 +217,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
               <div className="country-item">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="img/blank-men.png"
+                    src="img/ms-shivanjali.jpg"
                     className="img-fluid w-100 rounded"
                     alt="Image"
                     loading="lazy"

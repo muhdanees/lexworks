@@ -9,7 +9,7 @@ export default function MsShivanjali() {
             <div className="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
               <div className="bg-light">
                 <img
-                  src="img/blank-men.png"
+                  src="img/ms-shivanjali.jpg"
                   className="img-fluid rounded img-thumbnail w-100"
                   alt="Direct TAX"
                 />
@@ -19,9 +19,11 @@ export default function MsShivanjali() {
               <h5 className="sub-title mb-4 pe-3">Shivanjali Malik</h5>
 
               {/* <!-- <h4 className="customs-title"><em>Position:</em> Senior Associate</h4> --> */}
-
-              <h3 className="customs-heading mb-4">
+              <h5 className="mb-4">
                 Legal Tech Innovator & Documentation Specialist
+              </h5>
+              <h3 className="customs-heading mb-4">
+              EDUCATION: BSC.LLB (Hons)
               </h3>
 
               <p>
