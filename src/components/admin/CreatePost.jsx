@@ -263,7 +263,7 @@ export default function CreatePost({ slug, API_URL }) {
         <div className="pb-4 block">
           <span className="block mb-2">Tags</span>
           <div className="mb-2">
-          {optionsWatch.value.length > 0 ? (
+          {optionsWatch?.value.length > 0 ? (
               <span className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded">
                 {optionsWatch.value}
               </span>
