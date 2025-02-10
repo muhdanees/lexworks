@@ -26,7 +26,7 @@ export default function NewsDetail({ data }) {
                 </span>
                 <span>
                   <strong>Tags:</strong>{" "}
-                  {data?.categories?.map((category) => (
+                  {[data?.categories]?.map((category) => (
                     <a key={category} href={`/tags/${category}`}>
                       #{category?.[0].toUpperCase()}
                       {category.slice(1)}

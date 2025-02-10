@@ -81,7 +81,7 @@ export default function EditPost({ slug, API_URL }) {
         content: dataSubmit.content,
         title: dataSubmit.title,
         status: "published",
-        categories: dataSubmit.selectedOption.value || "",
+        categories: dataSubmit.selectedOption.value.toLowerCase() || "",
         image: imageJSON.url,
       }),
       headers: {

@@ -107,7 +107,7 @@ export default function CreatePost({ slug, API_URL }) {
         content: dataSubmit.content,
         title: dataSubmit.title,
         status: saveType.current,
-        categories: dataSubmit.selectedOption.value,
+        categories: dataSubmit.selectedOption.value.toLowerCase() || "",
         slug: dataSubmit.slug,
         authorId: dataSubmit.selectedOptionAuthor.value,
         image: imageJSON.url,
