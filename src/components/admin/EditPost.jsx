@@ -162,7 +162,6 @@ export default function EditPost({ slug, API_URL }) {
       toast.error("Unable to update image.");
       throw new Error("Unable to update image.");
     }
-    console.log("resImage", await resImage.json());
     setPreview("");
   };
 
@@ -185,7 +184,6 @@ export default function EditPost({ slug, API_URL }) {
       res.json()
     );
     setData(res);
-    console.log("res", res);
     const delta = quillRef.current.clipboard.convert({ html: res.content });
     quillRef.current.setContents(delta);
     // const newOptions = res.categories.map((categorie) => ({
