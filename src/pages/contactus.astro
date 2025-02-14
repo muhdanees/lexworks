@@ -4,7 +4,76 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
 import ContactUs from "../components/ContactUs.astro";
-const jsonLd = JSON.stringify({});
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Lex Works Advocates & Solicitors",
+    "url": "https://www.lexworks.co.in",
+    "image": "https://lex-img.s3.ap-south-1.amazonaws.com/assets/brand-logo.png",
+    "description": "At Lex Works, we provide nationwide legal solutions, inspired by a commitment to resolve your legal and technical challenges. Our record of landmark judgments showcases our ability to deliver prompt and effective outcomes.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C-131, 1st Floor",
+      "addressLocality": "Lajpat Nagar",
+      "addressRegion": "New Delhi",
+      "postalCode": "110024",
+      "addressCountry": "India"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "011-41540229",
+        "contactType": "customer query services",
+        "email": "lexworkss@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "dayOfWeek": "Monday",
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "dayOfWeek": "Tuesday",
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "dayOfWeek": "Wednesday",
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "dayOfWeek": "Thursday",
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "dayOfWeek": "Friday",
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "dayOfWeek": "Saturday",
+        "opens": "12:00",
+        "closes": "17:00"
+      },
+      {
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "17:00"
+      },
+    ],
+    "sameAs": [
+      "",
+      "",
+      ""
+    ]
+  }
+});
 ---
 
 <Layout title="Contact Lex Works | Schedule a Consultation"
