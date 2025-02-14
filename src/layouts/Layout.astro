@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 const {
   title = "Lex Works | Comprehensive Legal Solutions Across India",
   description = "Discover Lex Works, a law firm offering nationwide legal services with a commitment to resolving complex legal and technical challenges efficiently. Explore our landmark judgments and client-focused approach.",
+  jsonLd = null
 } = Astro.props;
 ---
 
@@ -48,6 +49,7 @@ const {
 
       gtag('config', 'G-HJD6S2PBD2');
     </script>
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd}></script>}
   </head>
   <body>
     <slot />

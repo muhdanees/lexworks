@@ -1,7 +1,35 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 const { title, description } = Astro.props;
+const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "author": {
+      "@type": "Person",
+      "name": "Author Name",
+      "url": "https://www.yourwebsite.com/author-profile"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Your Website Name",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.yourwebsite.com/logo.png"
+      }
+    },
+    "datePublished": "2025-02-13",
+    "dateModified": "2025-02-13",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.yourwebsite.com/blog-post-url"
+    },
+    "image": "https://www.yourwebsite.com/blog-image.jpg",
+    "articleBody": "Here goes the full content of your blog post."
+  })
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,35 +38,56 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={description.split(0, 120)} />
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!-- Example: Importing Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Import FontAwesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="/styles/bootstrap.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/style.css" />
     <ClientRouter />
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HJD6S2PBD2"></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HJD6S2PBD2"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-HJD6S2PBD2');
+      gtag("config", "G-HJD6S2PBD2");
     </script>
+    <script type="application/ld+json" set:html={jsonLd}></script>
   </head>
   <body>
     <slot />
 
     <!-- JavaScript Libraries -->
-    <script is:inline src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      is:inline
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
     <script is:inline src="/lib/wow/wow.min.js"></script>
     <script is:inline src="/lib/easing/easing.min.js"></script>
     <script is:inline src="/lib/waypoints/waypoints.min.js"></script>
