@@ -326,7 +326,7 @@ import { API_URL } from "astro:env/client";
         .then((res) => {
           console.log(res);
           Swal.fire({
-            title: "Good job!",
+            title: "We will get to you soon",
             text: "Successfully submited!",
             icon: "success"
           });
@@ -336,8 +336,8 @@ import { API_URL } from "astro:env/client";
         .catch((error) => {
           console.log(error);
           Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
+            title: "Not Good job",
+            text: "Unable to submit!",
             icon: "error"
           });
         }).finally(() => {
