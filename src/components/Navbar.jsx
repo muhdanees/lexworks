@@ -64,7 +64,7 @@ export default function Topbar({ page = "" }) {
               </div>
               <a href="/news-listing" className={`nav-item nav-link ${page === "contatus" ? "active": ""}`}>Updates</a>
             </div>
-            <a href="/contactus" className="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3">
+            <a href="/contactus" className="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 my-2 mb-md-0 mt-lg-0 mb-0">
               Consultation Session
             </a>
           </div>
