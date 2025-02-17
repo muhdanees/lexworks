@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+const { url } = Astro;
 const { title, description } = Astro.props;
 const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
@@ -27,7 +28,8 @@ const jsonLd = JSON.stringify({
     },
     "image": "https://www.yourwebsite.com/blog-image.jpg",
     "articleBody": "Here goes the full content of your blog post."
-  })
+  });
+const canonicalUrl = `https://www.lexworks.co.in${url.pathname}`;
 ---
 
 <!doctype html>
@@ -39,6 +41,7 @@ const jsonLd = JSON.stringify({
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description.split(0, 120)} />
+    <link rel="canonical" href={canonicalUrl} />
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

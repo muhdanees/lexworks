@@ -1,10 +1,12 @@
 ---
 import { ClientRouter } from "astro:transitions";
+const { url } = Astro;
 const {
   title = "Lex Works | Your Trusted Boutique Law Firm for Law & Tax Across India",
   description = "Discover Lex Works, a law firm offering nationwide legal services with a commitment to resolving complex legal and technical challenges efficiently. Explore our landmark judgments and client-focused approach.",
   jsonLd = null
 } = Astro.props;
+const canonicalUrl = `https://www.lexworks.co.in${url.pathname}`;
 ---
 
 <!doctype html>
@@ -17,7 +19,7 @@ const {
     <link rel="icon" href="./img/favicon_LW.ico" type="image/x-icon">
     <title>{title}</title>
     <meta name="description" content={description} />
-    
+    <link rel="canonical" href={canonicalUrl} />
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

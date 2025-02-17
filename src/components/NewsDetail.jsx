@@ -2,7 +2,6 @@ import React from "react";
 import { tags } from "../utils/tags";
 
 export default function NewsDetail({ data }) {
-  console.log("data", data);
   return (
     <>
       <div className="container-fluid py-sm-0 py-5 watermark">
