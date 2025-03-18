@@ -6,9 +6,11 @@ import PageHeader from "../components/PageHeader";
 import NewsListing from "../components/NewsListing";
 import { API_URL } from "astro:env/client";
 import PageHeaderPost from "../components/PageHeaderPost";
+const url = new URL(Astro.request.url);
+const page = Number(url.searchParams.get("page")) || 1;
 let jsonRes = { posts: [] };
 try {
-  const res = await fetch(`${API_URL}/posts/latest`)
+  const res = await fetch(`${API_URL}/posts/latest?page=${page}`)
   jsonRes = await res.json();
 } catch {
   console.log("NO Posts");
@@ -18,6 +20,6 @@ try {
 <Layout>
   <Header page="news-listing" />
   <PageHeaderPost pageTitle="News & Updates" />
-  <NewsListing data={jsonRes?.posts} />
+  <NewsListing data={jsonRes} page={page} />
   <Footer />
 </Layout>
