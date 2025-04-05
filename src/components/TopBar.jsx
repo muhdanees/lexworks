@@ -26,8 +26,8 @@ export default function Topbar() {
               className="d-flex align-items-center justify-content-end"
             >
               <a
-                className="btn btn-sm btn-outline-light btn-square me-2 linkedInHover"
-                href="#"
+                className="btn btn-sm btn-outline-light btn-square me-2 linkedInHover" target="_blank"
+                href="https://www.linkedin.com/company/lex-works-advocates-and-solicitors/posts/?feedView=all"
               >
                 <i className="fab fa-linkedin-in fw-normal"></i>
               </a>

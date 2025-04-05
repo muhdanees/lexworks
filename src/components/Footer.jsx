@@ -43,7 +43,7 @@ function Footer() {
                 </a>
                 <div className="d-flex align-items-center">
                   <i className="fas fa-share fa-2x text-secondary me-2"></i>
-                  <a className="btn mx-1 linkedInHover" href="#">
+                  <a className="btn mx-1 linkedInHover" target="_blank" href="https://www.linkedin.com/posts/lex-works-advocates-and-solicitors_release-and-re-export-of-jewellery-activity-7313480588772970498-r41p?utm_source=share&utm_medium=member_android&rcm=ACoAABB-b8MB4Gf-3xhrAm9GuM_wb1wBrKOt6oM">
                     <i className="fab fa-2x fa-linkedin-in"></i>
                   </a>
                   <a className="btn mx-1 instagramHover" href="#">
