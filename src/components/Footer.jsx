@@ -8,7 +8,7 @@ function Footer() {
         data-wow-delay="0.2s"
       >
         <div className="container">
-          <div className="row g-5">
+          <div className="row g-0">
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="text-secondary mb-4">Contact Info</h4>
@@ -20,7 +20,7 @@ function Footer() {
                     className="contentLine hoverAnim"
                     style={{ width: "245px" }}
                   >
-                    C-131, 1st Floor Lajpat Nagar<br />New Delhi - 110024
+                    B-II/62, 3rd Floor, <br />Lajpat Nagar-II, <br />New Delhi - 110024
                   </a>
                 </div>
                 <div className="alignContent">

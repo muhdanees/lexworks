@@ -20,7 +20,7 @@ export default function ContactUs() {
                 <i className="fas fa-map-marked-alt fa-2x text-primary bg-light p-3 rounded"></i>
                 <div className="ps-3">
                   <h5>New Delhi</h5>
-                  <p>C-131, 1st Floor Lajpat Nagar - 110024</p>
+                  <p>B-II/62, 3rd Floor, Lajpat Nagar-II, New Delhi - 110024</p>
                 </div>
               </div>
               <div className="row g-3">
