@@ -157,6 +157,40 @@ export default function CreatePost({ slug, API_URL }) {
     }
   };
 
+  const uploadToS3 = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+    const resimage = await fetch(`${API_URL}/images`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const imageJSON = await resimage.json();
+    return imageJSON.url;
+  }
+
+  const imageHandler = () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+    input.onchange = async () => {
+      const file = input.files[0];
+      if (file) {
+        try {
+          const imageUrl = await uploadToS3(file);
+          const range = quillRef.current.getSelection();
+          quillRef.current.insertEmbed(range.index, 'image', imageUrl);
+        } catch (err) {
+          console.error('Image upload failed', err);
+        }
+      }
+    };
+  }
+
   const handleCreate = (inputValue) => {
     const newOption = { value: inputValue, label: inputValue };
     const newOptions = [...options, newOption];
@@ -169,7 +203,12 @@ export default function CreatePost({ slug, API_URL }) {
       quillRef.current = new Quill("#" + editorRef.current.id, {
         theme: "snow",
         modules: {
-          toolbar: toolbarOptions,
+          toolbar: {
+            container: toolbarOptions,
+            handlers: {
+              image: imageHandler
+            }
+          },
         },
         placeholder: "Add new content",
       });

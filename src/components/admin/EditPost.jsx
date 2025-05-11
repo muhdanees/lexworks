@@ -203,12 +203,51 @@ export default function EditPost({ slug, API_URL }) {
     setPreview(res.image);
   };
 
+  const uploadToS3 = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+    const resimage = await fetch(`${API_URL}/images`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const imageJSON = await resimage.json();
+    return imageJSON.url;
+  }
+
+  const imageHandler = () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+    input.onchange = async () => {
+      const file = input.files[0];
+      if (file) {
+        try {
+          const imageUrl = await uploadToS3(file);
+          const range = quillRef.current.getSelection();
+          quillRef.current.insertEmbed(range.index, 'image', imageUrl);
+        } catch (err) {
+          console.error('Image upload failed', err);
+        }
+      }
+    };
+  }
+
   useEffect(() => {
     if (editorRef.current && !quillRef.current) {
       quillRef.current = new Quill("#" + editorRef.current.id, {
         theme: "snow",
         modules: {
-          toolbar: toolbarOptions,
+          toolbar: {
+            container: toolbarOptions,
+            handlers: {
+              image: imageHandler
+            }
+          },
         },
       });
       quillRef.current.on("text-change", () => {
