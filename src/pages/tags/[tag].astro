@@ -14,11 +14,19 @@ try {
 } catch {
   console.log("NO Posts");
 }
+
+let jsonTagRes = { tags: [] };
+try {
+  const res = await fetch(`${API_URL}/tags`)
+  jsonTagRes = await res.json();
+} catch {
+  console.log("NO Tags");
+}
 ---
 
 <Layout>
   <Header page="news-listing" />
   <PageHeaderPost pageTitle="Tags" />
-  <NewsListing data={jsonRes?.posts} />
+  <NewsListing data={jsonRes} jsonTagRes={jsonTagRes} page={1}/>
   <Footer />
 </Layout>

@@ -1,6 +1,6 @@
 import React from "react";
 import timeAgo from "../utils/timeago";
-import { tags } from "../utils/tags";
+// import { tags } from "../utils/tags";
 
 const Pagination = ({ totalPosts, limit, currentIndex, page = 1 }) => {
   const totalPages = Math.ceil(totalPosts / limit);
@@ -23,26 +23,47 @@ const Pagination = ({ totalPosts, limit, currentIndex, page = 1 }) => {
     <nav aria-label="Page navigation">
       <ul className="pagination justify-content-end">
         <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
-          <a className="page-link" href={`?page=${page - 1}`}>Previous</a>
+          <a className="page-link" href={`?page=${page - 1}`}>
+            Previous
+          </a>
         </li>
         {pageNumbers.map((num, index) => (
-          <li key={index} className={`page-item ${page === num ? "active" : ""}`}>
+          <li
+            key={index}
+            className={`page-item ${page === num ? "active" : ""}`}
+          >
             {num === "..." ? (
               <span className="page-link">...</span>
             ) : (
-              <a className="page-link" href={`?page=${num}`}>{num}</a>
+              <a className="page-link" href={`?page=${num}`}>
+                {num}
+              </a>
             )}
           </li>
         ))}
         <li className={`page-item ${page === totalPages ? "disabled" : ""}`}>
-          <a className="page-link" href={`?page=${page + 1}`}>Next</a>
+          <a className="page-link" href={`?page=${page + 1}`}>
+            Next
+          </a>
         </li>
       </ul>
     </nav>
   );
 };
 
-export default function NewsListing({ data, page }) {
+function Tags({ jsonTagRes }) {
+  return (
+    <div>
+      {jsonTagRes?.tags?.map(({ tag }) => (
+        <a href={`/tags/${tag.toLowerCase()}`} key={tag} className="tags">
+          #{tag}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export default function NewsListing({ data, page, jsonTagRes }) {
   return (
     <>
       <div className="container-fluid py-sm-0 py-5 watermark">
@@ -90,22 +111,18 @@ export default function NewsListing({ data, page }) {
                 </a>
               ))}
 
-              <Pagination currentIndex={data.currentIndex} totalPosts={data.totalPosts} limit={data.limits} page={page} />
+              <Pagination
+                currentIndex={data.currentIndex}
+                totalPosts={data.totalPosts}
+                limit={data.limits}
+                page={page}
+              />
             </div>
 
             <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
               <h5 className="sub-title mb-4 pe-3">Tags</h5>
 
-              <div className="">
-                {tags.map((tag) => (
-                  <a
-                    href={`/tags/${tag.toLowerCase()}`}
-                    className="tags"
-                  >
-                    #{tag}
-                  </a>
-                ))}
-              </div>
+              <Tags jsonTagRes={jsonTagRes} />
 
               {/* <h3 className="customs-heading mb-4">
               Customs Advisory and Litigation

@@ -10,16 +10,27 @@ const url = new URL(Astro.request.url);
 const page = Number(url.searchParams.get("page")) || 1;
 let jsonRes = { posts: [] };
 try {
-  const res = await fetch(`${API_URL}/posts/latest?page=${page}`)
+  const res = await fetch(`${API_URL}/posts/latest?page=${page || 1}`)
   jsonRes = await res.json();
 } catch {
   console.log("NO Posts");
 }
+
+console.log("jsonRes", jsonRes);
+
+let jsonTagRes = { tags: [] };
+try {
+  const res = await fetch(`${API_URL}/tags`)
+  jsonTagRes = await res.json();
+} catch {
+  console.log("NO Tags");
+}
 ---
+
 
 <Layout>
   <Header page="news-listing" />
   <PageHeaderPost pageTitle="News & Updates" />
-  <NewsListing data={jsonRes} page={page} />
+  <NewsListing data={jsonRes} page={page} jsonTagRes={jsonTagRes} />
   <Footer />
 </Layout>
