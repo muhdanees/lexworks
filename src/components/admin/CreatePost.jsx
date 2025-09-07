@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
-// import CreatableSelect from "react-select/creatable";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
-import { tags } from "../../utils/tags";
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -33,7 +31,7 @@ export default function CreatePost({ slug, API_URL }) {
   const [preview, setPreview] = useState(null);
   const [data, setData] = useState({});
   const [authors, setAuthors] = useState([]);
-  // const [options, setOptions] = useState([]);
+  const [tags, setTags] = useState([]);
 
   const getAllTags = async () => {
     const res = await fetch(`${API_URL}/tags`, {
@@ -41,7 +39,8 @@ export default function CreatePost({ slug, API_URL }) {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }).then((res) => res.json());
-    setOptions(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
+    console.log("res", res);
+    setTags(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
   };
 
   const getAllAuthors = async () => {
@@ -191,13 +190,6 @@ export default function CreatePost({ slug, API_URL }) {
     };
   }
 
-  const handleCreate = (inputValue) => {
-    const newOption = { value: inputValue, label: inputValue };
-    const newOptions = [...options, newOption];
-    setOptions(newOptions);
-    setValue("selectedOption", newOptions);
-  };
-
   useEffect(() => {
     if (editorRef.current && !quillRef.current) {
       quillRef.current = new Quill("#" + editorRef.current.id, {
@@ -217,7 +209,7 @@ export default function CreatePost({ slug, API_URL }) {
         setValue("content", html);
       });
     }
-    // getAllTags();
+    getAllTags();
     getAllAuthors();
   }, [editorRef.current, slug]);
 
@@ -314,7 +306,7 @@ export default function CreatePost({ slug, API_URL }) {
             render={({ field }) => (
               <Select
                 {...field}
-                options={tags.map((tag) => ({ label: tag, value: tag }))}
+                options={tags}
                 onChange={(selected) => field.onChange(selected)}
                 // isMulti
                 isSearchable

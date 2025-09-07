@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Quill from "quill";
 import { useForm, Controller } from "react-hook-form";
-import CreatableSelect from "react-select/creatable";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import LoadingIcon from "./icons/LoadingIcon";
-import { tags } from "../../utils/tags";
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -32,9 +30,9 @@ export default function EditPost({ slug, API_URL }) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
   const [preview, setPreview] = useState(null);
-  const [options, setOptions] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [deleting, setDeleting] = useState(false);
+  const [tags, setTags] = useState([]);
 
   const {
     register,
@@ -107,11 +105,7 @@ export default function EditPost({ slug, API_URL }) {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }).then((res) => res.json());
-    const tags = res.tags.map((tag) => tag.tag);
-    setOptions([
-      ...options.filter((option) => !tags.includes(option)),
-      ...res.tags?.map(({ tag }) => ({ label: tag, value: tag })),
-    ]);
+    setTags(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
   };
 
   const getAllAuthors = async () => {
@@ -165,13 +159,6 @@ export default function EditPost({ slug, API_URL }) {
     setPreview("");
   };
 
-  const handleCreate = (inputValue) => {
-    const newOption = { value: inputValue, label: inputValue };
-    const newOptions = [...options, newOption];
-    setOptions(newOptions);
-    setValue("selectedOption", newOptions);
-  };
-
   const onCopy = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText(data.slug).then(() => {
@@ -186,12 +173,6 @@ export default function EditPost({ slug, API_URL }) {
     setData(res);
     const delta = quillRef.current.clipboard.convert({ html: res.content });
     quillRef.current.setContents(delta);
-    // const newOptions = res.categories.map((categorie) => ({
-    //   value: categorie,
-    //   label: categorie,
-    // }));
-    // setOptions([...options, ...newOptions]);
-    // console.log(res.categories);
     setValue("selectedOption", { label: res.categories, value: res.categories });
     setValue("selectedOptionAuthor", {
       label: res.authorId,
@@ -338,14 +319,6 @@ export default function EditPost({ slug, API_URL }) {
                 {optionsWatch.value}
               </span>
             ) : null}
-            {/* {optionsWatch?.map((option) => (
-              <span
-                className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
-                key={option.value}
-              >
-                {option.value}
-              </span>
-            ))} */}
           </div>
           <Controller
             name="selectedOption"
@@ -353,12 +326,9 @@ export default function EditPost({ slug, API_URL }) {
             render={({ field }) => (
               <Select
                 {...field}
-                options={tags.map((tag) => ({ label: tag, value: tag }))}
-                onChange={(selected) => field.onChange(selected)}
+                options={tags}
                 isSearchable
-                // isMulti
-                // onCreateOption={handleCreate}
-                placeholder="Select or create an option"
+                placeholder="Select Tag"
               />
             )}
           />
