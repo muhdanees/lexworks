@@ -7,13 +7,28 @@ import { toast } from "react-toastify";
 export default function Posts({ url }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [nextKey, setNextKey] = useState(null);
+  const limits = 10;
 
   const fetchData = async () => {
     setLoading(true);
-    const res = await fetch(`${API_URL}/posts/latest?limits=10`);
+    const res = await fetch(`${API_URL}/posts/latest?limits=${limits}`);
     const json = await res.json();
     setData(json.posts);
+    setNextKey(json.nextKey);
     setLoading(false);
+  };
+
+  const getMore = async () => {
+    setLoadingMore(true);
+    const res = await fetch(
+      `${API_URL}/posts/latest?limits=${limits}&nextKey=${nextKey}`
+    );
+    const json = await res.json();
+    setData([...data, ...json.posts]);
+    setNextKey(json.nextKey);
+    setLoadingMore(false);
   };
 
   const deletePost = async (post) => {
@@ -64,6 +79,24 @@ export default function Posts({ url }) {
           </div>
         </div>
       ))}
+      <div className="text-center">
+        {nextKey ? (
+          <button
+            onClick={getMore}
+            disabled={loadingMore}
+            className="px-10 py-2 text-sm inline-flex gap-2 items-center justify-center font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+          >
+            {loadingMore ? (
+              <>
+                <LoadingIcon className="inline w-4 h-4 text-white animate-spin" />
+                Loading...
+              </>
+            ) : (
+              "Load More"
+            )}
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
