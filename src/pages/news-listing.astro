@@ -2,10 +2,9 @@
 import Header from "../components/Header";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer";
-import PageHeader from "../components/PageHeader";
 import NewsListing from "../components/NewsListing";
 import { API_URL } from "astro:env/client";
-import PageHeaderPost from "../components/PageHeaderPost";
+import PageHeaderPost from "../components/PageHeaderPost.astro";
 const url = new URL(Astro.request.url);
 const page = Number(url.searchParams.get("page")) || 1;
 let jsonRes = { posts: [] };

@@ -113,9 +113,7 @@ export default function NewsListing({ data, page, jsonTagRes }) {
                 </a>
               ))}
 
-              {data?.posts.length === 0 ? (
-                <p>No Latest Posts!</p>
-              ) : null}
+              {data?.posts.length === 0 ? <p>No Latest Posts!</p> : null}
               <Pagination
                 totalPosts={data.total}
                 limit={data.limit}
@@ -125,92 +123,7 @@ export default function NewsListing({ data, page, jsonTagRes }) {
 
             <div className="col-xl-4 wow fadeInRight" data-wow-delay="0.3s">
               <h5 className="sub-title mb-4 pe-3">Tags</h5>
-
               <Tags jsonTagRes={jsonTagRes} />
-
-              {/* <h3 className="customs-heading mb-4">
-              Customs Advisory and Litigation
-              </h3> */}
-
-              {/* <p>
-                At <strong>Lex Works</strong>, we recognize that navigating the
-                complexities of customs law is crucial for businesses engaged in
-                international trade. Our Customs Advisory and Litigation team
-                combines wealth of experience to offer strategic insights and
-                comprehensive support tailored to your specific needs.
-              </p> */}
-
-              {/* <div className="accordion" id="accordionExample">
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingOne">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      Accordion Item #1
-                    </button>
-                  </h2>
-
-                  <div
-                    id="collapseOne"
-                    className="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">Data Item #1</div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingTwo">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Accordion Item #2
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">Data Item #2</div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingThree">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Accordion Item #3
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThree"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">Data Item #3</div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

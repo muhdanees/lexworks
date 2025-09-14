@@ -1,5 +1,6 @@
 import React from "react";
 import timeAgo from "../utils/timeago";
+import { stripHtml } from "string-strip-html";
 
 export default function LatestNews({ posts }) {
   return (
@@ -32,7 +33,7 @@ export default function LatestNews({ posts }) {
                           {post?.title}...
                         </h5>
                         <p className="card-text multiText-truncate">
-                          {post?.content}...
+                          {stripHtml(post?.content).result?.slice(0, 200)}...
                         </p>
                         <p className="card-text bottomAlign">
                           <small className="text-muted">
@@ -68,7 +69,7 @@ export default function LatestNews({ posts }) {
                     <div className="col-md-8">
                       <div className="card-body">
                         <h5 className="card-title  headtingTruncate">{post?.title}</h5>
-                        <p className="card-text multiText-truncate">{post?.content}</p>
+                        <p className="card-text multiText-truncate">{stripHtml(post?.content).result?.slice(0, 200)}...</p>
                         <p className="card-text bottomAlign">
                           <small className="text-muted">
                           Upload on {new Date(post.createdAt).toDateString()}

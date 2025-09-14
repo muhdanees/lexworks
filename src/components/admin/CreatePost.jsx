@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import axios from "axios";
+import slugify from "slugify";
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -215,9 +216,9 @@ export default function CreatePost({ slug, API_URL }) {
     if (watchedFile && watchedFile[0]) {
       setPreview(URL.createObjectURL(watchedFile[0]));
       uploadToS3(watchedFile[0]).then((res) => {
-      console.log(res);
-      setImageData(res);
-    });
+        console.log(res);
+        setImageData(res);
+      });
     } else {
       setPreview(null);
     }
@@ -249,11 +250,10 @@ export default function CreatePost({ slug, API_URL }) {
             type="text"
             {...register("title", {
               onChange: (e) => {
-                const generateSlug = e.target.value
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[^a-z0-9]+/g, "-")
-                  .replace(/^-+|-+$/g, "");
+                const generateSlug = slugify(e.target.value, {
+                  lower: true,
+                  strict: true,
+                }).slice(0, 60);
                 setValue("slug", generateSlug);
                 setData((prev) => ({ ...prev, slug: generateSlug }));
               },

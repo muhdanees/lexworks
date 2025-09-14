@@ -12,7 +12,13 @@ export async function GET() {
         .replace(".", "");
       return `${siteUrl}${urlPath === "/index" ? "/" : urlPath}`;
     })
-    .filter((path) => !path.includes("admin") || !path.includes("posts"));
+    .filter((path) => {
+      return (
+        !path.includes("admin") &&
+        !path.includes("posts") &&
+        !path.includes("tags")
+      );
+    });
 
   const res = await fetch(`${API_URL}/posts/latest-slugs`).then((res) =>
     res.json()
