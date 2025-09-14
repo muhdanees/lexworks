@@ -3,44 +3,52 @@ import { useEffect, useState } from "react";
 import LoadingIcon from "./icons/LoadingIcon";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function Posts({ url }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [nextKey, setNextKey] = useState(null);
+  const [nextPage, setNextPage] = useState(1);
   const limits = 10;
 
   const fetchData = async () => {
     setLoading(true);
-    const res = await fetch(`${API_URL}/posts/latest?limits=${limits}`);
+    const res = await fetch(`${API_URL}/posts/latest?limit=${limits}`);
     const json = await res.json();
     setData(json.posts);
-    setNextKey(json.nextKey);
+    const hasPage = json.page < json.totalPages;
+    setNextPage(hasPage ? json.page + 1 : 1);
     setLoading(false);
   };
 
   const getMore = async () => {
     setLoadingMore(true);
     const res = await fetch(
-      `${API_URL}/posts/latest?limits=${limits}&nextKey=${nextKey}`
+      `${API_URL}/posts/latest?limit=${limits}&page=${nextPage}`
     );
     const json = await res.json();
     setData([...data, ...json.posts]);
-    setNextKey(json.nextKey);
+    const hasPage = json.page < json.totalPages;
+    setNextPage(hasPage ? json.page + 1 : 1);
     setLoadingMore(false);
   };
 
   const deletePost = async (post) => {
-    const res = await fetch(`${API_URL}/posts/${post.postId}/${post.slug}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    if (!res.ok) {
+    try {
+      await axios.request({
+        url: `${API_URL}/posts/`,
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        data: {
+          _id: post._id
+        }
+      })
+    } catch (error) {
       toast.error("Unable to delete Post!");
-      throw new Error("Unable to delete Post!");
+      console.error(error);
     }
     fetchData();
   };
@@ -80,7 +88,7 @@ export default function Posts({ url }) {
         </div>
       ))}
       <div className="text-center">
-        {nextKey ? (
+        {nextPage > 1 ? (
           <button
             onClick={getMore}
             disabled={loadingMore}

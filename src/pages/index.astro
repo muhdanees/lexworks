@@ -12,7 +12,7 @@ import ConsentPopup from "../components/ConsentPopup";
 import { API_URL } from "astro:env/client";
 let jsonRes = { posts: [] };
 try {
-  const res = await fetch(`${API_URL}/posts/latest?limits=4`)
+  const res = await fetch(`${API_URL}/posts/latest?limit=4`)
   jsonRes = await res.json();
 } catch {
   console.log("NO Posts");

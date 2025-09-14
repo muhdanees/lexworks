@@ -1,7 +1,8 @@
 import React from "react";
-import { tags } from "../utils/tags";
 
-export default function NewsDetail({ data }) {
+export default function NewsDetail({ data, jsonTagRes, jsonAuthorRes }) {
+  const author = jsonAuthorRes.find((author) => author.slug === data.author);
+
   return (
     <>
       <div className="container-fluid py-sm-0 py-5 watermark">
@@ -13,7 +14,7 @@ export default function NewsDetail({ data }) {
               <h2 className="customs-heading">{data.title}</h2>
               <div className="stripes mb-3">
                 <span className="authorText">
-                  <strong>Author:</strong> {data.authorId}
+                  <strong>Author:</strong> {author?.name}, {author?.designation}
                 </span>
                 <span className="authorText">
                   <strong>Updated on:</strong>{" "}
@@ -25,10 +26,9 @@ export default function NewsDetail({ data }) {
                 </span>
                 <span>
                   <strong>Tags:</strong>{" "}
-                  {[data?.categories]?.map((category) => (
-                    <a key={category} href={`/tags/${category}`}>
-                      #{category?.[0].toUpperCase()}
-                      {category.slice(1)}
+                  {data?.tags?.map((tag) => (
+                    <a key={tag} href={`/tags/${tag}`}>
+                      #{jsonTagRes?.find((jTag) => jTag.slug === tag)?.name}
                     </a>
                   ))}
                 </span>
@@ -85,9 +85,9 @@ export default function NewsDetail({ data }) {
                     {category.slice(1)}
                   </a>
                 ))} */}
-                {tags.map((tag) => (
-                  <a href={`/tags/${tag.toLowerCase()}`} className="tags">
-                    #{tag}
+                {jsonTagRes.map((tag) => (
+                  <a href={`/tags/${tag.slug}`} key={`right-${tag._id}`} className="tags">
+                    #{tag.name}
                   </a>
                 ))}
               </div>

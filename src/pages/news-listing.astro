@@ -10,13 +10,11 @@ const url = new URL(Astro.request.url);
 const page = Number(url.searchParams.get("page")) || 1;
 let jsonRes = { posts: [] };
 try {
-  const res = await fetch(`${API_URL}/posts/latest?page=${page || 1}`)
+  const res = await fetch(`${API_URL}/posts/latest?page=${page || 1}&limit=5`)
   jsonRes = await res.json();
 } catch {
   console.log("NO Posts");
 }
-
-console.log("jsonRes", jsonRes);
 
 let jsonTagRes = { tags: [] };
 try {

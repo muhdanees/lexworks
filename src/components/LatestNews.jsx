@@ -12,7 +12,7 @@ export default function LatestNews({ posts }) {
                 <a
                   href={`/posts/${post?.slug}`}
                   className="card bg-white mb-3"
-                  key={post.postId}
+                  key={post._id}
                 >
                   <div className="row g-0">
                     <div className="col-md-4">
@@ -51,7 +51,7 @@ export default function LatestNews({ posts }) {
                 <a
                   href={`/posts/${post?.slug}`}
                   className="card bg-white mb-3"
-                  key={post.postId}
+                  key={post._id}
                 >
                   <div className="row g-0">
                     <div className="col-md-4">

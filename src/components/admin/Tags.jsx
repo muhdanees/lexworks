@@ -1,47 +1,53 @@
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-// import { tags as staticTags } from "../../utils/tags";
+import axios from "axios";
 
 export default function Tags({ API_URL }) {
   const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
 
   const onCreate = async () => {
-    const res = await fetch(`${API_URL}/tags`, {
-      method: "POST",
-      body: JSON.stringify({ tag }),
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    if (!res.ok) {
-      toast.error("Error to create tag!");
-      throw new Error("Error to create tag!");
-    }
+    try {
+      await axios.post(
+        `${API_URL}/tags`,
+        {
+          name: tag,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
-    getAllTags();
+      getAllTags();
+    } catch (err) {
+      toast.error("Error to create tag!");
+      console.error(err);
+    }
   };
 
   const getAllTags = async () => {
-    const res = await fetch(`${API_URL}/tags`).then((res) => res.json());
-    setTags(Array.from(new Set(res.tags.map(({ tag }) => tag))));
+    const res = await axios.get(`${API_URL}/tags`);
+    setTags(res.data.tags);
     setTag("");
   };
 
   const removeTag = async (activeTag) => {
-    const res = await fetch(`${API_URL}/tags`, {
-      method: "DELETE",
-      body: JSON.stringify({ tag: activeTag }),
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    if (!res.ok) {
+    try {
+      await axios.request({
+        method: "DELETE",
+        url: `${API_URL}/tags`,
+        data: { _id: activeTag._id },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      getAllTags();
+    } catch (error) {
       toast.error("Error to delete tag!");
-      throw new Error("Error to delete tag!");
+      console.error(error);
     }
-
-    getAllTags();
   };
 
   useEffect(() => {
@@ -82,13 +88,13 @@ export default function Tags({ API_URL }) {
           </div>
         </div>
         <div className="mt-4">
-          {tags.map((currentTag, index) => (
+          {tags.map((currentTag) => (
             <span
-              key={currentTag + index}
+              key={currentTag._id}
               id="badge-dismiss-default"
               className="inline-flex items-center px-2 py-1 me-2 mb-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
             >
-              {currentTag}
+              {currentTag.name}
               <button
                 type="button"
                 className="flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900"

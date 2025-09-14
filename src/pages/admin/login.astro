@@ -26,17 +26,16 @@ import "../../layouts/AdminBase.css";
           <form class="space-y-4 md:space-y-6" id="loginForm">
             <div>
               <label
-                for="email"
+                for="username"
                 class="block mb-2 text-sm font-medium text-gray-900"
                 >Your email</label
               >
               <input
-                type="email"
-                name="email"
-                id="email"
+                type="text"
+                name="username"
+                id="username"
                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                placeholder="name@company.com"
-                autocomplete="email"
+                placeholder="name"
                 required=""
               />
             </div>
@@ -93,21 +92,20 @@ import "../../layouts/AdminBase.css";
 
 <script>
   import { API_URL } from "astro:env/client";
+  import axios from "axios";
   const loginForm = document.querySelector("#loginForm") as HTMLFormElement;
   function onSubmit(e: SubmitEvent) {
     e.preventDefault();
     const target = e.target as HTMLFormElement | null;
     if (target) {
-      const email = target.email.value;
+      const username = target.username.value;
       const password = target.password.value;
-      fetch(`${API_URL}/auth/login`, {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-      })
-        .then((res) => res.json())
+      axios.post(`${API_URL}/auth/login`, { username, password })
         .then((res) => {
-          if (res.token) {
-            localStorage.setItem("token", res.token);
+          console.log("res", res);
+          if (res.data.token) {
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("user", JSON.stringify(res.data));
             window.location.href = "/admin/dashboard";
           }
         })

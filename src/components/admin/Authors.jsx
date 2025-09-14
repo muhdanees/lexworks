@@ -1,48 +1,58 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export default function Authors({ API_URL }) {
   const [author, setAuthor] = useState("");
+  const [designation, setDesignation] = useState("");
   const [authors, setAuthors] = useState([]);
 
   const onCreate = async () => {
-    const res = await fetch(`${API_URL}/authors`, {
-      method: "POST",
-      body: JSON.stringify({ author }),
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    if (!res.ok) {
+    try {
+      await axios.post(
+        `${API_URL}/authors`,
+        {
+          name: author,
+          designation: designation,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      setAuthor("");
+      setDesignation("");
+      getAllAuthors();
+    } catch (error) {
       toast.error("Error to create author!");
-      throw new Error("Error to create author!");
+      console.error(error);
     }
-    setAuthor("");
-    getAllAuthors();
   };
 
   const getAllAuthors = async () => {
-    const res = await fetch(`${API_URL}/authors`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    }).then((res) => res.json());
-    setAuthors(res.authors);
-  };
-
-  const removeAuthor = async (activeAuthor) => {
-    const res = await fetch(`${API_URL}/authors`, {
-      method: "DELETE",
-      body: JSON.stringify({ author: activeAuthor }),
+    const res = await axios.get(`${API_URL}/authors`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
-    if (!res.ok) {
-      toast.error("Error to delete author!");
-      throw new Error("Error to delete author!");
-    }
+    setAuthors(res.data.authors);
+  };
 
+  const removeAuthor = async (activeAuthor) => {
+    try {
+      await axios.request({
+        method: "DELETE",
+        url: `${API_URL}/authors`,
+        data: { _id: activeAuthor._id },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+    } catch (error) {
+      toast.error("Error to delete author!");
+      console.error(error);
+    }
     getAllAuthors();
   };
 
@@ -61,16 +71,28 @@ export default function Authors({ API_URL }) {
             Add Author
           </label>
           <div className="flex w-full gap-4">
-            <div className="flex-1">
+            <div className="flex-1 flex gap-4">
               <input
                 type="text"
-                name="tag"
-                id="tag"
+                name="authorName"
+                id="authorName"
                 value={author}
                 onChange={(e) => {
                   setAuthor(e.target.value);
                 }}
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                placeholder="Name"
+                className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              />
+              <input
+                type="text"
+                name="designation"
+                id="designation"
+                value={designation}
+                onChange={(e) => {
+                  setDesignation(e.target.value);
+                }}
+                placeholder="designation"
+                className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
               />
             </div>
 
@@ -83,14 +105,14 @@ export default function Authors({ API_URL }) {
             </button>
           </div>
         </div>
-        <div className="mt-4">
-          {authors.map(({ author }) => (
+        <div className="mt-4 space-x-2 space-y-2">
+          {authors.map((author) => (
             <span
-              key={author}
+              key={author._id}
               id="badge-dismiss-default"
               className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded"
             >
-              {author}
+              {author.name}, {author.designation}
               <button
                 type="button"
                 className="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900"

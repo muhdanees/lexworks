@@ -7,9 +7,11 @@ import NewsListing from "../../components/NewsListing";
 import { API_URL } from "astro:env/client";
 import PageHeaderPost from "../../components/PageHeaderPost";
 const { tag } = Astro.params;
+const url = new URL(Astro.request.url);
+const page = Number(url.searchParams.get("page")) || 1;
 let jsonRes = { posts: [] };
 try {
-  const res = await fetch(`${API_URL}/posts/latest/${tag}?limit=10`)
+  const res = await fetch(`${API_URL}/posts/latest/${tag}?limit=10&page=${page}`)
   jsonRes = await res.json();
 } catch {
   console.log("NO Posts");

@@ -1,4 +1,5 @@
 ---
+import { stripHtml } from "string-strip-html";
 import Header from "../../components/Header";
 import Layout from "../../layouts/PostLayout.astro";
 import Footer from "../../components/Footer";
@@ -6,19 +7,44 @@ import PageHeaderPost from "../../components/PageHeaderPost";
 import NewsDetail from "../../components/NewsDetail";
 const { slug } = Astro.params;
 import { API_URL } from "astro:env/client";
-let jsonRes: { title?: "", description?: "" } = {};
+let jsonRes: { title?: ""; description?: "", content?: "" } = {};
 try {
-  const res = await fetch(`${API_URL}/posts/${slug}`)
-  jsonRes = await res.json();
+  const res = await fetch(`${API_URL}/posts/${slug}`);
+  const json = await res.json();
+  jsonRes = {
+    ...jsonRes,
+    ...json.post,
+  };
 } catch {
   console.log("NO Post");
 }
-console.log("jsonRes", jsonRes);
+
+let jsonTagRes = { tags: [] };
+try {
+  const res = await fetch(`${API_URL}/tags`);
+  jsonTagRes = await res.json();
+} catch {
+  console.log("NO Tags");
+}
+
+let jsonAuthorRes = { authors: [] };
+try {
+  const res = await fetch(`${API_URL}/authors`);
+  jsonAuthorRes = await res.json();
+  console.log("jsonAuthorRes", jsonAuthorRes);
+} catch {
+  console.log("NO Tags");
+}
+const content = stripHtml(jsonRes.content || "").result;
 ---
 
-<Layout title={jsonRes?.title} description={jsonRes.description}>
+<Layout title={jsonRes?.title} description={content.slice(0, 200)}>
   <Header />
   <PageHeaderPost pageTitle="Legal Updates" />
-  <NewsDetail data={jsonRes} />
+  <NewsDetail
+    data={jsonRes}
+    jsonTagRes={jsonTagRes.tags}
+    jsonAuthorRes={jsonAuthorRes.authors}
+  />
   <Footer />
 </Layout>

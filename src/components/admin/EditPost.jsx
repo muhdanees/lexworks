@@ -7,6 +7,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import LoadingIcon from "./icons/LoadingIcon";
+import axios from "axios";
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -30,6 +31,7 @@ export default function EditPost({ slug, API_URL }) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
   const [preview, setPreview] = useState(null);
+  const [imageData, setImageData] = useState({});
   const [authors, setAuthors] = useState([]);
   const [deleting, setDeleting] = useState(false);
   const [tags, setTags] = useState([]);
@@ -49,45 +51,28 @@ export default function EditPost({ slug, API_URL }) {
       content: "",
     },
   });
-  const optionsWatch = watch("selectedOption");
   const watchedFile = watch("file");
   const onSubmit = async (dataSubmit) => {
     setLoading(true);
-    const image = dataSubmit.file[0];
-    let imageJSON = { url: "" };
-    if (image) {
-      const formData = new FormData();
-      formData.append("image", image);
-      const resimage = await fetch(`${API_URL}/images`, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+    axios
+      .patch(
+        `${API_URL}/posts/${data.post._id}`,
+        {
+          title: dataSubmit.title,
+          slug: dataSubmit.slug,
+          author: dataSubmit.selectedOptionAuthor.value,
+          tags: dataSubmit.selectedOption.map((tag) => tag.value) || [],
+          content: dataSubmit.content,
+          image: imageData.url,
+          status: "published",
         },
-      });
-      if (!resimage.ok) {
-        toast.error("Error uploading image. Please try again!");
-        setLoading(false);
-        throw new Error("Error uploading image");
-      }
-      imageJSON = await resimage.json();
-    }
-    fetch(`${API_URL}/posts/${data.postId}/${data.slug}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        authorId: dataSubmit.selectedOptionAuthor.value,
-        content: dataSubmit.content,
-        title: dataSubmit.title,
-        status: "published",
-        categories: dataSubmit.selectedOption.value.toLowerCase() || "",
-        image: imageJSON.url,
-      }),
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "content-type": "application/json",
+          },
+        }
+      )
       .then(() => {
         toast.success("Post updated!");
       })
@@ -100,47 +85,44 @@ export default function EditPost({ slug, API_URL }) {
   };
 
   const getAllTags = async () => {
-    const res = await fetch(`${API_URL}/tags`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    }).then((res) => res.json());
-    setTags(res.tags?.map(({ tag }) => ({ label: tag, value: tag })));
+    try {
+      const res = await axios.get(`${API_URL}/tags`);
+      const newTags = res.data.tags?.map((tag) => ({
+        label: tag.name,
+        value: tag.slug,
+        other: tag,
+      }));
+      setTags(newTags);
+      return Promise.resolve(newTags);
+    } catch {
+      return Promise.resolve([]);
+    }
   };
 
   const getAllAuthors = async () => {
-    const res = await fetch(`${API_URL}/authors`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    }).then((res) => res.json());
-    const authors = res.authors.map(({ author }) => author);
-    setAuthors([
-      ...authors.filter((author) => !authors.includes(author)),
-      ...res.authors?.map(({ author }) => ({ label: author, value: author })),
-    ]);
+    try {
+      const res = await axios.get(`${API_URL}/authors`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const authors = res.data.authors.map((author) => ({
+        label: author.name,
+        value: author.slug,
+        other: author,
+      }));
+      setAuthors(authors);
+      return Promise.resolve(authors);
+    } catch {
+      return Promise.resolve([]);
+    }
   };
 
   const onDeleteImage = async (e) => {
     e.preventDefault();
     setDeleting(true);
-    const res = await fetch(
-      `${API_URL}/images?key=${encodeURIComponent(preview)}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-    setDeleting(false);
-    if (!res.ok) {
-      toast.error("Unable to delete image.");
-      throw new Error("Unable to delete image.");
-    }
-
     const resImage = await fetch(
-      `${API_URL}/posts/update-image/${data.postId}/${data.slug}`,
+      `${API_URL}/posts/update-image/${data.post._id}`,
       {
         method: "PATCH",
         body: JSON.stringify({
@@ -157,6 +139,7 @@ export default function EditPost({ slug, API_URL }) {
       throw new Error("Unable to update image.");
     }
     setPreview("");
+    setImageData({ url: ""});
   };
 
   const onCopy = (e) => {
@@ -166,27 +149,31 @@ export default function EditPost({ slug, API_URL }) {
     });
   };
 
-  const loadData = async () => {
-    const res = await fetch(`${API_URL}/posts/${slug}`).then((res) =>
-      res.json()
-    );
+  const loadData = async (newTags, newAuthors) => {
+    const result = await axios(`${API_URL}/posts/${slug}`);
+    const res = result.data;
     setData(res);
-    const delta = quillRef.current.clipboard.convert({ html: res.content });
-    quillRef.current.setContents(delta);
-    setValue("selectedOption", { label: res.categories, value: res.categories });
-    setValue("selectedOptionAuthor", {
-      label: res.authorId,
-      value: res.authorId,
+    const delta = quillRef.current.clipboard.convert({
+      html: res.post.content,
     });
-    setValue("title", res.title);
-    setValue("slug", res.slug);
-    setValue("content", res.content);
-    setPreview(res.image);
+    quillRef.current.setContents(delta);
+    setValue(
+      "selectedOption",
+      res.post.tags.map((tag) => newTags.find((t) => t.value === tag))
+    );
+    setValue(
+      "selectedOptionAuthor",
+      newAuthors.find((author) => author.value === res.post.author)
+    );
+    setValue("title", res.post.title);
+    setValue("slug", res.post.slug);
+    setValue("content", res.post.content);
+    setPreview(res.post.image);
   };
 
   const uploadToS3 = async (file) => {
     const formData = new FormData();
-    formData.append("image", file);
+    formData.append("file", file);
     const resimage = await fetch(`${API_URL}/images`, {
       method: "POST",
       body: formData,
@@ -195,13 +182,13 @@ export default function EditPost({ slug, API_URL }) {
       },
     });
     const imageJSON = await resimage.json();
-    return imageJSON.url;
-  }
+    return imageJSON;
+  };
 
   const imageHandler = () => {
-    const input = document.createElement('input');
-    input.setAttribute('type', 'file');
-    input.setAttribute('accept', 'image/*');
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
     input.click();
 
     input.onchange = async () => {
@@ -210,13 +197,13 @@ export default function EditPost({ slug, API_URL }) {
         try {
           const imageUrl = await uploadToS3(file);
           const range = quillRef.current.getSelection();
-          quillRef.current.insertEmbed(range.index, 'image', imageUrl);
+          quillRef.current.insertEmbed(range.index, "image", imageUrl.url);
         } catch (err) {
-          console.error('Image upload failed', err);
+          console.error("Image upload failed", err);
         }
       }
     };
-  }
+  };
 
   useEffect(() => {
     if (editorRef.current && !quillRef.current) {
@@ -226,8 +213,8 @@ export default function EditPost({ slug, API_URL }) {
           toolbar: {
             container: toolbarOptions,
             handlers: {
-              image: imageHandler
-            }
+              image: imageHandler,
+            },
           },
         },
       });
@@ -236,14 +223,20 @@ export default function EditPost({ slug, API_URL }) {
         setValue("content", html);
       });
     }
-    loadData();
-    getAllTags();
-    getAllAuthors();
+    (async () => {
+      const newTags = await getAllTags();
+      const newAuthors = await getAllAuthors();
+      await loadData(newTags, newAuthors);
+    })();
   }, [editorRef.current, slug]);
 
   useEffect(() => {
     if (watchedFile && watchedFile[0]) {
       setPreview(URL.createObjectURL(watchedFile[0]));
+      uploadToS3(watchedFile[0]).then((res) => {
+        console.log(res);
+        setImageData(res);
+      });
     } else {
       setPreview(null);
     }
@@ -313,13 +306,6 @@ export default function EditPost({ slug, API_URL }) {
         </div>
         <div className="pb-4 block">
           <span className="block mb-2">Tags</span>
-          <div className="mb-2">
-            {optionsWatch?.value?.length > 0 ? (
-              <span className="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded">
-                {optionsWatch.value}
-              </span>
-            ) : null}
-          </div>
           <Controller
             name="selectedOption"
             control={control}
@@ -327,6 +313,7 @@ export default function EditPost({ slug, API_URL }) {
               <Select
                 {...field}
                 options={tags}
+                isMulti
                 isSearchable
                 placeholder="Select Tag"
               />
@@ -375,8 +362,7 @@ export default function EditPost({ slug, API_URL }) {
                 />
               </svg>
               <p className="mb-2 text-sm text-gray-500 ">
-                <span className="font-semibold">Click to upload</span> or drag
-                and drop
+                <span className="font-semibold">Click to upload</span>
               </p>
               <p className="text-xs text-gray-500 ">
                 SVG, PNG, JPG or GIF (MAX. 800x400px)

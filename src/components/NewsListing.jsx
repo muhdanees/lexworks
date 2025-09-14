@@ -1,8 +1,8 @@
 import React from "react";
 import timeAgo from "../utils/timeago";
-// import { tags } from "../utils/tags";
+import { stripHtml } from "string-strip-html";
 
-const Pagination = ({ totalPosts, limit, currentIndex, page = 1 }) => {
+const Pagination = ({ totalPosts, limit, page = 1 }) => {
   const totalPages = Math.ceil(totalPosts / limit);
   const maxPagesToShow = 5; // Maximum number of page links to display
   const pageNumbers = [];
@@ -18,6 +18,8 @@ const Pagination = ({ totalPosts, limit, currentIndex, page = 1 }) => {
       pageNumbers.push(1, "...", page - 1, page, page + 1, "...", totalPages);
     }
   }
+
+  if (pageNumbers.length === 0) return null;
 
   return (
     <nav aria-label="Page navigation">
@@ -54,9 +56,9 @@ const Pagination = ({ totalPosts, limit, currentIndex, page = 1 }) => {
 function Tags({ jsonTagRes }) {
   return (
     <div>
-      {jsonTagRes?.tags?.map(({ tag }) => (
-        <a href={`/tags/${tag.toLowerCase()}`} key={tag} className="tags">
-          #{tag}
+      {jsonTagRes?.tags?.map((tag) => (
+        <a href={`/tags/${tag.slug}`} key={tag._id} className="tags">
+          #{tag.name}
         </a>
       ))}
     </div>
@@ -78,7 +80,7 @@ export default function NewsListing({ data, page, jsonTagRes }) {
                 <a
                   href={`/posts/${post.slug}`}
                   className="card mb-3"
-                  key={post.postId}
+                  key={post._id}
                 >
                   <div className="row g-0">
                     <div className="col-md-4">
@@ -96,7 +98,7 @@ export default function NewsListing({ data, page, jsonTagRes }) {
                           {post.title}
                         </h5>
                         <p className="card-text multiText-truncate">
-                          {post.content}
+                          {stripHtml(post.content).result?.slice(0, 200)}
                         </p>
                         <p className="card-text">
                           <small className="text-dark">
@@ -111,10 +113,12 @@ export default function NewsListing({ data, page, jsonTagRes }) {
                 </a>
               ))}
 
+              {data?.posts.length === 0 ? (
+                <p>No Latest Posts!</p>
+              ) : null}
               <Pagination
-                currentIndex={data.currentIndex}
-                totalPosts={data.totalPosts}
-                limit={data.limits}
+                totalPosts={data.total}
+                limit={data.limit}
                 page={page}
               />
             </div>
