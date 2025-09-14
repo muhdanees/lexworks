@@ -216,7 +216,6 @@ export default function CreatePost({ slug, API_URL }) {
     if (watchedFile && watchedFile[0]) {
       setPreview(URL.createObjectURL(watchedFile[0]));
       uploadToS3(watchedFile[0]).then((res) => {
-        console.log(res);
         setImageData(res);
       });
     } else {

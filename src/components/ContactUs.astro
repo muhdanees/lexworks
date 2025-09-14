@@ -323,8 +323,7 @@ import { API_URL } from "astro:env/client";
         body: formData,
       })
         .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
+        .then(() => {
           Swal.fire({
             title: "We will get to you soon",
             text: "Successfully submited!",
