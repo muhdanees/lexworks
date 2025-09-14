@@ -1,4 +1,5 @@
 import { API_URL } from "astro:env/client";
+import axios from "axios";
 
 export async function GET() {
   const siteUrl = "https://lexworks.co.in";
@@ -20,11 +21,9 @@ export async function GET() {
       );
     });
 
-  const res = await fetch(`${API_URL}/posts/latest-slugs`).then((res) =>
-    res.json()
-  );
+  const res = await axios.get(`${API_URL}/posts/latest-slugs?limit=10000`);
 
-  const posts = res.posts.map(
+  const posts = res.data.posts.map(
     (post: { slug: string }) => `${siteUrl}/posts/${post.slug}`
   );
 
