@@ -133,6 +133,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
               </div>
             </div>
+
             <div
               className="col-lg-6 col-xl-3 mb-5 wow fadeInUp"
               data-wow-delay="0.7s"
@@ -156,7 +157,63 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
                 <div className="country-name">
                   <a href="ms-oshin-maggu" className="text-white fs-4">
-                  Oshin Maggu
+                    Oshin Maggu
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-lg-6 col-xl-3 mb-5 wow fadeInUp"
+              data-wow-delay="0.7s"
+            >
+              <div className="country-item">
+                <div className="rounded overflow-hidden">
+                  <img
+                    src="img/mehak-sharma.png"
+                    className="img-fluid w-100 rounded"
+                    alt="Image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="country-flag">
+                  <img
+                    src="img/hammer.png"
+                    className="img-fluid rounded-circle"
+                    alt="Image"
+                  />
+                </div>
+                <div className="country-name">
+                  <a href="mehak-sharma" className="text-white fs-4">
+                    Mehak Sharma
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-lg-6 col-xl-3 mb-5 wow fadeInUp"
+              data-wow-delay="0.7s"
+            >
+              <div className="country-item">
+                <div className="rounded overflow-hidden">
+                  <img
+                    src="img/aryan-nagpal.png"
+                    className="img-fluid w-100 rounded"
+                    alt="Image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="country-flag">
+                  <img
+                    src="img/hammer.png"
+                    className="img-fluid rounded-circle"
+                    alt="Image"
+                  />
+                </div>
+                <div className="country-name">
+                  <a href="aryan-nagpal" className="text-white fs-4">
+                    Aryan Nagpal
                   </a>
                 </div>
               </div>
@@ -172,17 +229,17 @@ export default function OurTeam({ page, showSubtitle = false }) {
             </div> */}
           </div>
 
-          <div
+          {/* <div
             className="section-title text-center mb-5 wow fadeInUp"
             data-wow-delay="0.1s"
           >
             <div className="sub-style mb-2">
               <h5 className="sub-title text-primary px-3">Expert Advisors</h5>
             </div>
-          </div>
+          </div> */}
 
-          <div className="row g-4 text-center">
-            {/* <div
+          {/* <div className="row g-4 text-center">
+            <div
               className="col-lg-6 col-xl-3 mb-5 mb-xl-0 wow fadeInUp"
               data-wow-delay="0.7s"
             >
@@ -209,7 +266,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                   </a>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div
               className="col-lg-6 col-xl-3 mb-5 wow fadeInUp"
               data-wow-delay="0.7s"
@@ -238,7 +295,7 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
