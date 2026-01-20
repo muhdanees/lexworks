@@ -4,7 +4,7 @@ const { url } = Astro;
 const {
   title = "Lex Works | Your Trusted Boutique Law Firm for Law & Tax Across India",
   description = "Discover Lex Works, a law firm offering nationwide legal services with a commitment to resolving complex legal and technical challenges efficiently. Explore our landmark judgments and client-focused approach.",
-  jsonLd = null
+  jsonLd = null,
 } = Astro.props;
 const canonicalUrl = `https://www.lexworks.co.in${url.pathname}`;
 ---
@@ -15,8 +15,7 @@ const canonicalUrl = `https://www.lexworks.co.in${url.pathname}`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- <meta name="generator" content={Astro.generator} /> -->
-    <link rel="icon" href="./img/favicon_LW.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon_LW.ico" type="image/x-icon" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
@@ -43,19 +42,24 @@ const canonicalUrl = `https://www.lexworks.co.in${url.pathname}`;
     <link rel="stylesheet" href="/styles/style.css" />
     <ClientRouter />
     <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HJD6S2PBD2"></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HJD6S2PBD2"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-HJD6S2PBD2');
+      gtag("config", "G-HJD6S2PBD2");
     </script>
-    {jsonLd && <script type="application/ld+json" set:html={jsonLd}></script>}
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
   </head>
   <body>
     <slot />
-
+    <span hidden>{new Date().toISOString()}</span>
     <!-- JavaScript Libraries -->
     <script
       is:inline
