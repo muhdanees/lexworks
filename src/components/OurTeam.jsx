@@ -218,15 +218,6 @@ export default function OurTeam({ page, showSubtitle = false }) {
                 </div>
               </div>
             </div>
-            {/* <div className="col-12">
-              <a
-                className="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp"
-                data-wow-delay="0.1s"
-                href="/ourteam"
-              >
-                More Team
-              </a>
-            </div> */}
           </div>
 
           {/* <div
